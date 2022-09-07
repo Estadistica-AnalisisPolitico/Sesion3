@@ -3762,7 +3762,8 @@ rp2=glm(h2, data = salud, offset=log(pob),
 
 modelsPois=list(&#39;POISSON asegurados (I)&#39;=rp1,
                 &#39;POISSON asegurados (II)&#39;=rp2)
-modelsummary(modelsPois, title = &quot;Regresiones Poisson anidadas&quot;,
+modelsummary(modelsPois, 
+             title = &quot;Regresiones Poisson anidadas&quot;,
              stars = TRUE,
              output = &quot;kableExtra&quot;)</code></pre>
 <table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
@@ -3918,10 +3919,18 @@ RMSE
 </tr>
 </tfoot>
 </table>
-<p>La interpretación NO es tan directa como lo era en la regresión lineal. Sin hacer ningun cálculo, aquí podemos ver que para el segundo modelo ambos predictores son sigificativos; y que por un lado se sabe que a mayor analfabetismo, mayor cantidad de asegurados, y por otro lado, vemos que a mayor cantidad de trabajadores independientes, menor cantidad de asegurados. Sin embargo, no sabemos los valores en que la variable dependiente aumenta o disminuye.</p>
-<p>Para tener una mejor idea, debemos hacer cálculos. Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la <a href="#eq:poi">(2.1)</a>:</p>
-<p><span class="math inline">\(\log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon\)</span> \tag{2.1}</p>
-<p>Cuando el <em>exposure</em> es constante modelamos conteos (Y); cuando no lo es modelamos ratios (<span class="math inline">\(\lambda\)</span>)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Pero, como vemos en la Ecuación <a href="#eq:poi">(2.1)</a>, los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla @ref(tab:exp_rp2).</p>
+<p>La interpretación de la Tabla <a href="#tab:rp1rp2">2.2</a> NO es tan directa como lo era en la regresión lineal. Sin hacer ningun cálculo, aquí podemos ver:</p>
+<ul>
+<li>que para el segundo modelo ambos predictores son significativos;</li>
+<li>que a mayor analfabetismo, mayor cantidad de asegurados;</li>
+<li>que a mayor cantidad de trabajadores independientes, menor cantidad de asegurados.</li>
+</ul>
+<p>Sin embargo, no es tan sencilla la interpretación de los coeficientes de la la Tabla <a href="#tab:rp1rp2">2.2</a>. Para tener una mejor idea, debemos hacer cálculos.</p>
+<p>Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación <a href="#eq:poi">(2.1)</a>:</p>
+<span class="math display" id="eq:poi">\[\begin{equation}
+\log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon \tag{2.1}
+\end{equation}\]</span>
+<p>Cuando el <em>exposure</em> es constante modelamos conteos (Y); cuando no lo es modelamos ratios (<span class="math inline">\(\lambda\)</span>)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Pero, como vemos en la Ecuación <a href="#eq:poi">(2.1)</a>, los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla <a href="#tab:exp-rp2">2.3</a>.</p>
 <pre class="r"><code>modelsPois2=list(&#39;POISSON asegurados (II) exponenciada&#39;=rp2)
 
 f &lt;- function(x) format(x, digits = 4, scientific = FALSE)
@@ -3933,7 +3942,7 @@ modelsummary(modelsPois2,fmt=f,
              output = &quot;kableExtra&quot;)</code></pre>
 <table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-(#tab:exp_rp2)EXP() de la Regresión Poisson (II) para Interpretación
+<span id="tab:exp-rp2">Table 2.3: </span>EXP() de la Regresión Poisson (II) para Interpretación
 </caption>
 <thead>
 <tr>
@@ -4083,12 +4092,12 @@ rexp.est
 </div>
 <div id="comparación-de-modelos" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Comparación de modelos</h2>
-<p>Para la comparación podemos usar el anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla <a href="#tab:anovarp1rp2">2.3</a>.</p>
+<p>Para la comparación podemos usar el anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla <a href="#tab:anovarp1rp2">2.4</a>.</p>
 <pre class="r"><code>anova(rp1, rp2, test = &quot;Chisq&quot;) %&gt;%
 kable(caption = &quot;Tabla ANOVA para comparar modelos&quot;)%&gt;%kableExtra::kable_styling(full_width = FALSE)</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:anovarp1rp2">Table 2.3: </span>Tabla ANOVA para comparar modelos
+<span id="tab:anovarp1rp2">Table 2.4: </span>Tabla ANOVA para comparar modelos
 </caption>
 <thead>
 <tr>
@@ -4151,7 +4160,7 @@ NA
 </div>
 <div id="equidispersión" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Equidispersión</h1>
-<p>Uno de los supuestos en la Regresión Poisson es que la <strong>media</strong> y la <strong>varianza</strong> sean iguales. La Tabla <a href="#tab:summarydiffs"><strong>??</strong></a> mostró que estos valores no están cercanos, de hecho la razón varianza - media es 5.103213^{4}. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la <em>hipótesis de equidispersion</em>. Veamos la Tabla @ref(tab:tabla_disper).</p>
+<p>Uno de los supuestos en la Regresión Poisson es que la <strong>media</strong> y la <strong>varianza</strong> sean iguales. La Tabla <a href="#tab:summarydiffs"><strong>??</strong></a> mostró que estos valores no están cercanos, de hecho la razón varianza - media es 5.103213^{4}. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la <em>hipótesis de equidispersion</em>. Veamos la Tabla <a href="#tab:tabla-disper">3.1</a>.</p>
 <pre class="r"><code>overdispersion=AER::dispersiontest(rp2,alternative=&#39;greater&#39;)$ p.value&lt;0.05
 underdispersion=AER::dispersiontest(rp2,alternative=&#39;less&#39;)$ p.value&lt;0.05
 # tabla
@@ -4160,7 +4169,7 @@ names(testResult)=&#39;Que es lo más probable?&#39;
 testResult%&gt;%kable(caption = &quot;Test de Equidispersión&quot;)%&gt;%kableExtra::kable_styling()</code></pre>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-(#tab:tabla_disper)Test de Equidispersión
+<span id="tab:tabla-disper">Table 3.1: </span>Test de Equidispersión
 </caption>
 <thead>
 <tr>
@@ -4190,10 +4199,10 @@ FALSE
 </tr>
 </tbody>
 </table>
-<p>La Tabla @ref(tab:tabla_disper) no muestra que es altamente improbable que la varianza sea igual a la media, se opta por aceptar que hay sobredispersion.</p>
+<p>La Tabla <a href="#tab:tabla-disper">3.1</a> no muestra que es altamente improbable que la varianza sea igual a la media, se opta por aceptar que hay sobredispersion.</p>
 <div id="la-quasi-poisson" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> La Quasi Poisson</h2>
-<p>La presencia de sobredispersión puede solucionarse con la <em>quasipoisson</em>; veamos la Tabla <a href="#tab:rqp">3.1</a>.</p>
+<p>La presencia de sobredispersión puede solucionarse con la <em>quasipoisson</em>; veamos la Tabla <a href="#tab:rqp">3.2</a>.</p>
 <pre class="r"><code>rqp = glm(h2, data = salud, offset=log(pob),
           family = quasipoisson(link = &quot;log&quot;))
 
@@ -4204,7 +4213,7 @@ modelsummary(modelsPQP, title = &quot;Regresiones Poisson y QuasiPoisson&quot;,
              output = &quot;kableExtra&quot;)</code></pre>
 <table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:rqp">Table 3.1: </span>Regresiones Poisson y QuasiPoisson
+<span id="tab:rqp">Table 3.2: </span>Regresiones Poisson y QuasiPoisson
 </caption>
 <thead>
 <tr>
@@ -4354,7 +4363,7 @@ RMSE
 </tr>
 </tfoot>
 </table>
-<p>la Tabla <a href="#tab:rqp">3.1</a> nos muestra cosas interesantes:</p>
+<p>la Tabla <a href="#tab:rqp">3.2</a> nos muestra cosas interesantes:</p>
 <ul>
 <li>Los coeficientes son los mismos para ambos modelos:</li>
 </ul>
@@ -4390,7 +4399,7 @@ modelsummary(modelsQPexp,fmt=f,
              output = &quot;kableExtra&quot;)</code></pre>
 <table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-(#tab:exp_rqp)EXP() de la Regresión Quasi Poisson (II) para Interpretación
+<span id="tab:exp-rqp">Table 3.3: </span>EXP() de la Regresión Quasi Poisson (II) para Interpretación
 </caption>
 <thead>
 <tr>
@@ -4490,7 +4499,7 @@ RMSE
 </div>
 <div id="la-binomial-negativa" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> La Binomial Negativa</h2>
-<p>Otra alternativa ante la sobredispersión es usar la <em>regresión binomial negativa</em>. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla @ref(tab:exp_rbn).</p>
+<p>Otra alternativa ante la sobredispersión es usar la <em>regresión binomial negativa</em>. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla <a href="#tab:exp-rbn">3.4</a>.</p>
 <pre class="r"><code>h2off=formula(segu~analf15 + inde + offset(log(pob)))
 rbn=glm.nb(h2off,data=salud)
 
@@ -4507,7 +4516,7 @@ modelsummary(modelsQP_BN,fmt=f,
              output = &quot;kableExtra&quot;)</code></pre>
 <table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-(#tab:exp_rbn)EXP() de la Regresiones Poisson, Quasi Poisson y Binomial Negativa
+<span id="tab:exp-rbn">Table 3.4: </span>EXP() de la Regresiones Poisson, Quasi Poisson y Binomial Negativa
 </caption>
 <thead>
 <tr>
@@ -4696,12 +4705,12 @@ RMSE
 </tr>
 </tfoot>
 </table>
-<p>Nótese en la Tabla @ref(tab:exp_rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas.</p>
+<p>Nótese en la Tabla <a href="#tab:exp-rbn">3.4</a> que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas.</p>
 <pre class="r"><code>anova(rp2,rqp,rbn, test = &quot;Chisq&quot;) %&gt;%
 kable(caption = &quot;Tabla ANOVA para comparar modelos&quot;)%&gt;%kableExtra::kable_styling(full_width = FALSE)</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:anovarall">Table 3.2: </span>Tabla ANOVA para comparar modelos
+<span id="tab:anovarall">Table 3.5: </span>Tabla ANOVA para comparar modelos
 </caption>
 <thead>
 <tr>

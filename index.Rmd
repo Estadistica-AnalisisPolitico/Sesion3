@@ -54,7 +54,7 @@ Modelo Lineal Generalizados (I)
 
 <a id='rlin'></a>
 
-# Más allá de la Regresión Lineal (OLS) 
+# Más allá de la Regresión Lineal (OLS)
 
 El Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Descarguemos los siguientes indicadores a nivel de distrito [^1]:
 
@@ -88,7 +88,6 @@ Si tenemos la hipótesis:
 
 > A nivel distrital, la cantidad de personas con algún seguro de salud está afectada por el nivel analfabetismo.
 
-
 De lo visto en las sesiones anteriores [@magallanes_estadistica-analisispoliticosesion1_2022-1; @magallanes_estadistica-analisispoliticosesion2_2022-1], podríamos intentar una regresión lineal, que nos daría estos resultados:
 
 ```{r rl1,warning=FALSE, message=FALSE, results='asis'}
@@ -105,7 +104,7 @@ modelsummary(model1, title = "Resumen de Regresion Lineal",
              output = "kableExtra")
 ```
 
-Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen _ajuste_, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que dificilmente este modelo puede ser útil.
+Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen *ajuste*, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que dificilmente este modelo puede ser útil.
 
 ```{r evaluacionrl1,fig.cap="Diagnósticos para el modelo OLS asegurados (I) "}
 par(mfrow = c(2, 2))  
@@ -115,7 +114,7 @@ plot(rl1, 3, caption = '');title(main="Homocedasticidad")
 plot(rl1, 5, caption = '');title(main="Influyentes")
 ```
 
-Podríamos mejorar este modelo si controlásemos el tamaño de la población en el modelo. Veamos la Tabla \@ref(tab:rl12). 
+Podríamos mejorar este modelo si controlásemos el tamaño de la población en el modelo. Veamos la Tabla \@ref(tab:rl12).
 
 ```{r rl12,warning=FALSE, message=FALSE, results='asis'}
 library(knitr)
@@ -190,7 +189,6 @@ La regresión Poisson tiene sus supuestos:
 
 Reimplementemos nuestra hipótesis original usando la regresión Poisson. Los resultados los vemos en la Tabla \@ref(tab:rp1rl2), comparándolos con el resultado de la regresión lineal controlada por la población.
 
-
 ```{r rp1rl2,warning=FALSE, message=FALSE, results='asis'}
 
 rp1=glm(h1, data = salud, 
@@ -206,10 +204,11 @@ modelsummary(modelslmpoi, title = "Regresiones OLS y Poisson",
              output = "kableExtra")
 ```
 
-Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (_exposure_), añadida usando _offset_. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos representar controlar la _exposure_ de manera explícita (la población) ^[No sería diferente si tuvieramos _hijos por hogar_, _postulaciones por político_.]. 
+Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos representar controlar la *exposure* de manera explícita (la población) [^2].
 
+[^2]: No sería diferente si tuvieramos *hijos por hogar*, *postulaciones por político*.
 
-La Tabla \@ref(tab:rp1rl2) muestra dos modelos que no se pueden comparar fácilmente, pero podemos verlo de manera gráfica en la Figura \@ref(fig:compare_olspoi). 
+La Tabla \@ref(tab:rp1rl2) muestra dos modelos que no se pueden comparar fácilmente, pero podemos verlo de manera gráfica en la Figura \@ref(fig:compare_olspoi).
 
 ```{r compare_olspoi,fig.cap="Comparando modelos via valores calculados"}
 par(mfrow = c(1, 2))  # divide screen 1 row 2 columns
@@ -217,14 +216,13 @@ plot(salud$segu,fitted(rp1),ylim=c(0,365000));title(main="Original versus Poisso
 plot(salud$segu,fitted(rl2),ylim=c(0,365000));title(main="Original versus OLS \ncontrolando población")
 ```
 
-La Figura  \@ref(fig:compare_olspoi) muestra que los valores obtenidos por la regresiones (_fitted values_) se relacionan muy bien con los valores originales. Ambas servirían para predecir; pero sólo la Poisson le da significancia al predictor de interés. 
+La Figura \@ref(fig:compare_olspoi) muestra que los valores obtenidos por la regresiones (*fitted values*) se relacionan muy bien con los valores originales. Ambas servirían para predecir; pero sólo la Poisson le da significancia al predictor de interés.
 
 ## Interpretación
 
 Ahora que sabemos cuándo usar una regresión Poisson, alteremos la hipótesis anterior así:
 
 > A nivel distrital, la cantidad de personas con algun seguro de salud está afectada por el nivel analfabetismo y por la presencia de trabajadores independientes.
-
 
 ```{r rp1rp2,warning=FALSE, message=FALSE, results='asis'}
 
@@ -236,20 +234,34 @@ rp2=glm(h2, data = salud, offset=log(pob),
 
 modelsPois=list('POISSON asegurados (I)'=rp1,
                 'POISSON asegurados (II)'=rp2)
-modelsummary(modelsPois, title = "Regresiones Poisson anidadas",
+modelsummary(modelsPois, 
+             title = "Regresiones Poisson anidadas",
              stars = TRUE,
              output = "kableExtra")
 ```
 
-La interpretación NO es tan directa como lo era en la regresión lineal. Sin hacer ningun cálculo, aquí podemos ver que para el segundo modelo ambos predictores son sigificativos; y que por un lado se sabe que a mayor analfabetismo, mayor cantidad de asegurados, y por otro lado, vemos que a mayor cantidad de trabajadores independientes, menor cantidad de asegurados. Sin embargo, no sabemos los valores en que la variable dependiente aumenta o disminuye.
+La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era en la regresión lineal. Sin hacer ningun cálculo, aquí podemos ver:
 
-Para tener una mejor idea, debemos hacer cálculos. Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la \@ref(eq:poi):
+-   que para el segundo modelo ambos predictores son significativos;
+-   que a mayor analfabetismo, mayor cantidad de asegurados;
+-   que a mayor cantidad de trabajadores independientes, menor cantidad de asegurados.
 
-$\log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon$ (\#eq:poi)
+Sin embargo, no es tan sencilla la interpretación de los coeficientes de la la Tabla \@ref(tab:rp1rp2). Para tener una mejor idea, debemos hacer cálculos.
 
-Cuando el _exposure_ es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)^[los conteos con _offset_.]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp_rp2).
+Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
 
-```{r exp_rp2,warning=FALSE, message=FALSE, results='asis'}
+
+```{=tex}
+\begin{equation}
+\log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon (\#eq:poi)
+\end{equation}
+```
+
+Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^3]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
+
+[^3]: los conteos con *offset*.
+
+```{r exp-rp2,warning=FALSE, message=FALSE, results='asis'}
 modelsPois2=list('POISSON asegurados (II) exponenciada'=rp2)
 
 f <- function(x) format(x, digits = 4, scientific = FALSE)
@@ -263,8 +275,9 @@ modelsummary(modelsPois2,fmt=f,
 #cbind(exp(coef(rp2)),exp(confint(rp2)))
 ```
 
-La Tabla \@ref(tab:exp_rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al _cero_, aquí no deseamos que el intervalo de confianza incluya al _uno_. Una vez exponenciado, podemos interpretar los coeficientes. Así, se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x|1-1.016|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (o 100x|1-0.99|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).  
+La Tabla \@ref(tab:exp_rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes. Así, se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (o 100x\|1-0.99\|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
 
+````{=html}
 <!--
 ```{r, echo=FALSE}
 library(sandwich)
@@ -291,26 +304,24 @@ rexp.est[, "Robust SE"] <- s
 rexp.est
 ```
 -->
-
-
+````
 
 ## Comparación de modelos
 
 Para la comparación podemos usar el anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla \@ref(tab:anovarp1rp2).
-
 
 ```{r anovarp1rp2}
 anova(rp1, rp2, test = "Chisq") %>%
 kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling(full_width = FALSE)
 ```
 
-Se nota claramente que el segundo modelo es mejor que el inicial pues la caida de la _Deviance_ es significativa (probabilidad baja de  ser cero).
+Se nota claramente que el segundo modelo es mejor que el inicial pues la caida de la *Deviance* es significativa (probabilidad baja de ser cero).
 
 # Equidispersión
 
-Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. La Tabla \@ref(tab:summarydiffs) mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion*. Veamos la Tabla \@ref(tab:tabla_disper).
+Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. La Tabla \@ref(tab:summarydiffs) mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion*. Veamos la Tabla \@ref(tab:tabla-disper).
 
-```{r tabla_disper, message=FALSE}
+```{r tabla-disper, message=FALSE}
 
 overdispersion=AER::dispersiontest(rp2,alternative='greater')$ p.value<0.05
 underdispersion=AER::dispersiontest(rp2,alternative='less')$ p.value<0.05
@@ -320,13 +331,11 @@ names(testResult)='Que es lo más probable?'
 testResult%>%kable(caption = "Test de Equidispersión")%>%kableExtra::kable_styling()
 ```
 
-La Tabla \@ref(tab:tabla_disper) no muestra que es altamente improbable que la varianza sea igual  a la media, se opta por aceptar que hay sobredispersion. 
+La Tabla \@ref(tab:tabla-disper) no muestra que es altamente improbable que la varianza sea igual a la media, se opta por aceptar que hay sobredispersion.
 
 ## La Quasi Poisson
 
 La presencia de sobredispersión puede solucionarse con la *quasipoisson*; veamos la Tabla \@ref(tab:rqp).
-
-
 
 ```{r rqp, warning=FALSE, message=FALSE, echo=TRUE,results='asis'}
 rqp = glm(h2, data = salud, offset=log(pob),
@@ -356,15 +365,14 @@ cbind(sePoi=se.coef(rp2),seQuasiPoi=se.coef(rqp))
 ```
 
 -   Nota además ambos modelos tienen diferente dispersion:
+
 ```{r}
 summary(rqp)$dispersion; summary(rp2)$dispersion
 ```
 
-
 La regresión quasipoisson lidia mejor con la sobredispersión, cuyo efecto concreto fue sobre los errores típicos, lo que afectaría la significancia de los predictores. De ahí que un mejor intervalo de confianza sería:
 
-
-```{r exp_rqp,warning=FALSE, message=FALSE, results='asis'}
+```{r exp-rqp,warning=FALSE, message=FALSE, results='asis'}
 modelsQPexp=list('QuasiPoisson asegurados (II) exponenciado'=rqp)
 
 f <- function(x) format(x, digits = 4, scientific = FALSE)
@@ -378,10 +386,9 @@ modelsummary(modelsQPexp,fmt=f,
 
 ## La Binomial Negativa
 
-Otra alternativa ante la sobredispersión es usar la *regresión binomial negativa*. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla \@ref(tab:exp_rbn).
+Otra alternativa ante la sobredispersión es usar la *regresión binomial negativa*. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla \@ref(tab:exp-rbn).
 
-
-```{r exp_rbn,warning=FALSE, message=FALSE, results='asis'}
+```{r exp-rbn,warning=FALSE, message=FALSE, results='asis'}
 h2off=formula(segu~analf15 + inde + offset(log(pob)))
 rbn=glm.nb(h2off,data=salud)
 
@@ -398,15 +405,14 @@ modelsummary(modelsQP_BN,fmt=f,
              output = "kableExtra")
 ```
 
-Nótese en la Tabla \@ref(tab:exp_rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas.
+Nótese en la Tabla \@ref(tab:exp-rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas.
 
 ```{r anovarall}
 anova(rp2,rqp,rbn, test = "Chisq") %>%
 kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling(full_width = FALSE)
 ```
-La caída del _Deviance_ es tanta que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso.
 
-
+La caída del *Deviance* es tanta que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso.
 
 ------------------------------------------------------------------------
 
