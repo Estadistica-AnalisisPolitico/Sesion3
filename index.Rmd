@@ -69,6 +69,7 @@ Veamos los contenidos:
 
 ```{r getdata}
 rm(list = ls()) # clear memory
+knitr::knit_hooks$set(inline = as.character)
 
 gitLink="https://github.com/Estadistica-AnalisisPolitico/DataFiles-estadistica/raw/main/salud.xlsx"
 salud=rio::import(gitLink)
@@ -262,49 +263,50 @@ Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelam
 [^3]: los conteos con *offset*.
 
 ```{r exp-rp2,warning=FALSE, message=FALSE, results='asis'}
-modelsPois2=list('POISSON asegurados (II) exponenciada'=rp2)
 
 f <- function(x) format(x, digits = 4, scientific = FALSE)
-modelsummary(modelsPois2,fmt=f,
+modelsummary(modelsPois,
+             fmt=f,
              exponentiate = T, 
              statistic = 'conf.int',
-             title = "EXP() de la Regresión Poisson (II) para Interpretación",
+             title = "EXP() de la Regresión Poisson para Interpretación",
              stars = TRUE,
              output = "kableExtra")
 # simple version:
 #cbind(exp(coef(rp2)),exp(confint(rp2)))
 ```
 
-La Tabla \@ref(tab:exp_rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes. Así, se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (o 100x\|1-0.99\|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
+La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x\|1-0.99\|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
 
-````{=html}
+
 <!--
 ```{r, echo=FALSE}
-library(sandwich)
-cov.rp2 <- vcovHC(rp2, type="HC0")
-std.err <- sqrt(diag(cov.rp2))
-r.est <- cbind(Estimate= coef(rp2), "Robust SE" = std.err,
-"Pr(>|z|)" = 2 * pnorm(abs(coef(rp2)/std.err), lower.tail=FALSE),
-LL = coef(rp2) - 1.96 * std.err,
-UL = coef(rp2) + 1.96 * std.err)
+##robustes
+cov.rp2 = sandwich::vcovHC(rp2, type="HC0")
+Rob.std.err = sqrt(diag(cov.rp2))
+summaryRobusto = cbind(Estimate= coef(rp2), 
+                   "SE robusto" = Rob.std.err,
+                  "Pr(>|z|)" = 2 * pnorm(abs(coef(rp2)/Rob.std.err), 
+                  lower.tail=FALSE),
+                   LI = coef(rp2) - 1.96 * Rob.std.err,
+                   LS = coef(rp2) + 1.96 * Rob.std.err)
 
-r.est
+summaryRobusto
 ```
 
 ```{r}
 library(msm)
-s <- deltamethod(list(~ exp(x1), ~ exp(x2),~ exp(x3)), 
-                                                coef(rp2), cov.rp2)
+Robustos <- deltamethod(list(~ exp(x1), ~ exp(x2),~ exp(x3)),
+                     coef(rp2), cov.rp2)
 
-## exponentiate old estimates dropping the p values
-rexp.est <- exp(r.est[, -3])
-## replace SEs with estimates for exponentiated coefficients
-rexp.est[, "Robust SE"] <- s
+Exp.summaryRobusto <- exp(summaryRobusto[, -3])
 
-rexp.est
+Exp.summaryRobusto[, "SE robusto"] <- Robustos
+
+Exp.summaryRobusto
 ```
 -->
-````
+
 
 ## Comparación de modelos
 
@@ -327,15 +329,15 @@ overdispersion=AER::dispersiontest(rp2,alternative='greater')$ p.value<0.05
 underdispersion=AER::dispersiontest(rp2,alternative='less')$ p.value<0.05
 # tabla
 testResult=as.data.frame(rbind(overdispersion,underdispersion))
-names(testResult)='Que es lo más probable?'
+names(testResult)='Es probable?'
 testResult%>%kable(caption = "Test de Equidispersión")%>%kableExtra::kable_styling()
 ```
 
-La Tabla \@ref(tab:tabla-disper) no muestra que es altamente improbable que la varianza sea igual a la media, se opta por aceptar que hay sobredispersion.
+La Tabla \@ref(tab:tabla-disper) muestra que es altamente improbable que la varianza sea igual a la media, por lo que se opta por aceptar que lo más probable es que tengamos sobredispersión.
 
 ## La Quasi Poisson
 
-La presencia de sobredispersión puede solucionarse con la *quasipoisson*; veamos la Tabla \@ref(tab:rqp).
+La presencia de sobredispersión puede tratarse con la *quasipoisson*; veamos la Tabla \@ref(tab:rqp).
 
 ```{r rqp, warning=FALSE, message=FALSE, echo=TRUE,results='asis'}
 rqp = glm(h2, data = salud, offset=log(pob),
@@ -364,7 +366,7 @@ cbind(coefPoi=coef(rp2),coefQuasiPoi=coef(rqp))
 cbind(sePoi=se.coef(rp2),seQuasiPoi=se.coef(rqp))
 ```
 
--   Nota además ambos modelos tienen diferente dispersion:
+-   Nota además ambos modelos tienen diferente parámetro de dispersion:
 
 ```{r}
 summary(rqp)$dispersion; summary(rp2)$dispersion

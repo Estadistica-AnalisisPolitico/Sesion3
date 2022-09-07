@@ -3141,6 +3141,7 @@ div.tocify {
 </ul>
 <p>Veamos los contenidos:</p>
 <pre class="r"><code>rm(list = ls()) # clear memory
+knitr::knit_hooks$set(inline = as.character)
 
 gitLink=&quot;https://github.com/Estadistica-AnalisisPolitico/DataFiles-estadistica/raw/main/salud.xlsx&quot;
 salud=rio::import(gitLink)
@@ -3931,25 +3932,27 @@ RMSE
 \log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon \tag{2.1}
 \end{equation}\]</span>
 <p>Cuando el <em>exposure</em> es constante modelamos conteos (Y); cuando no lo es modelamos ratios (<span class="math inline">\(\lambda\)</span>)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Pero, como vemos en la Ecuación <a href="#eq:poi">(2.1)</a>, los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla <a href="#tab:exp-rp2">2.3</a>.</p>
-<pre class="r"><code>modelsPois2=list(&#39;POISSON asegurados (II) exponenciada&#39;=rp2)
-
-f &lt;- function(x) format(x, digits = 4, scientific = FALSE)
-modelsummary(modelsPois2,fmt=f,
+<pre class="r"><code>f &lt;- function(x) format(x, digits = 4, scientific = FALSE)
+modelsummary(modelsPois,
+             fmt=f,
              exponentiate = T, 
              statistic = &#39;conf.int&#39;,
-             title = &quot;EXP() de la Regresión Poisson (II) para Interpretación&quot;,
+             title = &quot;EXP() de la Regresión Poisson para Interpretación&quot;,
              stars = TRUE,
              output = &quot;kableExtra&quot;)</code></pre>
 <table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:exp-rp2">Table 2.3: </span>EXP() de la Regresión Poisson (II) para Interpretación
+<span id="tab:exp-rp2">Table 2.3: </span>EXP() de la Regresión Poisson para Interpretación
 </caption>
 <thead>
 <tr>
 <th style="text-align:left;">
 </th>
 <th style="text-align:center;">
-POISSON asegurados (II) exponenciada
+POISSON asegurados (I)
+</th>
+<th style="text-align:center;">
+POISSON asegurados (II)
 </th>
 </tr>
 </thead>
@@ -3959,11 +3962,17 @@ POISSON asegurados (II) exponenciada
 (Intercept)
 </td>
 <td style="text-align:center;">
+0.4066***
+</td>
+<td style="text-align:center;">
 0.5405***
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+[0.4063, 0.4069]
 </td>
 <td style="text-align:center;">
 [0.5396, 0.5415]
@@ -3974,11 +3983,17 @@ POISSON asegurados (II) exponenciada
 analf15
 </td>
 <td style="text-align:center;">
+1.0051***
+</td>
+<td style="text-align:center;">
 1.0166***
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+[1.0050, 1.0051]
 </td>
 <td style="text-align:center;">
 [1.0165, 1.0167]
@@ -3989,11 +4004,15 @@ analf15
 inde
 </td>
 <td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 0.9893***
 </td>
 </tr>
 <tr>
 <td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
 </td>
 <td style="text-align:center;box-shadow: 0px 1px">
 [0.9893, 0.9894]
@@ -4006,10 +4025,16 @@ Num.Obs.
 <td style="text-align:center;">
 1831
 </td>
+<td style="text-align:center;">
+1831
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 AIC
+</td>
+<td style="text-align:center;">
+174144961.9
 </td>
 <td style="text-align:center;">
 174020168.2
@@ -4020,12 +4045,18 @@ AIC
 BIC
 </td>
 <td style="text-align:center;">
+174144972.9
+</td>
+<td style="text-align:center;">
 174020184.7
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Log.Lik.
+</td>
+<td style="text-align:center;">
+−87072478.956
 </td>
 <td style="text-align:center;">
 −87010081.083
@@ -4036,12 +4067,18 @@ Log.Lik.
 F
 </td>
 <td style="text-align:center;">
+21585.036
+</td>
+<td style="text-align:center;">
 75214.880
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 RMSE
+</td>
+<td style="text-align:center;">
+4353.10
 </td>
 <td style="text-align:center;">
 3748.51
@@ -4058,11 +4095,11 @@ RMSE
 </table>
 <pre class="r"><code># simple version:
 #cbind(exp(coef(rp2)),exp(confint(rp2)))</code></pre>
-<p>La Tabla @ref(tab:exp_rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al <em>cero</em>, aquí no deseamos que el intervalo de confianza incluya al <em>uno</em>. Una vez exponenciado, podemos interpretar los coeficientes. Así, se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x|1-1.016|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (o 100x|1-0.99|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).</p>
+<p>La Tabla <a href="#tab:exp-rp2">2.3</a> tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al <em>cero</em>, aquí no deseamos que el intervalo de confianza incluya al <em>uno</em>. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x|1-1.016|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x|1-0.99|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).</p>
 <!--
 
 ```
-##                Estimate   Robust SE     Pr(>|z|)          LL           UL
+##                Estimate  SE robusto     Pr(>|z|)          LI           LS
 ## (Intercept) -0.61523114 0.049017867 3.917237e-36 -0.71130616 -0.519156121
 ## analf15      0.01649913 0.001664003 3.571051e-23  0.01323768  0.019760572
 ## inde        -0.01073999 0.001468896 2.639633e-13 -0.01361903 -0.007860955
@@ -4071,19 +4108,18 @@ RMSE
 
 ```r
 library(msm)
-s <- deltamethod(list(~ exp(x1), ~ exp(x2),~ exp(x3)), 
-                                                coef(rp2), cov.rp2)
+Robustos <- deltamethod(list(~ exp(x1), ~ exp(x2),~ exp(x3)),
+                     coef(rp2), cov.rp2)
 
-## exponentiate old estimates dropping the p values
-rexp.est <- exp(r.est[, -3])
-## replace SEs with estimates for exponentiated coefficients
-rexp.est[, "Robust SE"] <- s
+Exp.summaryRobusto <- exp(summaryRobusto[, -3])
 
-rexp.est
+Exp.summaryRobusto[, "SE robusto"] <- Robustos
+
+Exp.summaryRobusto
 ```
 
 ```
-##              Estimate   Robust SE        LL        UL
+##              Estimate  SE robusto        LI        LS
 ## (Intercept) 0.5405159 0.026494939 0.4910025 0.5950225
 ## analf15     1.0166360 0.001691685 1.0133257 1.0199571
 ## inde        0.9893175 0.001453204 0.9864733 0.9921699
@@ -4160,12 +4196,12 @@ NA
 </div>
 <div id="equidispersión" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Equidispersión</h1>
-<p>Uno de los supuestos en la Regresión Poisson es que la <strong>media</strong> y la <strong>varianza</strong> sean iguales. La Tabla <a href="#tab:summarydiffs"><strong>??</strong></a> mostró que estos valores no están cercanos, de hecho la razón varianza - media es 5.103213^{4}. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la <em>hipótesis de equidispersion</em>. Veamos la Tabla <a href="#tab:tabla-disper">3.1</a>.</p>
+<p>Uno de los supuestos en la Regresión Poisson es que la <strong>media</strong> y la <strong>varianza</strong> sean iguales. La Tabla <a href="#tab:summarydiffs"><strong>??</strong></a> mostró que estos valores no están cercanos, de hecho la razón varianza - media es 51032.13. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la <em>hipótesis de equidispersion</em>. Veamos la Tabla <a href="#tab:tabla-disper">3.1</a>.</p>
 <pre class="r"><code>overdispersion=AER::dispersiontest(rp2,alternative=&#39;greater&#39;)$ p.value&lt;0.05
 underdispersion=AER::dispersiontest(rp2,alternative=&#39;less&#39;)$ p.value&lt;0.05
 # tabla
 testResult=as.data.frame(rbind(overdispersion,underdispersion))
-names(testResult)=&#39;Que es lo más probable?&#39;
+names(testResult)=&#39;Es probable?&#39;
 testResult%&gt;%kable(caption = &quot;Test de Equidispersión&quot;)%&gt;%kableExtra::kable_styling()</code></pre>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -4176,7 +4212,7 @@ testResult%&gt;%kable(caption = &quot;Test de Equidispersión&quot;)%&gt;%kableE
 <th style="text-align:left;">
 </th>
 <th style="text-align:left;">
-Que es lo más probable?
+Es probable?
 </th>
 </tr>
 </thead>
@@ -4199,10 +4235,10 @@ FALSE
 </tr>
 </tbody>
 </table>
-<p>La Tabla <a href="#tab:tabla-disper">3.1</a> no muestra que es altamente improbable que la varianza sea igual a la media, se opta por aceptar que hay sobredispersion.</p>
+<p>La Tabla <a href="#tab:tabla-disper">3.1</a> muestra que es altamente improbable que la varianza sea igual a la media, por lo que se opta por aceptar que lo más probable es que tengamos sobredispersión.</p>
 <div id="la-quasi-poisson" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> La Quasi Poisson</h2>
-<p>La presencia de sobredispersión puede solucionarse con la <em>quasipoisson</em>; veamos la Tabla <a href="#tab:rqp">3.2</a>.</p>
+<p>La presencia de sobredispersión puede tratarse con la <em>quasipoisson</em>; veamos la Tabla <a href="#tab:rqp">3.2</a>.</p>
 <pre class="r"><code>rqp = glm(h2, data = salud, offset=log(pob),
           family = quasipoisson(link = &quot;log&quot;))
 
@@ -4382,7 +4418,7 @@ cbind(coefPoi=coef(rp2),coefQuasiPoi=coef(rqp))</code></pre>
 ## analf15     4.609011e-05 0.0009421985
 ## inde        3.037210e-05 0.0006208826</code></pre>
 <ul>
-<li>Nota además ambos modelos tienen diferente dispersion:</li>
+<li>Nota además ambos modelos tienen diferente parámetro de dispersion:</li>
 </ul>
 <pre class="r"><code>summary(rqp)$dispersion; summary(rp2)$dispersion</code></pre>
 <pre><code>## [1] 417.8971</code></pre>
