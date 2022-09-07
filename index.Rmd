@@ -54,40 +54,40 @@ Modelo Lineal Generalizados (I)
 
 <a id='rlin'></a>
 
-# Limitaciones de la Regresión Lineal (OLS) 
+# Más allá de la Regresión Lineal (OLS) 
 
-El Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007]. Descarguemos los siguientes indicadores a nivel de distrito [^1]:
+El Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Descarguemos los siguientes indicadores a nivel de distrito [^1]:
 
 [^1]: Debes incluir en la base de datos Departamento, Provincia, y Distrito
 
--   Personas que tienen algún tipo de seguro
--   Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales
--   Porcentaje de personas analfabetas de 15 años y más
--   Total de habitantes del censo 2007
+-   Número de personas que tienen algún tipo de seguro.
+-   Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales.
+-   Porcentaje de personas analfabetas de 15 años y más.
+-   Total de habitantes (2007).
 
 Veamos los contenidos:
 
 ```{r getdata}
-rm(list = ls())
+rm(list = ls()) # clear memory
+
 gitLink="https://github.com/Estadistica-AnalisisPolitico/DataFiles-estadistica/raw/main/salud.xlsx"
 salud=rio::import(gitLink)
 
-#format data
+#simpler names
 oldnames=names(salud)
 newnames=c("depa","prov","dis","segu","inde","analf15","pob")
 names(salud)=newnames
 
-library(magrittr) # for pipe %>%
+# display table
+library(magrittr) # needed for pipe %>% 
 salud%>%
     rmarkdown::paged_table()
 ```
 
 Si tenemos la hipótesis:
 
-> A nivel distrital, la cantidad de personas con algun seguro de salud está afectada por el nivel analfabetismo.
+> A nivel distrital, la cantidad de personas con algún seguro de salud está afectada por el nivel analfabetismo.
 
-<!-- por la presencia de trabajadores independientes y 
--->
 
 De lo visto en las sesiones anteriores [@magallanes_estadistica-analisispoliticosesion1_2022-1; @magallanes_estadistica-analisispoliticosesion2_2022-1], podríamos intentar una regresión lineal, que nos daría estos resultados:
 
@@ -100,23 +100,22 @@ h1=formula(segu~analf15)
 rl1=lm(h1, data = salud)
 
 model1=list('OLS asegurados (I)'=rl1)
-modelsummary(model1, title = "Regresion Lineal (I)",
+modelsummary(model1, title = "Resumen de Regresion Lineal",
              stars = TRUE,
              output = "kableExtra")
 ```
 
-Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como hay muy poca preducción, es muy probable que la evaluación del modelo no sea satisfactoria.
+Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen _ajuste_, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que dificilmente este modelo puede ser útil.
 
-Así, vemos en la Figura \@ref(fig:evaluacionrl1) que dificilmente este modelo puede ser útil.
-
-```{r evaluacionrl1,fig.cap="Diagnósticos para el modelo 1 "}
+```{r evaluacionrl1,fig.cap="Diagnósticos para el modelo OLS asegurados (I) "}
 par(mfrow = c(2, 2))  
 plot(rl1, 1,caption = '');title(main="Linealidad")
 plot(rl1, 2, caption = '');title(main="Normalidad")
 plot(rl1, 3, caption = '');title(main="Homocedasticidad")
 plot(rl1, 5, caption = '');title(main="Influyentes")
 ```
-Podriamos mejorar este modelo si controlasemos el tamaño de la población en el modelo. Veamos la Tabla \@ref(tab:rl12). 
+
+Podríamos mejorar este modelo si controlásemos el tamaño de la población en el modelo. Veamos la Tabla \@ref(tab:rl12). 
 
 ```{r rl12,warning=FALSE, message=FALSE, results='asis'}
 library(knitr)
@@ -126,23 +125,25 @@ h1control=formula(segu~analf15 + pob)
 
 rl2=lm(h1control, data = salud)
 
-modelslm=list('OLS conteo asegurados (I)'=rl1,'OLS conteo asegurados (II)'=rl2)
+modelslm=list('OLS asegurados (I)'=rl1,'OLS asegurados (II)'=rl2)
 modelsummary(modelslm, title = "Regresiones Lineales",
              stars = TRUE,
              output = "kableExtra")
 ```
-Se ve una gran mejora en el R-2 ajustado con el nuevo modelo en la Tabla \@ref(tab:rl12). Veamos sus gráficas de diagnóstico en la Figura \@ref(fig:evaluacionrl2).
 
-```{r evaluacionrl2,fig.cap="Diagnósticos para el modelo 2 "}
+Se ve una gran mejora en el R-2 ajustado con el modelo II en la Tabla \@ref(tab:rl12). Veamos sus gráficas de diagnóstico en la Figura \@ref(fig:evaluacionrl2).
+
+```{r evaluacionrl2,fig.cap="Diagnósticos para el modelo OLS asegurados (II) "}
 par(mfrow = c(2, 2))  
 plot(rl2, 1,caption = '');title(main="Linealidad")
 plot(rl2, 2, caption = '');title(main="Normalidad")
 plot(rl2, 3, caption = '');title(main="Homocedasticidad")
 plot(rl2, 5, caption = '');title(main="Influyentes")
 ```
-Las gráficas de la Figura Figura \@ref(fig:evaluacionrl2) nos muestran un mejor escenario pero a costa de perder el efecto de una variable independiente ante una de control. Quiza debimos dar un paso más sencillo: analizar la naturaleza de la variable dependiente. Veamos la Figura \@ref(fig:hisVD) para entender mejor.
 
-```{r hisVD,message=FALSE,fig.cap="Descripción de la Variable dependiente"}
+Las gráficas de la Figura \@ref(fig:evaluacionrl2) nos muestran un mejor escenario, pero recuerda que nuestro predictor dejó de ser significativo ante la presencia de la variable de control. Quiza debimos dar un paso más sencillo: analizar la naturaleza de la variable dependiente. Veamos la Figura \@ref(fig:hisVD) para entenderla mejor.
+
+```{r hisVD,message=FALSE,fig.cap="Descripción de la Variable Dependiente"}
 library(ggplot2)
 VarDep=salud$segu
 descris=list(min=min(VarDep),
@@ -154,33 +155,38 @@ descris=list(min=min(VarDep),
 base=ggplot(data=salud, aes(x=segu)) + theme_classic()
 hist=base + geom_histogram(bins=50)
 histInfo=hist + annotate("text", x = 100000, y = 1000,
+                         color='grey50',
                        label = paste0("Minimo: ",descris$min))
 histInfo = histInfo + annotate("text", x = 100000, y = 800,
+                       color='grey50',
                        label = paste0("Máximo: ",descris$max))
 
 histInfo = histInfo + annotate("text", x = 100000, y = 600,
+                       color='grey50',
                        label = paste0("Media: ",descris$media))
 
 histInfo = histInfo + annotate("text", x = 100000, y = 400,
+                       color='grey50',
                        label = paste0("Varianza: ",descris$var))
 
 histInfo = histInfo + annotate("text", x = 100000, y = 200,
+                       color='grey50',
                        label = paste0("Sesgo: ",descris$asim))
 
 histInfo
     
 ```
 
-Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distrubución con sesgo positivo. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una campana, por lo que debilitará la predicción; claro uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
+Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distrubución con sesgo positivo. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de signficancia si los datos no siguen una tendencia lineal sin; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
 
 # Regresión Poisson
 
-Usamos la regresión Poisson con una variable dependiente no negativa y entera que represente *conteos* en espacio o tiempo. La regresión Poisson tiene sus supuestos:
+La regresión Poisson tiene sus supuestos:
 
-1.  **Variable Respuesta** Es un conteo por unidad de tiempo o espacio, que puede ser descrita por la distribución Poisson.
+1.  **Variable Respuesta** Es un conteo (Y) por unidad de tiempo o espacio, que puede ser descrita por la distribución Poisson. Puede además ser un ratio ($\lambda$) cuando la unidad de tiempo o espacio varía para cada conteo.
 2.  **Independencia** Las observaciones (filas) no deben tener relación entre sí.
 3.  **Media=Varianza** Por definición, la media de una variable que se distribuye como Poisson debe ser igual a su varianza (equidispersión). Si la varianza supera significativamente a la media hablamos de sobredispersión; pero si la media fuera mucho mayor que la varianza tendríamos subdispersión.
-4.  **Linealidad** El logaritmo de la media de los datos, log($\lambda$), debe ser una función lineal de los datos.
+4.  **Linealidad** El logaritmo de la variable dependiente debe ser una función lineal de los datos.
 
 Reimplementemos la misma hipotesis, esta vez usando la regresión Poisson. Los resultados los vemos en la Tabla \@ref(tab:rp1rl2).
 
