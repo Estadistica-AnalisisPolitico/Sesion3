@@ -416,8 +416,16 @@ kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling
 
 La caída del *Deviance* es tanta que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso.
 
+Si representar la Tabla \@ref(tab:exp-rbn) de manera gráfica, podemos usar la Figura \@ref(fig:finplots)
 
-
+```{r finplots, fig.cap="Comparación visual de modelos", message=FALSE, warning=FALSE}
+library(ggplot2)
+dotwhisker::dwplot(list(Poisson=rqp,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T) + scale_y_discrete(labels=c("trabajo\nindependiente","analfabetismo")) + scale_color_discrete(name="Modelos para:\nCantidad de Asegurados") + geom_vline(
+           xintercept = 1,
+           colour = "grey60",
+           linetype = 2
+       )
+```
 
 ------------------------------------------------------------------------
 
