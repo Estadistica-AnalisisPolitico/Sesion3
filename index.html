@@ -4098,12 +4098,6 @@ RMSE
 <p>La Tabla <a href="#tab:exp-rp2">2.3</a> tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al <em>cero</em>, aquí no deseamos que el intervalo de confianza incluya al <em>uno</em>. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x|1-1.016|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x|1-0.99|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).</p>
 <!--
 
-```
-##                Estimate  SE robusto     Pr(>|z|)          LI           LS
-## (Intercept) -0.61523114 0.049017867 3.917237e-36 -0.71130616 -0.519156121
-## analf15      0.01649913 0.001664003 3.571051e-23  0.01323768  0.019760572
-## inde        -0.01073999 0.001468896 2.639633e-13 -0.01361903 -0.007860955
-```
 
 
 ```r
@@ -4116,13 +4110,6 @@ Exp.summaryRobusto <- exp(summaryRobusto[, -3])
 Exp.summaryRobusto[, "SE robusto"] <- Robustos
 
 Exp.summaryRobusto
-```
-
-```
-##              Estimate  SE robusto        LI        LS
-## (Intercept) 0.5405159 0.026494939 0.4910025 0.5950225
-## analf15     1.0166360 0.001691685 1.0133257 1.0199571
-## inde        0.9893175 0.001453204 0.9864733 0.9921699
 ```
 -->
 </div>
@@ -4196,7 +4183,7 @@ NA
 </div>
 <div id="equidispersión" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Equidispersión</h1>
-<p>Uno de los supuestos en la Regresión Poisson es que la <strong>media</strong> y la <strong>varianza</strong> sean iguales. La Tabla <a href="#tab:summarydiffs"><strong>??</strong></a> mostró que estos valores no están cercanos, de hecho la razón varianza - media es 51032.13. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la <em>hipótesis de equidispersion</em>. Veamos la Tabla <a href="#tab:tabla-disper">3.1</a>.</p>
+<p>Uno de los supuestos en la Regresión Poisson es que la <strong>media</strong> y la <strong>varianza</strong> sean iguales. De los estadigrafos de la Figura <a href="#fig:hisVD">1.3</a> se mostró que estos valores no están cercanos, de hecho la razón varianza - media es 51032.13. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la <em>hipótesis de equidispersion</em>. Veamos la Tabla <a href="#tab:tabla-disper">3.1</a>.</p>
 <pre class="r"><code>overdispersion=AER::dispersiontest(rp2,alternative=&#39;greater&#39;)$ p.value&lt;0.05
 underdispersion=AER::dispersiontest(rp2,alternative=&#39;less&#39;)$ p.value&lt;0.05
 # tabla

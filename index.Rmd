@@ -280,7 +280,7 @@ La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, mu
 
 
 <!--
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 ##robustes
 cov.rp2 = sandwich::vcovHC(rp2, type="HC0")
 Rob.std.err = sqrt(diag(cov.rp2))
@@ -294,7 +294,7 @@ summaryRobusto = cbind(Estimate= coef(rp2),
 summaryRobusto
 ```
 
-```{r}
+```{r, eval=FALSE}
 library(msm)
 Robustos <- deltamethod(list(~ exp(x1), ~ exp(x2),~ exp(x3)),
                      coef(rp2), cov.rp2)
@@ -321,7 +321,7 @@ Se nota claramente que el segundo modelo es mejor que el inicial pues la caida d
 
 # Equidispersión
 
-Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. La Tabla \@ref(tab:summarydiffs) mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion*. Veamos la Tabla \@ref(tab:tabla-disper).
+Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion*. Veamos la Tabla \@ref(tab:tabla-disper).
 
 ```{r tabla-disper, message=FALSE}
 
@@ -415,6 +415,9 @@ kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling
 ```
 
 La caída del *Deviance* es tanta que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso.
+
+
+
 
 ------------------------------------------------------------------------
 
