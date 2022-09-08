@@ -49,7 +49,6 @@ Modelo Lineal Generalizados (I)
 
 ------------------------------------------------------------------------
 
-<a id='rlin'></a>
 
 # Más allá de la Regresión Lineal (OLS)
 
@@ -429,7 +428,9 @@ DF%>% kable(caption = "Coeficientes Standarizados (ordenar vía valores absoluto
 ```
 
 ------------------------------------------------------------------------
+# Bibliografía {.unnumbered}
 
-<br></br>
+::: {#refs}
+:::
 
-[al INICIO](#beginning)
+<br></br> <br></br> [al INICIO](#beginning) <br></br> <br></br>
