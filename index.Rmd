@@ -69,7 +69,7 @@ Veamos los contenidos:
 
 ```{r getdata}
 rm(list = ls()) # clear memory
-knitr::knit_hooks$set(inline = as.character)
+knitr::knit_hooks$set(inline = as.character) # inline as string
 
 gitLink="https://github.com/Estadistica-AnalisisPolitico/DataFiles-estadistica/raw/main/salud.xlsx"
 salud=rio::import(gitLink)
@@ -181,7 +181,7 @@ Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distrubución con se
 
 # Regresión Poisson
 
-La regresión Poisson tiene sus supuestos:
+La regresión Poisson tiene sus supuestos [@glen_poisson_2016]:
 
 1.  **Variable Respuesta** Es un conteo (Y) por unidad de tiempo o espacio, que puede ser descrita por la distribución Poisson. Puede además ser un ratio ($\lambda$) cuando la unidad de tiempo o espacio varía para cada conteo.
 2.  **Independencia** Las observaciones (filas) no deben tener relación entre sí.
@@ -251,13 +251,11 @@ Sin embargo, no es tan sencilla la interpretación de los coeficientes de la la 
 
 Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
 
-
 ```{=tex}
 \begin{equation}
 \log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon (\#eq:poi)
 \end{equation}
 ```
-
 Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^3]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
 
 [^3]: los conteos con *offset*.
@@ -276,9 +274,9 @@ modelsummary(modelsPois,
 #cbind(exp(coef(rp2)),exp(confint(rp2)))
 ```
 
-La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x\|1-0.99\|). Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
+La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x\|1-0.99\|) [@choueiry_interpret_2022]. Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
 
-
+````{=html}
 <!--
 ```{r, echo=FALSE, eval=FALSE}
 ##robustes
@@ -306,22 +304,11 @@ Exp.summaryRobusto[, "SE robusto"] <- Robustos
 Exp.summaryRobusto
 ```
 -->
-
-
-## Comparación de modelos
-
-Para la comparación podemos usar el anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla \@ref(tab:anovarp1rp2).
-
-```{r anovarp1rp2}
-anova(rp1, rp2, test = "Chisq") %>%
-kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling(full_width = FALSE)
-```
-
-Se nota claramente que el segundo modelo es mejor que el inicial pues la caida de la *Deviance* es significativa (probabilidad baja de ser cero).
+````
 
 # Equidispersión
 
-Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion*. Veamos la Tabla \@ref(tab:tabla-disper).
+Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion* [@hilbe_statistical_2017]. Veamos la Tabla \@ref(tab:tabla-disper).
 
 ```{r tabla-disper, message=FALSE}
 
@@ -409,14 +396,16 @@ modelsummary(modelsQP_BN,fmt=f,
 
 Nótese en la Tabla \@ref(tab:exp-rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas.
 
+# Comparación de modelos
+
+Para la comparación podemos usar el anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla \@ref(tab:anovarall).
+
 ```{r anovarall}
 anova(rp2,rqp,rbn, test = "Chisq") %>%
 kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling(full_width = FALSE)
 ```
 
-La caída del *Deviance* es tanta que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso.
-
-Si representar la Tabla \@ref(tab:exp-rbn) de manera gráfica, podemos usar la Figura \@ref(fig:finplots)
+La caída del *Deviance* es tanta para el último caso que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso. Una manera adicional de comparar es la gráfica. Así, la Tabla \@ref(tab:exp-rbn) se puede ver de manera gráfica en la Figura \@ref(fig:finplots).
 
 ```{r finplots, fig.cap="Comparación visual de modelos", message=FALSE, warning=FALSE}
 library(ggplot2)
@@ -425,6 +414,21 @@ dotwhisker::dwplot(list(Poisson=rqp,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T)
            colour = "grey60",
            linetype = 2
        )
+```
+
+Finalmente, podemos calcular los coeficientes estandarizados [@ibm_spss_computing_2020] para saber cuál de los predictores tiene mayor efecto (ver Tabla \@ref(tab:stdCoefs)).
+
+```{r stdCoefs}
+sdVD=sd(salud$segu)
+sdVIs=apply(salud[,c("analf15","inde")],2,sd)
+DF=list(Poisson=sdVIs*coef(rp2)[c(2,3)]/sdVD,
+     CuasiPoisson=sdVIs*coef(rqp)[c(2,3)]/sdVD,
+     BinomNegativa=sdVIs*coef(rbn)[c(2,3)]/sdVD)%>%
+       data.frame()
+
+DF%>% kable(caption = "Coeficientes Standarizados (ordenar vía valores absolutos)")%>%
+          kableExtra::kable_styling(full_width = F)
+
 ```
 
 ------------------------------------------------------------------------
