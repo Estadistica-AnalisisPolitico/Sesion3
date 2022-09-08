@@ -43,12 +43,9 @@ Modelo Lineal Generalizados (I)
 
 </center>
 
-```{=html}
-<!--
-<center><a href="https://doi.org/10.5281/zenodo.7015029"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7015029.svg" alt="DOI"></a>
+<center><a href="https://doi.org/10.5281/zenodo.7059207"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7059207.svg" alt="DOI"></a>
 </center>
--->
-```
+
 
 ------------------------------------------------------------------------
 
