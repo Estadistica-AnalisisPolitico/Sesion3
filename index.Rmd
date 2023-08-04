@@ -50,18 +50,123 @@ Modelo Lineal Generalizados (I)
 ------------------------------------------------------------------------
 
 
-# Más allá de la Regresión Lineal (OLS)
+# Regresionando conteos
 
-El Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Descarguemos los siguientes indicadores a nivel de distrito [^1]:
+El Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento): 
 
-[^1]: Debes incluir en la base de datos Departamento, Provincia, y Distrito.
+
+![](inei2017.png)
+
+Descarguemos los siguientes indicadores a nivel de distrito:
 
 -   Número de personas que tienen algún tipo de seguro.
 -   Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales.
 -   Porcentaje de personas analfabetas de 15 años y más.
 -   Total de habitantes (2007).
 
-Veamos los contenidos:
+![](inei2017b.png)
+
+Al pedir "procesar" aparece este resultado:
+
+![](inei2017c.png)
+
+Antes de descargaroo, busca darle este formato:
+
+![](inei2017d.png)
+
+Luego, descargalo con CSV, abrelo en Excel y veras algo así:
+
+![](inei2017e.png)
+
+Separalo de manera adecuada (aprovecha de eliminar las primeras dos columnas) y guardalo como xlsx.
+
+![](inei2017f.png)
+
+```{r}
+rm(list = ls())
+
+library(rio)
+
+censo2007=import("data2007.xlsx")
+head(censo2007)
+```
+
+Veamos que tipos de datos tenemos, y los nombres de columnas:
+
+
+```{r}
+str(censo2007)
+```
+
+
+```{r}
+censo2007=censo2007[,-c(1,5,6,9)]
+head(censo2007)
+```
+```{r}
+censo2007$Valor[!grepl("[0-9]", censo2007$Valor)]
+```
+
+```{r}
+censo2007$Valor=as.numeric(censo2007$Valor)
+```
+
+```{r}
+
+library(reshape2)
+censo2007_wide=dcast(data=censo2007, formula=Departamento+Provincia+Distrito ~ Descripcion+Clase, value.var="Valor")
+
+head(censo2007_wide)
+```
+
+```{r}
+names(censo2007_wide)
+```
+
+```{r}
+names(censo2007_wide)=gsub(pattern = "Área Rural",
+                           replacement = "rural",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Área Urbana",
+                           replacement = "urban",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Sexo - Hombre",
+                           replacement = "Hombre",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Sexo - Mujer",
+                           replacement = "Mujer",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Sexo - Mujer",
+                           replacement = "Mujer",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Personas que tienen algún tipo de seguro",
+                           replacement = "algunSeguro_conteo",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Porcentaje de personas analfabetas de 15 años y más",
+                           replacement = "analfabeta15omas_pct",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales",
+                           replacement = "trabIndepNoProf_pct",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)=gsub(pattern = "Total de habitantes del censo 2007",
+                           replacement = "poblacion_conteo",
+                           x = names(censo2007_wide))
+
+names(censo2007_wide)
+```
+
+
+
+
+En este caso, se recomienda que desde la propia pagina web le des un mejor formato:
 
 ```{r getdata}
 rm(list = ls()) # clear memory
