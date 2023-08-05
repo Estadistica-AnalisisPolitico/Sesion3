@@ -35,7 +35,7 @@ Profesor: <a href="http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" targ
 
 <h2>
 
-Modelo Lineal Generalizados (I)
+Regresionando conteos
 
 </h2>
 
@@ -49,77 +49,93 @@ Modelo Lineal Generalizados (I)
 
 ------------------------------------------------------------------------
 
+# Data como conteos
 
-# Regresionando conteos
-
-El Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento): 
+Las variables que rpresentan conteos son prominentes en las ciencias sociales. Podemos encontrar muchas en los indicadores que se crean en los censos. Por ejemplo, el Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo a nivel distrital, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento): 
 
 
 ![](inei2017.png)
 
 Descarguemos los siguientes indicadores a nivel de distrito:
 
--   Número de personas que tienen algún tipo de seguro.
--   Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales.
--   Porcentaje de personas analfabetas de 15 años y más.
--   Total de habitantes (2007).
+* Conteos:
+  - Número de personas que tienen algún tipo de seguro.
+  - Total de habitantes (2007).
+* Procentajes:
+  - Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales.
+  - Porcentaje de personas analfabetas de 15 años y más.
+  
+Para ello, en el portal debes seleccionar esos indicadores de esta manera:
 
 ![](inei2017b.png)
 
-Al pedir "procesar" aparece este resultado:
+Al pedir "procesar" aparece este resultado en otra página:
 
 ![](inei2017c.png)
 
-Antes de descargaroo, busca darle este formato:
+Esa página permite que reorganices los datos. Entonces, busca darle este formato:
 
 ![](inei2017d.png)
 
-Luego, descargalo con CSV, abrelo en Excel y veras algo así:
+Luego, descargalo con CSV (añade **.csv** al nombre de archivo), ábrelo en **Excel** y verás algo así:
 
 ![](inei2017e.png)
 
-Separalo de manera adecuada (aprovecha de eliminar las primeras dos columnas) y guardalo como xlsx.
+Nota que todo ha aperecido en una sola columna. Como se ve, cada columna tiene una coma que la separa de otra; sepáralas de manera adecuaday guardalo como **.xlsx**  (aprovecha de eliminar las primeras dos columnas) .
 
 ![](inei2017f.png)
+
+El archivo guardado lo podemos guardar en un repositorio de GitHub, y abrirlo desde ahí. 
 
 ```{r}
 rm(list = ls())
 
 library(rio)
 
-censo2007=import("data2007.xlsx")
+censo2007=import("https://github.com/Estadistica-AnalisisPolitico/Sesion3/raw/main/data2007.xlsx")
 head(censo2007)
 ```
 
-Veamos que tipos de datos tenemos, y los nombres de columnas:
+Veamos qué tipos de datos tenemos, y los nombres de columnas:
 
 
 ```{r}
 str(censo2007)
 ```
 
+Lo más notorio es que la columna **Valor** ha sido interpretada como texto y no cómo tipo numérico. R hará eso si es que alguna celda tiene un carácter que no sea número o punto. Veamos:
+
+
 
 ```{r}
-censo2007=censo2007[,-c(1,5,6,9)]
-head(censo2007)
-```
-```{r}
+# qué celda tiene algo que no sea número
 censo2007$Valor[!grepl("[0-9]", censo2007$Valor)]
 ```
+Sabiendo ello, podemos convertir la columna a numérico sin temor a perder valores:
 
 ```{r}
 censo2007$Valor=as.numeric(censo2007$Valor)
 ```
 
+Ahora, podemos quedarnos con algunas columnas:
+```{r}
+censo2007_sub=censo2007[,-c(1,5,6,9)] # eliminando
+# queda
+str(censo2007_sub)
+```
+Este último data frame está en formato **long**, pasémoslo a formato **wide**:
+
 ```{r}
 
 library(reshape2)
-censo2007_wide=dcast(data=censo2007, formula=Departamento+Provincia+Distrito ~ Descripcion+Clase, value.var="Valor")
-
+censo2007_wide=dcast(data=censo2007_sub,
+                     formula=Departamento+Provincia+Distrito ~ Descripcion+Clase,
+                     value.var="Valor")
+# columnas del formato wide
 names(censo2007_wide)
 ```
 
-
+Los nombres de columnas son muy largos, podemos reducirlos así:
 
 ```{r}
 names(censo2007_wide)=gsub(pattern = "Área Rural",
@@ -143,35 +159,39 @@ names(censo2007_wide)=gsub(pattern = "Sexo - Mujer",
                            x = names(censo2007_wide))
 
 names(censo2007_wide)=gsub(pattern = "Personas que tienen algún tipo de seguro",
-                           replacement = "algunSeguro_conteo",
+                           replacement = "conSeguro",
                            x = names(censo2007_wide))
 
 names(censo2007_wide)=gsub(pattern = "Porcentaje de personas analfabetas de 15 años y más",
-                           replacement = "analfabeta15omas_pct",
+                           replacement = "analfa",
                            x = names(censo2007_wide))
 
 names(censo2007_wide)=gsub(pattern = "Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales",
-                           replacement = "trabIndepNoProf_pct",
+                           replacement = "indep",
                            x = names(censo2007_wide))
 
 names(censo2007_wide)=gsub(pattern = "Total de habitantes del censo 2007",
-                           replacement = "poblacion_conteo",
+                           replacement = "poblacion",
                            x = names(censo2007_wide))
 
+# nuevos nombres
 names(censo2007_wide)
 ```
 
+¿Cómo nos quedaríamos por ahora con las columnas de "Totales"?
 ```{r}
 grep(pattern = "Total",names(censo2007_wide))
 ```
+Procedamos:
+
 ```{r}
 colsTotal=grep(pattern = "Total",names(censo2007_wide))
 censo2007_wide_Totales=censo2007_wide[,c(1,2,3,colsTotal)]
 
+# ahora:
+head(censo2007_wide_Totales)
+
 ```
-
-
-
 
 
 Si tenemos la hipótesis:
@@ -184,7 +204,7 @@ De lo visto en las sesiones anteriores [@magallanes_estadistica-analisispolitico
 library(knitr)
 library(modelsummary)
 
-h1=formula(algunSeguro_conteo_Total~analfabeta15omas_pct_Total)
+h1=formula(conSeguro_Total~analfa_Total)
 
 rl1=lm(h1, data = censo2007_wide_Totales)
 
@@ -194,7 +214,7 @@ modelsummary(model1, title = "Resumen de Regresion Lineal",
              output = "kableExtra")
 ```
 
-Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen *ajuste*, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que dificilmente este modelo puede ser útil.
+Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen *ajuste*, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que difícilmente este modelo puede ser útil.
 
 ```{r evaluacionrl1,fig.cap="Diagnósticos para el modelo OLS asegurados (I) "}
 par(mfrow = c(2, 2))  
@@ -210,7 +230,7 @@ Podríamos mejorar este modelo si controlásemos el tamaño de la población en 
 library(knitr)
 library(modelsummary)
 
-h1control=formula(algunSeguro_conteo_Total~analfabeta15omas_pct_Total + poblacion_conteo_Total )
+h1control=formula(conSeguro_Total~analfa_Total + poblacion_Total )
 
 rl2=lm(h1control, data = censo2007_wide_Totales)
 
@@ -220,7 +240,7 @@ modelsummary(modelslm, title = "Regresiones Lineales",
              output = "kableExtra")
 ```
 
-Se ve una gran mejora en el R-2 ajustado con el modelo II en la Tabla \@ref(tab:rl12). Veamos sus gráficas de diagnóstico en la Figura \@ref(fig:evaluacionrl2).
+Se ve una gran mejora en el R2 ajustado con el modelo II de la Tabla \@ref(tab:rl12). Veamos sus gráficas de diagnóstico en la Figura \@ref(fig:evaluacionrl2).
 
 ```{r evaluacionrl2,fig.cap="Diagnósticos para el modelo OLS asegurados (II) "}
 par(mfrow = c(2, 2))  
@@ -230,18 +250,18 @@ plot(rl2, 3, caption = '');title(main="Homocedasticidad")
 plot(rl2, 5, caption = '');title(main="Influyentes")
 ```
 
-Las gráficas de la Figura \@ref(fig:evaluacionrl2) nos muestran un mejor escenario, pero nota que nuestro predictor dejó de ser significativo ante la presencia de la variable de control. Quiza debimos dar un paso más sencillo: analizar la naturaleza de la variable dependiente. Veamos la Figura \@ref(fig:hisVD) para entenderla mejor.
+Las gráficas de la Figura \@ref(fig:evaluacionrl2) nos muestran un mejor escenario, pero nota que nuestro predictor dejó de ser significativo ante la presencia de la variable de control. Quizá debimos dar un paso más sencillo: analizar la naturaleza de la variable dependiente. Veamos la Figura \@ref(fig:hisVD) para entenderla mejor.
 
 ```{r hisVD,message=FALSE,fig.cap="Descripción de la Variable Dependiente"}
 library(ggplot2)
-VarDep=censo2007_wide_Totales$algunSeguro_conteo_Total
+VarDep=censo2007_wide_Totales$conSeguro_Total
 descris=list(min=min(VarDep),
              max=max(VarDep),
              media=round(mean(VarDep),2),
              var=round(var(VarDep),2),
              asim=round(e1071::skewness(VarDep),2))
 
-base=ggplot(data=censo2007_wide_Totales, aes(x=algunSeguro_conteo_Total)) + theme_classic()
+base=ggplot(data=censo2007_wide_Totales, aes(x=conSeguro_Total)) + theme_classic()
 hist=base + geom_histogram(bins=50)
 histInfo=hist + annotate("text", x = 100000, y = 1000,
                          color='grey50',
@@ -282,7 +302,7 @@ Reimplementemos nuestra hipótesis original usando la regresión Poisson. Los re
 ```{r rp1rl2,warning=FALSE, message=FALSE, results='asis'}
 
 rp1=glm(h1, data = censo2007_wide_Totales, 
-        offset=log(poblacion_conteo_Total), #exposure 
+        offset=log(poblacion_Total), #exposure 
         family = poisson(link = "log"))
 
 # displaying results
@@ -294,12 +314,12 @@ modelsummary(modelslmpoi, title = "Regresiones OLS y Poisson",
              output = "kableExtra")
 ```
 
-Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos representar controlar la *exposure* de manera explícita (la población) [^2]. Sin embargo, el AIC de la Poisson es aun mayor que el de la Gaussiana [^3] (veremos luego cómo se mejora).
+Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos controlar la *exposure* de manera explícita (la población) [^1]. Sin embargo, el AIC de la Poisson es aun mayor que el de la Gaussiana [^2] (veremos luego cómo ello mejora en la Tabla \@ref(tab:exp-rbn)).
 
-[^2]: No sería diferente si tuvieramos *hijos por hogar*, *postulaciones por político*.
+[^1]: No sería diferente si tuvieramos *hijos por hogar*, *postulaciones por político*.
 
-[^3]: AIC nos permite comparar entre modelos. Un menor AIC es preferido.
-rp1rl2
+[^2]: AIC nos permite comparar entre modelos. Un menor AIC es preferido.
+
 
 
 
@@ -311,10 +331,10 @@ Ahora que sabemos cuándo usar una regresión Poisson, alteremos la hipótesis a
 
 ```{r rp1rp2,warning=FALSE, message=FALSE, results='asis'}
 
-h2=formula(algunSeguro_conteo_Total~analfabeta15omas_pct_Total + trabIndepNoProf_pct_Total)
+h2=formula(conSeguro_Total~analfa_Total + indep_Total)
     
 rp2=glm(h2, data = censo2007_wide_Totales, 
-        offset=log(poblacion_conteo_Total),
+        offset=log(poblacion_Total),
         family = poisson(link = "log"))
 
 
@@ -326,7 +346,7 @@ modelsummary(modelsPois,
              output = "kableExtra")
 ```
 
-La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era en la regresión lineal. Sin hacer ningun cálculo, aquí podemos ver:
+La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era en la regresión lineal. Sin hacer ningún cálculo, aquí podemos ver:
 
 -   que para el segundo modelo ambos predictores son significativos;
 -   que a mayor analfabetismo, mayor cantidad de asegurados;
@@ -341,9 +361,9 @@ Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la E
 \log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon (\#eq:poi)
 \end{equation}
 ```
-Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^4]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
+Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^3]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
 
-[^4]: Los conteos con *offset*.
+[^3]: Los conteos con *offset*.
 
 ```{r exp-rp2,warning=FALSE, message=FALSE, results='asis'}
 
@@ -385,7 +405,7 @@ La presencia de sobredispersión puede tratarse con la *quasipoisson*; veamos la
 
 ```{r rqp, warning=FALSE, message=FALSE, echo=TRUE,results='asis'}
 rqp = glm(h2, data = censo2007_wide_Totales,
-          offset=log(poblacion_conteo_Total),
+          offset=log(poblacion_Total),
           family = quasipoisson(link = "log"))
 
 modelsPQP=list('POISSON asegurados (II)'=rp2,'QUASIPOISSON asegurados (II)'=rqp)
@@ -396,7 +416,7 @@ modelsummary(modelsPQP,
              output = "kableExtra")
 ```
 
-la Tabla \@ref(tab:rqp) nos muestra cosas interesantes:
+La Tabla \@ref(tab:rqp) nos muestra cosas interesantes:
 
 -   Los coeficientes son los mismos para ambos modelos:
 
@@ -406,19 +426,15 @@ cbind(coefPoi=coef(rp2),coefQuasiPoi=coef(rqp))
 
 ```
 
--   Pero no los errores típicos no:
+-   Pero no los errores típicos:
 
 ```{r}
 cbind(sePoi=se.coef(rp2),seQuasiPoi=se.coef(rqp))
 ```
 
--   Nota además ambos modelos tienen diferente parámetro de dispersion:
 
-```{r}
-summary(rp2)$dispersion;summary(rqp)$dispersion
-```
 
-La regresión quasipoisson lidia mejor con la sobredispersión, cuyo efecto concreto fue sobre los errores típicos, lo que afectaría la significancia de los predictores. De ahí que un mejor intervalo de confianza sería:
+La regresión quasipoisson lidia con la sobredispersión al recalcular los errores típicos, lo que afectaría la significancia de los predictores. De ahí que calcula nuevos intervalos de confianza:
 
 ```{r exp-rqp,warning=FALSE, message=FALSE, results='asis'}
 modelsQPexp=list('QuasiPoisson asegurados (II) exponenciado'=rqp)
@@ -434,10 +450,10 @@ modelsummary(modelsQPexp,fmt=f,
 
 ## La Binomial Negativa
 
-Una buena ante la sobredispersión es usar la *regresión binomial negativa*. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla \@ref(tab:exp-rbn).
+Una buena alternativa ante la sobredispersión es usar la *regresión binomial negativa*. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla \@ref(tab:exp-rbn).
 
 ```{r exp-rbn,warning=FALSE, message=FALSE, results='asis'}
-h2off=formula(algunSeguro_conteo_Total ~ analfabeta15omas_pct_Total + trabIndepNoProf_pct_Total + offset(log(poblacion_conteo_Total)))
+h2off=formula(conSeguro_Total ~ analfa_Total + indep_Total + offset(log(poblacion_Total)))
 
 rbn=glm.nb(h2off,data=censo2007_wide_Totales)
 
@@ -479,8 +495,8 @@ dotwhisker::dwplot(list(Poisson=rqp,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T)
 Finalmente, podemos calcular los coeficientes estandarizados [@ibm_spss_computing_2020] para saber cuál de los predictores tiene mayor efecto (ver Tabla \@ref(tab:stdCoefs)).
 
 ```{r stdCoefs}
-sdVD=sd(censo2007_wide_Totales$algunSeguro_conteo_Total)
-sdVIs=apply(censo2007_wide_Totales[,c("algunSeguro_conteo_Total","trabIndepNoProf_pct_Total")],2,sd)
+sdVD=sd(censo2007_wide_Totales$conSeguro_Total)
+sdVIs=apply(censo2007_wide_Totales[,c("conSeguro_Total","indep_Total")],2,sd)
 DF=list(Poisson=sdVIs*coef(rp2)[c(2,3)]/sdVD,
      CuasiPoisson=sdVIs*coef(rqp)[c(2,3)]/sdVD,
      BinomNegativa=sdVIs*coef(rbn)[c(2,3)]/sdVD)%>%
