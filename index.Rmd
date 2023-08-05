@@ -116,12 +116,10 @@ censo2007$Valor=as.numeric(censo2007$Valor)
 library(reshape2)
 censo2007_wide=dcast(data=censo2007, formula=Departamento+Provincia+Distrito ~ Descripcion+Clase, value.var="Valor")
 
-head(censo2007_wide)
-```
-
-```{r}
 names(censo2007_wide)
 ```
+
+
 
 ```{r}
 names(censo2007_wide)=gsub(pattern = "Área Rural",
@@ -163,28 +161,18 @@ names(censo2007_wide)=gsub(pattern = "Total de habitantes del censo 2007",
 names(censo2007_wide)
 ```
 
-
-
-
-En este caso, se recomienda que desde la propia pagina web le des un mejor formato:
-
-```{r getdata}
-rm(list = ls()) # clear memory
-knitr::knit_hooks$set(inline = as.character) # inline as string
-
-gitLink="https://github.com/Estadistica-AnalisisPolitico/DataFiles-estadistica/raw/main/salud.xlsx"
-salud=rio::import(gitLink)
-
-#simpler names
-oldnames=names(salud)
-newnames=c("depa","prov","dis","segu","inde","analf15","pob")
-names(salud)=newnames
-
-# display table
-library(magrittr) # needed for pipe %>% 
-salud%>%
-    rmarkdown::paged_table()
+```{r}
+grep(pattern = "Total",names(censo2007_wide))
 ```
+```{r}
+colsTotal=grep(pattern = "Total",names(censo2007_wide))
+censo2007_wide_Totales=censo2007_wide[,c(1,2,3,colsTotal)]
+
+```
+
+
+
+
 
 Si tenemos la hipótesis:
 
@@ -196,9 +184,9 @@ De lo visto en las sesiones anteriores [@magallanes_estadistica-analisispolitico
 library(knitr)
 library(modelsummary)
 
-h1=formula(segu~analf15)
+h1=formula(algunSeguro_conteo_Total~analfabeta15omas_pct_Total)
 
-rl1=lm(h1, data = salud)
+rl1=lm(h1, data = censo2007_wide_Totales)
 
 model1=list('OLS asegurados (I)'=rl1)
 modelsummary(model1, title = "Resumen de Regresion Lineal",
@@ -222,9 +210,9 @@ Podríamos mejorar este modelo si controlásemos el tamaño de la población en 
 library(knitr)
 library(modelsummary)
 
-h1control=formula(segu~analf15 + pob)
+h1control=formula(algunSeguro_conteo_Total~analfabeta15omas_pct_Total + poblacion_conteo_Total )
 
-rl2=lm(h1control, data = salud)
+rl2=lm(h1control, data = censo2007_wide_Totales)
 
 modelslm=list('OLS asegurados (I)'=rl1,'OLS asegurados (II)'=rl2)
 modelsummary(modelslm, title = "Regresiones Lineales",
@@ -242,18 +230,18 @@ plot(rl2, 3, caption = '');title(main="Homocedasticidad")
 plot(rl2, 5, caption = '');title(main="Influyentes")
 ```
 
-Las gráficas de la Figura \@ref(fig:evaluacionrl2) nos muestran un mejor escenario, pero recuerda que nuestro predictor dejó de ser significativo ante la presencia de la variable de control. Quiza debimos dar un paso más sencillo: analizar la naturaleza de la variable dependiente. Veamos la Figura \@ref(fig:hisVD) para entenderla mejor.
+Las gráficas de la Figura \@ref(fig:evaluacionrl2) nos muestran un mejor escenario, pero nota que nuestro predictor dejó de ser significativo ante la presencia de la variable de control. Quiza debimos dar un paso más sencillo: analizar la naturaleza de la variable dependiente. Veamos la Figura \@ref(fig:hisVD) para entenderla mejor.
 
 ```{r hisVD,message=FALSE,fig.cap="Descripción de la Variable Dependiente"}
 library(ggplot2)
-VarDep=salud$segu
+VarDep=censo2007_wide_Totales$algunSeguro_conteo_Total
 descris=list(min=min(VarDep),
              max=max(VarDep),
              media=round(mean(VarDep),2),
              var=round(var(VarDep),2),
              asim=round(e1071::skewness(VarDep),2))
 
-base=ggplot(data=salud, aes(x=segu)) + theme_classic()
+base=ggplot(data=censo2007_wide_Totales, aes(x=algunSeguro_conteo_Total)) + theme_classic()
 hist=base + geom_histogram(bins=50)
 histInfo=hist + annotate("text", x = 100000, y = 1000,
                          color='grey50',
@@ -278,7 +266,7 @@ histInfo
     
 ```
 
-Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distrubución con sesgo positivo. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de signficancia si los datos no siguen una tendencia lineal sin; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
+Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distribución con sesgo positivo. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de signficancia si los datos no siguen una tendencia lineal; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
 
 # Regresión Poisson
 
@@ -293,8 +281,8 @@ Reimplementemos nuestra hipótesis original usando la regresión Poisson. Los re
 
 ```{r rp1rl2,warning=FALSE, message=FALSE, results='asis'}
 
-rp1=glm(h1, data = salud, 
-        offset=log(pob), #exposure 
+rp1=glm(h1, data = censo2007_wide_Totales, 
+        offset=log(poblacion_conteo_Total), #exposure 
         family = poisson(link = "log"))
 
 # displaying results
@@ -306,19 +294,14 @@ modelsummary(modelslmpoi, title = "Regresiones OLS y Poisson",
              output = "kableExtra")
 ```
 
-Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos representar controlar la *exposure* de manera explícita (la población) [^2].
+Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos representar controlar la *exposure* de manera explícita (la población) [^2]. Sin embargo, el AIC de la Poisson es aun mayor que el de la Gaussiana [^3] (veremos luego cómo se mejora).
 
 [^2]: No sería diferente si tuvieramos *hijos por hogar*, *postulaciones por político*.
 
-La Tabla \@ref(tab:rp1rl2) muestra dos modelos que no se pueden comparar fácilmente, pero podemos verlo de manera gráfica en la Figura \@ref(fig:compare_olspoi).
+[^3]: AIC nos permite comparar entre modelos. Un menor AIC es preferido.
+rp1rl2
 
-```{r compare_olspoi,fig.cap="Comparando modelos via valores calculados"}
-par(mfrow = c(1, 2))  # divide screen 1 row 2 columns
-plot(salud$segu,fitted(rp1),ylim=c(0,365000));title(main="Original versus Poisson")
-plot(salud$segu,fitted(rl2),ylim=c(0,365000));title(main="Original versus OLS \ncontrolando población")
-```
 
-La Figura \@ref(fig:compare_olspoi) muestra que los valores obtenidos por la regresiones (*fitted values*) se relacionan muy bien con los valores originales. Ambas servirían para predecir; pero sólo la Poisson le da significancia al predictor de interés.
 
 ## Interpretación
 
@@ -328,9 +311,10 @@ Ahora que sabemos cuándo usar una regresión Poisson, alteremos la hipótesis a
 
 ```{r rp1rp2,warning=FALSE, message=FALSE, results='asis'}
 
-h2=formula(segu~analf15 + inde)
+h2=formula(algunSeguro_conteo_Total~analfabeta15omas_pct_Total + trabIndepNoProf_pct_Total)
     
-rp2=glm(h2, data = salud, offset=log(pob),
+rp2=glm(h2, data = censo2007_wide_Totales, 
+        offset=log(poblacion_conteo_Total),
         family = poisson(link = "log"))
 
 
@@ -348,7 +332,7 @@ La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era e
 -   que a mayor analfabetismo, mayor cantidad de asegurados;
 -   que a mayor cantidad de trabajadores independientes, menor cantidad de asegurados.
 
-Sin embargo, no es tan sencilla la interpretación de los coeficientes de la la Tabla \@ref(tab:rp1rp2). Para tener una mejor idea, debemos hacer cálculos.
+La interpretación de los coeficientes de la Tabla \@ref(tab:rp1rp2) requiere cálculos previos:
 
 Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
 
@@ -357,9 +341,9 @@ Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la E
 \log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon (\#eq:poi)
 \end{equation}
 ```
-Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^3]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
+Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^4]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
 
-[^3]: los conteos con *offset*.
+[^4]: Los conteos con *offset*.
 
 ```{r exp-rp2,warning=FALSE, message=FALSE, results='asis'}
 
@@ -371,48 +355,20 @@ modelsummary(modelsPois,
              title = "EXP() de la Regresión Poisson para Interpretación",
              stars = TRUE,
              output = "kableExtra")
-# simple version:
+# mas simple:
 #cbind(exp(coef(rp2)),exp(confint(rp2)))
 ```
 
 La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x\|1-0.99\|) [@choueiry_interpret_2022]. Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
 
-````{=html}
-<!--
-```{r, echo=FALSE, eval=FALSE}
-##robustes
-cov.rp2 = sandwich::vcovHC(rp2, type="HC0")
-Rob.std.err = sqrt(diag(cov.rp2))
-summaryRobusto = cbind(Estimate= coef(rp2), 
-                   "SE robusto" = Rob.std.err,
-                  "Pr(>|z|)" = 2 * pnorm(abs(coef(rp2)/Rob.std.err), 
-                  lower.tail=FALSE),
-                   LI = coef(rp2) - 1.96 * Rob.std.err,
-                   LS = coef(rp2) + 1.96 * Rob.std.err)
 
-summaryRobusto
-```
-
-```{r, eval=FALSE}
-library(msm)
-Robustos <- deltamethod(list(~ exp(x1), ~ exp(x2),~ exp(x3)),
-                     coef(rp2), cov.rp2)
-
-Exp.summaryRobusto <- exp(summaryRobusto[, -3])
-
-Exp.summaryRobusto[, "SE robusto"] <- Robustos
-
-Exp.summaryRobusto
-```
--->
-````
 
 # Equidispersión
 
 Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion* [@hilbe_statistical_2017]. Veamos la Tabla \@ref(tab:tabla-disper).
 
 ```{r tabla-disper, message=FALSE}
-
+library(magrittr)
 overdispersion=AER::dispersiontest(rp2,alternative='greater')$ p.value<0.05
 underdispersion=AER::dispersiontest(rp2,alternative='less')$ p.value<0.05
 # tabla
@@ -428,12 +384,14 @@ La Tabla \@ref(tab:tabla-disper) muestra que es altamente improbable que la vari
 La presencia de sobredispersión puede tratarse con la *quasipoisson*; veamos la Tabla \@ref(tab:rqp).
 
 ```{r rqp, warning=FALSE, message=FALSE, echo=TRUE,results='asis'}
-rqp = glm(h2, data = salud, offset=log(pob),
+rqp = glm(h2, data = censo2007_wide_Totales,
+          offset=log(poblacion_conteo_Total),
           family = quasipoisson(link = "log"))
 
 modelsPQP=list('POISSON asegurados (II)'=rp2,'QUASIPOISSON asegurados (II)'=rqp)
 
-modelsummary(modelsPQP, title = "Regresiones Poisson y QuasiPoisson",
+modelsummary(modelsPQP, 
+             title = "Regresiones Poisson y QuasiPoisson",
              stars = TRUE,
              output = "kableExtra")
 ```
@@ -457,7 +415,7 @@ cbind(sePoi=se.coef(rp2),seQuasiPoi=se.coef(rqp))
 -   Nota además ambos modelos tienen diferente parámetro de dispersion:
 
 ```{r}
-summary(rqp)$dispersion; summary(rp2)$dispersion
+summary(rp2)$dispersion;summary(rqp)$dispersion
 ```
 
 La regresión quasipoisson lidia mejor con la sobredispersión, cuyo efecto concreto fue sobre los errores típicos, lo que afectaría la significancia de los predictores. De ahí que un mejor intervalo de confianza sería:
@@ -476,11 +434,12 @@ modelsummary(modelsQPexp,fmt=f,
 
 ## La Binomial Negativa
 
-Otra alternativa ante la sobredispersión es usar la *regresión binomial negativa*. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla \@ref(tab:exp-rbn).
+Una buena ante la sobredispersión es usar la *regresión binomial negativa*. Comparemos todas la regresiones exponenciadas, como se ve en la Tabla \@ref(tab:exp-rbn).
 
 ```{r exp-rbn,warning=FALSE, message=FALSE, results='asis'}
-h2off=formula(segu~analf15 + inde + offset(log(pob)))
-rbn=glm.nb(h2off,data=salud)
+h2off=formula(algunSeguro_conteo_Total ~ analfabeta15omas_pct_Total + trabIndepNoProf_pct_Total + offset(log(poblacion_conteo_Total)))
+
+rbn=glm.nb(h2off,data=censo2007_wide_Totales)
 
 modelsQP_BN=list('Poisson asegurados (II)'=rp2,
                  'QuasiPoisson asegurados (II)'=rqp,
@@ -495,7 +454,7 @@ modelsummary(modelsQP_BN,fmt=f,
              output = "kableExtra")
 ```
 
-Nótese en la Tabla \@ref(tab:exp-rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas.
+Nótese en la Tabla \@ref(tab:exp-rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas. Además, los AIC son mucho mejores para caso de la Binomial Negativa (recuerda los AIC de la Tabla \@ref(tab:rp1rl2)).
 
 # Comparación de modelos
 
@@ -520,8 +479,8 @@ dotwhisker::dwplot(list(Poisson=rqp,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T)
 Finalmente, podemos calcular los coeficientes estandarizados [@ibm_spss_computing_2020] para saber cuál de los predictores tiene mayor efecto (ver Tabla \@ref(tab:stdCoefs)).
 
 ```{r stdCoefs}
-sdVD=sd(salud$segu)
-sdVIs=apply(salud[,c("analf15","inde")],2,sd)
+sdVD=sd(censo2007_wide_Totales$algunSeguro_conteo_Total)
+sdVIs=apply(censo2007_wide_Totales[,c("algunSeguro_conteo_Total","trabIndepNoProf_pct_Total")],2,sd)
 DF=list(Poisson=sdVIs*coef(rp2)[c(2,3)]/sdVD,
      CuasiPoisson=sdVIs*coef(rqp)[c(2,3)]/sdVD,
      BinomNegativa=sdVIs*coef(rbn)[c(2,3)]/sdVD)%>%
