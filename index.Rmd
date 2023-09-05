@@ -92,7 +92,7 @@ rm(list = ls())
 
 library(rio)
 
-censo2007=import("https://github.com/Estadistica-AnalisisPolitico/Sesion3/raw/main/data2007.xlsx")
+censo2007=import("https://github.com/Estadistica-AnalisisPolitico/Sesion3/raw/main/data2007peru.xlsx")
 head(censo2007)
 ```
 
@@ -496,7 +496,7 @@ Finalmente, podemos calcular los coeficientes estandarizados [@ibm_spss_computin
 
 ```{r stdCoefs}
 sdVD=sd(censo2007_wide_Totales$conSeguro_Total)
-sdVIs=apply(censo2007_wide_Totales[,c("conSeguro_Total","indep_Total")],2,sd)
+sdVIs=apply(censo2007_wide_Totales[,c("analfa_Total","indep_Total")],2,sd)
 DF=list(Poisson=sdVIs*coef(rp2)[c(2,3)]/sdVD,
      CuasiPoisson=sdVIs*coef(rqp)[c(2,3)]/sdVD,
      BinomNegativa=sdVIs*coef(rbn)[c(2,3)]/sdVD)%>%
