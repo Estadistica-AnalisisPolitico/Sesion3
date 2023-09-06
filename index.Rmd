@@ -9,11 +9,7 @@ bibliography: references.bib
 #zotero: true
 ---
 
-<center>
-
-<img src="https://github.com/Estadistica-AnalisisPolitico/Images/raw/main/LogoEAP.png" width="500"/>
-
-</center>
+<center><img src="https://github.com/Estadistica-AnalisisPolitico/Images/raw/main/LogoEAP.png" width="500"/></center>
 
 Profesor: <a href="http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" target="_blank">Dr. José Manuel MAGALLANES REYES, Ph.D.</a> <br>
 
@@ -33,38 +29,31 @@ Profesor: <a href="http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" targ
 
 <header>
 
-<h2>
-
-Regresionando conteos
-
-</h2>
+<h2>Regresionando conteos</h2>
 
 </header>
 
 </center>
 
-<center><a href="https://doi.org/10.5281/zenodo.7059207"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7059207.svg" alt="DOI"></a>
-</center>
-
+<center><a href="https://doi.org/10.5281/zenodo.7059207"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7059207.svg" alt="DOI"/></a></center>
 
 ------------------------------------------------------------------------
 
 # Data como conteos
 
-Las variables que rpresentan conteos son prominentes en las ciencias sociales. Podemos encontrar muchas en los indicadores que se crean en los censos. Por ejemplo, el Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo a nivel distrital, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento): 
-
+Las variables que rpresentan conteos son prominentes en las ciencias sociales. Podemos encontrar muchas en los indicadores que se crean en los censos. Por ejemplo, el Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo a nivel distrital, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento):
 
 ![](inei2017.png)
 
 Descarguemos los siguientes indicadores a nivel de distrito:
 
-* Conteos:
-  - Número de personas que tienen algún tipo de seguro.
-  - Total de habitantes (2007).
-* Procentajes:
-  - Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales.
-  - Porcentaje de personas analfabetas de 15 años y más.
-  
+-   Conteos:
+    -   Número de personas que tienen algún tipo de seguro.
+    -   Total de habitantes (2007).
+-   Procentajes:
+    -   Porcentaje de Trabajadores Independientes o por cuenta propia no profesionales.
+    -   Porcentaje de personas analfabetas de 15 años y más.
+
 Para ello, en el portal debes seleccionar esos indicadores de esta manera:
 
 ![](inei2017b.png)
@@ -81,11 +70,11 @@ Luego, descargalo con CSV (añade **.csv** al nombre de archivo), ábrelo en **E
 
 ![](inei2017e.png)
 
-Nota que todo ha aperecido en una sola columna. Como se ve, cada columna tiene una coma que la separa de otra; sepáralas de manera adecuaday guardalo como **.xlsx**  (aprovecha de eliminar las primeras dos columnas) .
+Nota que todo ha aperecido en una sola columna. Como se ve, cada columna tiene una coma que la separa de otra; sepáralas de manera adecuaday guardalo como **.xlsx** (aprovecha de eliminar las primeras dos columnas) .
 
 ![](inei2017f.png)
 
-El archivo guardado lo podemos guardar en un repositorio de GitHub, y abrirlo desde ahí. 
+El archivo guardado lo podemos guardar en un repositorio de GitHub, y abrirlo desde ahí.
 
 ```{r}
 rm(list = ls())
@@ -98,32 +87,42 @@ head(censo2007)
 
 Veamos qué tipos de datos tenemos, y los nombres de columnas:
 
-
 ```{r}
 str(censo2007)
 ```
 
 Lo más notorio es que la columna **Valor** ha sido interpretada como texto y no cómo tipo numérico. R hará eso si es que alguna celda tiene un carácter que no sea número o punto. Veamos:
 
-
-
 ```{r}
 # qué celda tiene algo que no sea número
 censo2007$Valor[!grepl("[0-9]", censo2007$Valor)]
 ```
+
 Sabiendo ello, podemos convertir la columna a numérico sin temor a perder valores:
 
-```{r}
+```{r, message=FALSE}
 censo2007$Valor=as.numeric(censo2007$Valor)
 ```
 
-Ahora, podemos quedarnos con algunas columnas:
+Ahora, podemos quedarnos las columnas que utilizaremos en el ejemplo :
+
 ```{r}
-censo2007_sub=censo2007[,-c(1,5,6,9)] # eliminando
+censo2007_sub=censo2007[,-c(1,5,6,9)] # -c() elimina esas columnas
 # queda
 str(censo2007_sub)
 ```
-Este último data frame está en formato **long**, pasémoslo a formato **wide**:
+
+Este último data frame está en formato **long**:
+
+```{r}
+library(magrittr)
+head(censo2007_sub,20)%>%
+    rmarkdown::paged_table(options = )
+```
+
+Reconocemos el formato **long** cuando, sabiendo que la unidad de análisis es el distrito, vemos que el distrito se repite en muchas filas. Arriba vemos que todas las variables de Aramango aparecen al lado de este distrito. Nota además que los *nombres de las variables* están en las filas (no como titulos de las columnas) y que los *valores de la variable* aparecen en la última fila.
+
+Pasémoslo a formato **wide**:
 
 ```{r}
 
@@ -131,13 +130,20 @@ library(reshape2)
 censo2007_wide=dcast(data=censo2007_sub,
                      formula=Departamento+Provincia+Distrito ~ Descripcion+Clase,
                      value.var="Valor")
+```
+
+Los nombres de columnas son muy largos luego de esta conversión serán muy largos:
+
+```{r}
 # columnas del formato wide
 names(censo2007_wide)
 ```
 
-Los nombres de columnas son muy largos, podemos reducirlos así:
+Pero podemos cambiarlos por nombres más cortos así:
 
 ```{r}
+# uso de gsub()
+# donde diga "Area Rural" cambiar a "rural":
 names(censo2007_wide)=gsub(pattern = "Área Rural",
                            replacement = "rural",
                            x = names(censo2007_wide))
@@ -179,9 +185,12 @@ names(censo2007_wide)
 ```
 
 ¿Cómo nos quedaríamos por ahora con las columnas de "Totales"?
+
 ```{r}
+# grep() devuelve las posiciones
 grep(pattern = "Total",names(censo2007_wide))
 ```
+
 Procedamos:
 
 ```{r}
@@ -193,8 +202,7 @@ head(censo2007_wide_Totales)
 
 ```
 
-
-Si tenemos la hipótesis:
+Planteemos la primera hipótesis:
 
 > A nivel distrital, la cantidad de personas con algún seguro de salud está afectada por el nivel analfabetismo.
 
@@ -214,7 +222,7 @@ modelsummary(model1, title = "Resumen de Regresion Lineal",
              output = "kableExtra")
 ```
 
-Como vemos en la Tabla \@ref(tab:rl1), el covariado salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen *ajuste*, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que difícilmente este modelo puede ser útil.
+Como vemos en la Tabla \@ref(tab:rl1), el covariado (conocido como predictor o variable independiente) salió con un valor absoluto alto, negativo, y significativo (es muy poco probable - menos de 0.1% - que no tenga efecto), pero con un R-2 ajustado muy bajo. Como el modelo no nos da buen *ajuste*, es muy probable que la evaluación del modelo no sea satisfactoria. Así, vemos en la Figura \@ref(fig:evaluacionrl1) que difícilmente este modelo puede ser útil.
 
 ```{r evaluacionrl1,fig.cap="Diagnósticos para el modelo OLS asegurados (I) "}
 par(mfrow = c(2, 2))  
@@ -259,43 +267,48 @@ descris=list(min=min(VarDep),
              max=max(VarDep),
              media=round(mean(VarDep),2),
              var=round(var(VarDep),2),
-             asim=round(e1071::skewness(VarDep),2))
+             asim=round(e1071::skewness(VarDep),2),
+             kurt=round(e1071::kurtosis(VarDep),2))
 
 base=ggplot(data=censo2007_wide_Totales, aes(x=conSeguro_Total)) + theme_classic()
 hist=base + geom_histogram(bins=50)
-histInfo=hist + annotate("text", x = 100000, y = 1000,
+histInfo=hist + annotate("text", x = 100000, y = 1050,
                          color='grey50',
                        label = paste0("Minimo: ",descris$min))
-histInfo = histInfo + annotate("text", x = 100000, y = 800,
+histInfo = histInfo + annotate("text", x = 100000, y = 900,
                        color='grey50',
                        label = paste0("Máximo: ",descris$max))
 
-histInfo = histInfo + annotate("text", x = 100000, y = 600,
+histInfo = histInfo + annotate("text", x = 100000, y = 650,
                        color='grey50',
                        label = paste0("Media: ",descris$media))
 
-histInfo = histInfo + annotate("text", x = 100000, y = 400,
+histInfo = histInfo + annotate("text", x = 100000, y = 500,
                        color='grey50',
                        label = paste0("Varianza: ",descris$var))
 
+histInfo = histInfo + annotate("text", x = 100000, y = 350,
+                       color='grey50',
+                       label = paste0("Asimetría: ",descris$asim))
+
 histInfo = histInfo + annotate("text", x = 100000, y = 200,
                        color='grey50',
-                       label = paste0("Sesgo: ",descris$asim))
+                       label = paste0("Curtosis: ",descris$kurt))
 
 histInfo
     
 ```
 
-Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distribución con sesgo positivo. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de signficancia si los datos no siguen una tendencia lineal; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
+Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distribución con asimetría positiva (cola a la derecha) y super leptocurtica. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de significancia si los datos no siguen una tendencia lineal; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
 
 # Regresión Poisson
 
 La regresión Poisson tiene sus supuestos [@glen_poisson_2016]:
 
-1.  **Variable Respuesta** Es un conteo (Y) por unidad de tiempo o espacio, que puede ser descrita por la distribución Poisson. Puede además ser un ratio ($\lambda$) cuando la unidad de tiempo o espacio varía para cada conteo.
+1.  **Variable Respuesta** Es un conteo (Y) por unidad de tiempo o espacio, que puede ser descrita por la distribución Poisson (por ejemplo *asaltos* por dia). Puede además ser un ratio ($\lambda$) cuando la unidad de tiempo o espacio varía para cada conteo (por ejemplo *votos a favor* del *total de votos*) .
 2.  **Independencia** Las observaciones (filas) no deben tener relación entre sí.
 3.  **Media=Varianza** Por definición, la media de una variable que se distribuye como Poisson debe ser igual a su varianza (equidispersión). Si la varianza supera significativamente a la media hablamos de sobredispersión; pero si la media fuera mucho mayor que la varianza tendríamos subdispersión.
-4.  **Linealidad** El logaritmo de la variable dependiente debe ser una función lineal de los datos.
+4.  **Linealidad** El logaritmo de la variable dependiente (los conteos) debe ser una función lineal de los covariados.
 
 Reimplementemos nuestra hipótesis original usando la regresión Poisson. Los resultados los vemos en la Tabla \@ref(tab:rp1rl2), comparándolos con el resultado de la regresión lineal controlada por la población.
 
@@ -314,18 +327,15 @@ modelsummary(modelslmpoi, title = "Regresiones OLS y Poisson",
              output = "kableExtra")
 ```
 
-Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso si lo era pues necesitamos controlar la *exposure* de manera explícita (la población) [^1]. Sin embargo, el AIC de la Poisson es aun mayor que el de la Gaussiana [^2] (veremos luego cómo ello mejora en la Tabla \@ref(tab:exp-rbn)).
+Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el modelo Poisson le devuelve efecto a la independiente. Nótese que la Poisson está modelando los conteos, teniendo en cuenta la exposición (*exposure*), añadida usando *offset*. Esto no siempre es necesario, pero en este caso sí lo era, pues necesitamos controlar la *exposure* de manera explícita (la población) [^1]. Sin embargo, el AIC de la Poisson es aun mayor que el de la Gaussiana [^2] (veremos luego cómo ello mejora en la Tabla \@ref(tab:exp-rbn)).
 
 [^1]: No sería diferente si tuvieramos *hijos por hogar*, *postulaciones por político*.
 
 [^2]: AIC nos permite comparar entre modelos. Un menor AIC es preferido.
 
-
-
-
 ## Interpretación
 
-Ahora que sabemos cuándo usar una regresión Poisson, alteremos la hipótesis anterior así:
+Ya que sabemos cuándo usar una regresión Poisson, alteremos la hipótesis anterior:
 
 > A nivel distrital, la cantidad de personas con algun seguro de salud está afectada por el nivel analfabetismo y por la presencia de trabajadores independientes.
 
@@ -346,15 +356,13 @@ modelsummary(modelsPois,
              output = "kableExtra")
 ```
 
-La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era en la regresión lineal. Sin hacer ningún cálculo, aquí podemos ver:
+La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era en la regresión lineal. Demos una interpretación simple, sin hacer ningún cálculo, de los resultados del modelo II de la Tabla \@ref(tab:rp1rp2):
 
--   que para el segundo modelo ambos predictores son significativos;
--   que a mayor analfabetismo, mayor cantidad de asegurados;
--   que a mayor cantidad de trabajadores independientes, menor cantidad de asegurados.
+-   En el modelo II ambos predictores son significativos;
+-   En el modelo II, a mayor analfabetismo, mayor cantidad de asegurados;
+-   En el modelo II, a mayor cantidad de trabajadores independientes, menor cantidad de asegurados.
 
-La interpretación de los coeficientes de la Tabla \@ref(tab:rp1rp2) requiere cálculos previos:
-
-Tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
+Sin embargo, la interpretación precisa de los coeficientes de la Tabla \@ref(tab:rp1rp2) requiere cálculos previos; tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
 
 ```{=tex}
 \begin{equation}
@@ -367,25 +375,39 @@ Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelam
 
 ```{r exp-rp2,warning=FALSE, message=FALSE, results='asis'}
 
-f <- function(x) format(x, digits = 4, scientific = FALSE)
+# formula para limitar a 4 digitos decimales, 
+# sin que se muestre notación científica:
+formatoNum <- function(x) format(x, digits = 4, scientific = FALSE)
+
 modelsummary(modelsPois,
-             fmt=f,
-             exponentiate = T, 
+             fmt=formatoNum, # uso mi formula
+             exponentiate = T, # exponenciar!!!!!
              statistic = 'conf.int',
-             title = "EXP() de la Regresión Poisson para Interpretación",
+             title = "Regresión Poisson - coeficientes exponenciados",
              stars = TRUE,
              output = "kableExtra")
 # mas simple:
 #cbind(exp(coef(rp2)),exp(confint(rp2)))
 ```
 
-La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*. Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100x\|1-1.016\|). De igual manera, por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100x\|1-0.99\|) [@choueiry_interpret_2022]. Nótese que esta regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
+La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, muestra los intervalos de confianza (exponenciados) en vez de los errores típicos. Nota que mientras en la regresión lineal no deseábamos que nuestro coeficiente esté cerca al cero, es decir, que su intervalo de confianza no incluya al *cero*, aquí no deseamos que el intervalo de confianza incluya al *uno*.
 
+Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que:
 
+-   por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100 x \|1-1.016\|).
+
+-   por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100 x \|1-0.99\|) [@choueiry_interpret_2022].
+
+Nótese que la regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
 
 # Equidispersión
 
-Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es `r round(descris$var/descris$media,2)`. Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion* [@hilbe_statistical_2017]. Veamos la Tabla \@ref(tab:tabla-disper).
+Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es:
+```{r}
+round(descris$var/descris$media,2)
+```
+
+Aquí es clara la sobredispersión, pero en caso haya dudas podemos poner a prueba la *hipótesis de equidispersion* [@hilbe_statistical_2017]. Veamos la Tabla \@ref(tab:tabla-disper).
 
 ```{r tabla-disper, message=FALSE}
 library(magrittr)
@@ -421,20 +443,19 @@ La Tabla \@ref(tab:rqp) nos muestra cosas interesantes:
 -   Los coeficientes son los mismos para ambos modelos:
 
 ```{r, message=FALSE}
-library(arm)
-cbind(coefPoi=coef(rp2),coefQuasiPoi=coef(rqp))
+
+cbind(coef_Poi=coef(rp2),coef_QuasiPoi=coef(rqp))
 
 ```
 
 -   Pero no los errores típicos:
 
-```{r}
-cbind(sePoi=se.coef(rp2),seQuasiPoi=se.coef(rqp))
+```{r,  message=FALSE}
+library(arm)
+cbind(se_Poi=se.coef(rp2),se_QuasiPoi=se.coef(rqp))
 ```
 
-
-
-La regresión quasipoisson lidia con la sobredispersión al recalcular los errores típicos, lo que afectaría la significancia de los predictores. De ahí que calcula nuevos intervalos de confianza:
+La regresión quasipoisson lidia con la sobredispersión al recalcular los errores típicos, lo que afectaría la significancia de los predictores; de ahí que calcula nuevos intervalos de confianza:
 
 ```{r exp-rqp,warning=FALSE, message=FALSE, results='asis'}
 modelsQPexp=list('QuasiPoisson asegurados (II) exponenciado'=rqp)
@@ -481,7 +502,7 @@ anova(rp2,rqp,rbn, test = "Chisq") %>%
 kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling(full_width = FALSE)
 ```
 
-La caída del *Deviance* es tanta para el último caso que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso. Una manera adicional de comparar es la gráfica. Así, la Tabla \@ref(tab:exp-rbn) se puede ver de manera gráfica en la Figura \@ref(fig:finplots).
+La caída del *Deviance* es tanta para el último caso (de 754119 a 1868) que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso. Una manera adicional de comparar es la gráfica. Así, la Tabla \@ref(tab:exp-rbn) se puede ver de manera gráfica en la Figura \@ref(fig:finplots).
 
 ```{r finplots, fig.cap="Comparación visual de modelos", message=FALSE, warning=FALSE}
 library(ggplot2)
@@ -508,6 +529,7 @@ DF%>% kable(caption = "Coeficientes Standarizados (ordenar vía valores absoluto
 ```
 
 ------------------------------------------------------------------------
+
 # Bibliografía {.unnumbered}
 
 ::: {#refs}
