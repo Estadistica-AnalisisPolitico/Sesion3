@@ -460,8 +460,8 @@ La regresión quasipoisson lidia con la sobredispersión al recalcular los error
 ```{r exp-rqp,warning=FALSE, message=FALSE, results='asis'}
 modelsQPexp=list('QuasiPoisson asegurados (II) exponenciado'=rqp)
 
-f <- function(x) format(x, digits = 4, scientific = FALSE)
-modelsummary(modelsQPexp,fmt=f,
+
+modelsummary(modelsQPexp,fmt=formatoNum,
              exponentiate = T, 
              statistic = 'conf.int',
              title = "EXP() de la Regresión Quasi Poisson (II) para Interpretación",
@@ -482,8 +482,8 @@ modelsQP_BN=list('Poisson asegurados (II)'=rp2,
                  'QuasiPoisson asegurados (II)'=rqp,
                  'Binomial Negativa asegurados (II)'=rbn)
 
-f <- function(x) format(x, digits = 4, scientific = FALSE)
-modelsummary(modelsQP_BN,fmt=f,
+
+modelsummary(modelsQP_BN,fmt=formatoNum,
              exponentiate = T, 
              statistic = 'conf.int',
              title = "EXP() de la Regresiones Poisson, Quasi Poisson  y Binomial Negativa",
