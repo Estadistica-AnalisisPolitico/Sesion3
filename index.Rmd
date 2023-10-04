@@ -41,7 +41,7 @@ Profesor: <a href="http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" targ
 
 # Data como conteos
 
-Las variables que rpresentan conteos son prominentes en las ciencias sociales. Podemos encontrar muchas en los indicadores que se crean en los censos. Por ejemplo, el Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo a nivel distrital, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento):
+Las variables que representan conteos son prominentes en las ciencias sociales. Podemos encontrar muchas en los indicadores que se crean en los censos. Por ejemplo, el Instituto Nacional de Estadística del Perú (INEI), organizó muy bien diversos indicadores para su XI Censo de Población y VI Censo de Vivienda [@inei2007] en su portal para el 2007. Si queriamos descargar los indicadores disponibles para ese censo a nivel distrital, simplemente se accede a su [página](http://ineidw.inei.gob.pe/ineidw/) y se selecciona todos los distritos (es lo que queremos en este momento):
 
 ![](inei2017.png)
 
@@ -299,7 +299,7 @@ histInfo
     
 ```
 
-Es histograma de la Figura \@ref(fig:hisVD) nos muestra una distribución con asimetría positiva (cola a la derecha) y super leptocurtica. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de significancia si los datos no siguen una tendencia lineal; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
+El histograma de la Figura \@ref(fig:hisVD) nos muestra una distribución con asimetría positiva (cola a la derecha) y super leptocurtica. Ello nos hace reflexionar que nuestra variable dependiente representa conteos, valores enteros positivos. La regresión lineal tendrá problemas pues asume que la variable dependiente tiene valores reales y no acotados. Así mismo, el sesgo presente lo aleja de una 'campana' de Gauss, por lo que debilitaría los cálculos de significancia si los datos no siguen una tendencia lineal; claro está que uno puede transformar la variable dependiente, pero ello a la vez complicará la interpretación.
 
 # Regresión Poisson
 
@@ -362,7 +362,7 @@ La interpretación de la Tabla \@ref(tab:rp1rp2) NO es tan directa como lo era e
 -   En el modelo II, a mayor analfabetismo, mayor cantidad de asegurados;
 -   En el modelo II, a mayor cantidad de trabajadores independientes, menor cantidad de asegurados.
 
-Sin embargo, la interpretación precisa de los coeficientes de la Tabla \@ref(tab:rp1rp2) requiere cálculos previos; tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
+Sin embargo, la interpretación precisa de los coeficientes de la Tabla \@ref(tab:rp1rp2) requiere más cálculos; tengamos primero en cuenta lo que la regresión Poisson ha calculado usando la Ecuación \@ref(eq:poi):
 
 ```{=tex}
 \begin{equation}
@@ -394,11 +394,11 @@ La Tabla \@ref(tab:exp-rp2) tiene los coeficientes exponenciados, así mismo, mu
 
 Una vez exponenciado, podemos interpretar los coeficientes de manera más sencilla. Así, para el modelo II se ve que:
 
--   por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100 x \|1-1.016\|).
+-   por cada unidad que aumente el analfabetismo la cantidad esperada de asegurados se multiplica por 1.016, es decir, aumentaría en un 1.6% (100 x \|1-1.016\|) en promedio.
 
--   por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100 x \|1-0.99\|) [@choueiry_interpret_2022].
+-   por cada unidad que aumente los trabajadores independientes, la cantidad esperada de asegurados se multiplica por 0.99, es decir, disminuiría en 1% (100 x \|1-0.99\|) [@choueiry_interpret_2022] en promedio.
 
-Nótese que la regresión propone un efecto multiplicativo sobre el valor medio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
+Nótese que la regresión propone un efecto multiplicativo sobre el promedio de la respuesta (la regresión OLS o Gaussiana propone un efecto aditivo).
 
 # Equidispersión
 
