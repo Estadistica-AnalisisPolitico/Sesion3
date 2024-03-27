@@ -9,16 +9,23 @@ bibliography: references.bib
 #zotero: true
 ---
 
-<center><img src="https://github.com/Estadistica-AnalisisPolitico/Images/raw/main/LogoEAP.png" width="500"/></center>
 
-Profesor: <a href="http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" target="_blank">Dr. José Manuel MAGALLANES REYES, Ph.D.</a> <br>
+<img src="https://imgur.com/T5KQ7qg.jpg" width="400"/>
 
--   Profesor del Departamento de Ciencias Sociales, Sección de Ciencia Política y Gobierno.
+<center>
 
--   [Oficina 105](https://goo.gl/maps/xuGeG6o9di1i1y5m6) - Edificio CISEPA / ECONOMIA / CCSS
+<h1>Estadística para el Análisis Político 2</h1>
 
+</center>
+
+<br>
+
+Profesor:[Dr. José Manuel MAGALLANES REYES, Ph.D](http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" target="_blank) <br>
+
+-   Profesor Principal del Departamento de Ciencias Sociales, Sección de Ciencia Política y Gobierno.
+
+-   [Oficina 223](https://goo.gl/maps/xuGeG6o9di1i1y5m6) - Edificio CISEPA / ECONOMIA / CCSS
 -   Telefono: (51) 1 - 6262000 anexo 4302
-
 -   Correo Electrónico: [jmagallanes\@pucp.edu.pe](mailto:jmagallanes@pucp.edu.pe)
 
 <a id='beginning'></a>
@@ -38,6 +45,10 @@ Profesor: <a href="http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" targ
 <center><a href="https://doi.org/10.5281/zenodo.7059207"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7059207.svg" alt="DOI"/></a></center>
 
 ------------------------------------------------------------------------
+
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(position = c('top', 'right'))
+```
 
 # Data como conteos
 
