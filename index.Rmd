@@ -9,7 +9,6 @@ bibliography: references.bib
 #zotero: true
 ---
 
-
 <img src="https://imgur.com/T5KQ7qg.jpg" width="400"/>
 
 <center>
@@ -20,12 +19,14 @@ bibliography: references.bib
 
 <br>
 
-Profesor:[Dr. José Manuel MAGALLANES REYES, Ph.D](http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/" target="_blank) <br>
+Profesor:[Dr. José Manuel MAGALLANES REYES, Ph.D](http://www.pucp.edu.pe/profesor/jose-manuel-magallanes/%22%20target=%22_blank) <br>
 
 -   Profesor Principal del Departamento de Ciencias Sociales, Sección de Ciencia Política y Gobierno.
 
 -   [Oficina 223](https://goo.gl/maps/xuGeG6o9di1i1y5m6) - Edificio CISEPA / ECONOMIA / CCSS
+
 -   Telefono: (51) 1 - 6262000 anexo 4302
+
 -   Correo Electrónico: [jmagallanes\@pucp.edu.pe](mailto:jmagallanes@pucp.edu.pe)
 
 <a id='beginning'></a>
@@ -414,6 +415,7 @@ Nótese que la regresión propone un efecto multiplicativo sobre el promedio de 
 # Equidispersión
 
 Uno de los supuestos en la Regresión Poisson es que la **media** y la **varianza** sean iguales. De los estadigrafos de la Figura \@ref(fig:hisVD) se mostró que estos valores no están cercanos, de hecho la razón varianza - media es:
+
 ```{r}
 round(descris$var/descris$media,2)
 ```
@@ -502,18 +504,48 @@ modelsummary(modelsQP_BN,fmt=formatoNum,
              output = "kableExtra")
 ```
 
-Nótese en la Tabla \@ref(tab:exp-rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas. Además, los AIC son mucho mejores para caso de la Binomial Negativa (recuerda los AIC de la Tabla \@ref(tab:rp1rl2)).
+Nótese en la Tabla \@ref(tab:exp-rbn) que los coeficientes obtenidos en la regresión binomial negativa son diferentes a los demas. Además, los AIC son mucho mejores para caso de la Binomial Negativa (recuerda los AIC de la Tabla \@ref(tab:rp1rl2)); los AIC/BIC podemos verlos así de manera alternativa:
+
+```{r aicbic}
+data.frame(Model = c("poisson", "quasipoisson", "negative-binomial"),
+           AIC = c(AIC(rp2), AIC(rqp), AIC(rbn)),
+           BIC = c(BIC(rp2), BIC(rqp), BIC(rbn)),stringsAsFactors = FALSE
+)%>%
+kable(caption = "AIC / BIC para los modelos de conteos")%>%kableExtra::kable_styling(full_width = FALSE)
+```
 
 # Comparación de modelos
 
-Para la comparación podemos usar el anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla \@ref(tab:anovarall).
+La Tabla \@ref(tab:aicbic)) es la mejor alternativa antes modelos no anidados. Una alternativa adicional sería verificar la sobredispersión producida en los modelos:
+
+```{r}
+# poisson case
+performance::check_overdispersion(rp2)
+```
+
+```{r}
+# quasipoisson case
+performance::check_overdispersion(rqp)
+```
+
+```{r}
+# negative binomial case
+performance::check_overdispersion(rbn)
+```
+
+Como estos modelos NO son anidados, usaremos con cuidado la tabla anova, esta vez pidiendo un test chi-cuadrado; veamos el resultado en la Tabla \@ref(tab:anovarall).
 
 ```{r anovarall}
-anova(rp2,rqp,rbn, test = "Chisq") %>%
+anova(rp2,rqp,rbn,test = "Chisq") %>%
 kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling(full_width = FALSE)
 ```
 
-La caída del *Deviance* es tanta para el último caso (de 754119 a 1868) que la mejor opción es la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso. Una manera adicional de comparar es la gráfica. Así, la Tabla \@ref(tab:exp-rbn) se puede ver de manera gráfica en la Figura \@ref(fig:finplots).
+La caída del *Deviance* es tanta para el último caso (de 754119 a 1868) que la mejor opción es la binomial negativa. Sin embargo, la quasipoisson, como se vió en la Tabla \@ref(tab:exp-rbn) no tiene ni AIC/BIC ni enlace Log, por lo que se produce p-valores como perdidos. Veamos la alternativa del *loglikelihood ratio test* como se recomienda en @bobbitt_negative_2021 para casos no anidados, pero sin usar la quasipoisson:
+
+```{r poibineg}
+lmtest::lrtest(rp2,rbn)
+```
+La Tabla \@ref(tab:poibineg) sugiere la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso. Una manera adicional de comparar es la gráfica. Así, la Tabla \@ref(tab:exp-rbn) se puede ver de manera gráfica en la Figura \@ref(fig:finplots).
 
 ```{r finplots, fig.cap="Comparación visual de modelos", message=FALSE, warning=FALSE}
 library(ggplot2)
