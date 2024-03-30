@@ -343,7 +343,7 @@ Ahora que tenemos ambas regresiones en la Tabla \@ref(tab:rp1rl2), vemos que el 
 
 [^1]: No sería diferente si tuvieramos *hijos por hogar*, *postulaciones por político*.
 
-[^2]: AIC nos permite comparar entre modelos. Un menor AIC es preferido.
+[^2]: AIC nos permite comparar entre modelos. Un menor AIC es preferido. Los mismo se puede decir del BIC.
 
 ## Interpretación
 
@@ -516,7 +516,7 @@ kable(caption = "AIC / BIC para los modelos de conteos")%>%kableExtra::kable_sty
 
 # Comparación de modelos
 
-La Tabla \@ref(tab:aicbic)) es la mejor alternativa antes modelos no anidados. Una alternativa adicional sería verificar la sobredispersión producida en los modelos:
+La Tabla \@ref(tab:aicbic) es la mejor alternativa antes modelos no anidados. Una alternativa adicional sería verificar la sobredispersión producida en los modelos:
 
 ```{r}
 # poisson case
@@ -543,7 +543,8 @@ kable(caption = "Tabla ANOVA para comparar modelos")%>%kableExtra::kable_styling
 La caída del *Deviance* es tanta para el último caso (de 754119 a 1868) que la mejor opción es la binomial negativa. Sin embargo, la quasipoisson, como se vió en la Tabla \@ref(tab:exp-rbn) no tiene ni AIC/BIC ni enlace Log, por lo que se produce p-valores como perdidos. Veamos la alternativa del *loglikelihood ratio test* como se recomienda en @bobbitt_negative_2021 para casos no anidados, pero sin usar la quasipoisson:
 
 ```{r poibineg}
-lmtest::lrtest(rp2,rbn)
+lmtest::lrtest(rp2,rbn)%>%
+kable(caption = "loglikelihood ratio test")%>%kableExtra::kable_styling(full_width = FALSE)
 ```
 La Tabla \@ref(tab:poibineg) sugiere la binomial negativa. Por lo general, la binomial negativa es más utilizada que la quasipoisson, pero la binomial negativa no es apropiada para la subdispersión, mientras que la quasipoisson sí se usa para ese caso. Una manera adicional de comparar es la gráfica. Así, la Tabla \@ref(tab:exp-rbn) se puede ver de manera gráfica en la Figura \@ref(fig:finplots).
 
