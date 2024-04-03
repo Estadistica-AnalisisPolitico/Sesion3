@@ -64,9 +64,10 @@ performance::check_overdispersion(rqp)
 # negative binomial case
 performance::check_overdispersion(rbn)
 
-
+# visual
 library(ggplot2)
-dotwhisker::dwplot(list(Poisson=rp2,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T) + scale_y_discrete(labels=c("trabajo\nindependiente","analfabetismo")) + scale_color_discrete(name="Modelos para:\nCantidad de Asegurados") + geom_vline(
+dotwhisker::dwplot(list(Poisson=rp2,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T) + 
+    scale_y_discrete(labels=c("trabajo\nindependiente","analfabetismo")) + scale_color_discrete(name="Modelos para:\nCantidad de Asegurados") + geom_vline(
     xintercept = 1,
     colour = "grey60",
     linetype = 2
