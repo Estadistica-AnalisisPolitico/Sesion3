@@ -381,6 +381,7 @@ Sin embargo, la interpretación precisa de los coeficientes de la Tabla \@ref(ta
 \log(Y) = \log(\lambda) =\alpha + \beta \cdot X + \epsilon (\#eq:poi)
 \end{equation}
 ```
+
 Cuando el *exposure* es constante modelamos conteos (Y); cuando no lo es modelamos ratios ($\lambda$)[^3]. Pero, como vemos en la Ecuación \@ref(eq:poi), los coeficiente necesitan ser exponenciados para saber el efecto sobre Y. Veamos la Tabla \@ref(tab:exp-rp2).
 
 [^3]: Los conteos con *offset*.
@@ -550,7 +551,7 @@ La Tabla \@ref(tab:poibineg) sugiere la binomial negativa. Por lo general, la bi
 
 ```{r finplots, fig.cap="Comparación visual de modelos", message=FALSE, warning=FALSE}
 library(ggplot2)
-dotwhisker::dwplot(list(Poisson=rqp,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T) + scale_y_discrete(labels=c("trabajo\nindependiente","analfabetismo")) + scale_color_discrete(name="Modelos para:\nCantidad de Asegurados") + geom_vline(
+dotwhisker::dwplot(list(Poisson=rp2,CuasiPoisso=rqp,BinomialNegativa=rbn),exp=T) + scale_y_discrete(labels=c("trabajo\nindependiente","analfabetismo")) + scale_color_discrete(name="Modelos para:\nCantidad de Asegurados") + geom_vline(
            xintercept = 1,
            colour = "grey60",
            linetype = 2

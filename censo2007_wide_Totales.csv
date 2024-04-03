@@ -1,0 +1,1832 @@
+"Departamento","Provincia","Distrito","conSeguro_Total","analfa_Total","indep_Total","poblacion_Total"
+"Amazonas","Bagua","Aramango",5057,13.81,54.61,11442
+"Amazonas","Bagua","Copallin",2593,13.46,35.05,6126
+"Amazonas","Bagua","El Parco",524,12.17,20.91,1274
+"Amazonas","Bagua","Imaza",11294,17.29,47.94,21409
+"Amazonas","Bagua","La Peca",14310,7.62,36.51,31506
+"Amazonas","Bongará","Chisquilla",206,3.29,42.95,346
+"Amazonas","Bongará","Churuja",155,8.47,47.62,272
+"Amazonas","Bongará","Corosha",325,13.51,59.11,712
+"Amazonas","Bongará","Cuispes",238,9.37,51.08,782
+"Amazonas","Bongará","Florida",1286,11.12,59.85,6199
+"Amazonas","Bongará","Jazán",3079,5.57,46.29,8332
+"Amazonas","Bongará","Jumbilla",888,5.38,45.06,1569
+"Amazonas","Bongará","Recta",153,4.68,39.06,231
+"Amazonas","Bongará","San Carlos",119,10.57,61.15,367
+"Amazonas","Bongará","Shipasbamba",514,10.24,45.32,1350
+"Amazonas","Bongará","Valera",419,9.43,55.06,1262
+"Amazonas","Bongará","Yambrasbamba",1724,11.81,56.49,6043
+"Amazonas","Chachapoyas","Asunción",189,13.11,47.59,289
+"Amazonas","Chachapoyas","Balsas",751,13.47,55.82,1401
+"Amazonas","Chachapoyas","Chachapoyas",12170,4.38,26.71,23939
+"Amazonas","Chachapoyas","Cheto",268,7.16,49.58,582
+"Amazonas","Chachapoyas","Chiliquín",456,13.46,58.2,851
+"Amazonas","Chachapoyas","Chuquibamba",1168,7.4,55.34,2074
+"Amazonas","Chachapoyas","Granada",139,14.71,47.75,426
+"Amazonas","Chachapoyas","Huancas",176,10.2,50.39,809
+"Amazonas","Chachapoyas","La Jalca",2376,13.36,58.21,5344
+"Amazonas","Chachapoyas","Leimebamba",1816,11.26,43.86,3918
+"Amazonas","Chachapoyas","Levanto",511,15.58,63.22,945
+"Amazonas","Chachapoyas","Magdalena",399,9.93,34.08,880
+"Amazonas","Chachapoyas","Mariscal Castilla",469,10.37,59.01,1132
+"Amazonas","Chachapoyas","Molinopampa",1215,11.48,57.68,2501
+"Amazonas","Chachapoyas","Montevideo",286,6.2,43.85,691
+"Amazonas","Chachapoyas","Olleros",239,16.21,60.8,355
+"Amazonas","Chachapoyas","Quinjalca",327,15.51,57.91,934
+"Amazonas","Chachapoyas","San Francisco de Daguas",124,9.17,50.42,302
+"Amazonas","Chachapoyas","San Isidro de Maino",237,9.3,56.43,686
+"Amazonas","Chachapoyas","Soloco",606,11.68,60.63,1413
+"Amazonas","Chachapoyas","Sonche",140,15.65,53.06,228
+"Amazonas","Condorcanqui","El Cenepa",4616,21.9,57.78,8513
+"Amazonas","Condorcanqui","Nieva",11047,17.55,54.9,22192
+"Amazonas","Condorcanqui","Río Santiago",7281,19.6,48.58,12606
+"Amazonas","Luya","Camporredondo",1868,14.24,31.49,6076
+"Amazonas","Luya","Cocabamba",929,15.65,45.78,2240
+"Amazonas","Luya","Colcamar",827,15.53,65.07,2395
+"Amazonas","Luya","Conila",936,17.65,71.64,2033
+"Amazonas","Luya","Inguilpata",355,11.15,66.67,694
+"Amazonas","Luya","Lámud",1398,13.51,36.25,2319
+"Amazonas","Luya","Longuita",396,12.88,60,946
+"Amazonas","Luya","Lonya Chico",620,14.58,66.91,1051
+"Amazonas","Luya","Luya",2337,13.91,60.62,4153
+"Amazonas","Luya","Luya Viejo",357,14.67,65.1,413
+"Amazonas","Luya","María",357,7.71,48.24,855
+"Amazonas","Luya","Ocalli",1476,11.32,52.51,3622
+"Amazonas","Luya","Ocumal",2037,14.24,52.82,3781
+"Amazonas","Luya","Pisuquía",2385,16.73,52.58,5432
+"Amazonas","Luya","Providencia",590,13.83,57.11,1448
+"Amazonas","Luya","San Cristóbal",455,17.04,64.81,707
+"Amazonas","Luya","San Francisco del Yeso",269,25.52,42.76,793
+"Amazonas","Luya","San Jerónimo",672,14.71,57.04,947
+"Amazonas","Luya","San Juan de Lopecancha",206,10.71,58.85,553
+"Amazonas","Luya","Santa Catalina",675,12.25,56.87,1698
+"Amazonas","Luya","Santo Tomás",1616,12.16,65.36,3670
+"Amazonas","Luya","Tingo",586,12,43.8,1212
+"Amazonas","Luya","Trita",888,15.85,63.7,1290
+"Amazonas","Rodríguez de Mendoza","Chirimoto",530,8.83,62.56,1842
+"Amazonas","Rodríguez de Mendoza","Cochamal",237,3.56,56.58,545
+"Amazonas","Rodríguez de Mendoza","Huambo",1104,11.24,38.89,3168
+"Amazonas","Rodríguez de Mendoza","Limabamba",832,6.49,48.91,2629
+"Amazonas","Rodríguez de Mendoza","Longar",934,5.17,45.93,1747
+"Amazonas","Rodríguez de Mendoza","Mariscal Benavides",774,8.35,42.98,1496
+"Amazonas","Rodríguez de Mendoza","Milpuc",206,6.58,65.33,671
+"Amazonas","Rodríguez de Mendoza","Omia",1583,9.16,48.26,7053
+"Amazonas","Rodríguez de Mendoza","San Nicolás",2103,4.72,44.36,4837
+"Amazonas","Rodríguez de Mendoza","Santa Rosa",145,10.78,50.99,540
+"Amazonas","Rodríguez de Mendoza","Totora",238,2.55,54.35,490
+"Amazonas","Rodríguez de Mendoza","Vista Alegre",260,12.5,48.33,1371
+"Amazonas","Utcubamba","Bagua Grande",19867,11.46,41.95,47336
+"Amazonas","Utcubamba","Cajaruro",10952,13.99,44.61,26735
+"Amazonas","Utcubamba","Cumba",4061,13.86,49.06,9070
+"Amazonas","Utcubamba","El Milagro",2819,11.77,23.99,5847
+"Amazonas","Utcubamba","Jamalca",3135,15.34,47.21,7554
+"Amazonas","Utcubamba","Lonya Grande",4430,14.23,46.21,9437
+"Amazonas","Utcubamba","Yamón",1462,13.92,29.39,3064
+"Áncash","Aija","Aija",909,5.66,33.84,2036
+"Áncash","Aija","Coris",718,11,58.04,2121
+"Áncash","Aija","Huacllán",179,6.59,46.85,556
+"Áncash","Aija","La Merced",744,9.56,35.2,2377
+"Áncash","Aija","Succha",277,5.85,54.3,905
+"Áncash","Antonio Raymondi","Aczo",997,18.04,48.69,2378
+"Áncash","Antonio Raymondi","Chaccho",859,20.34,35.4,1927
+"Áncash","Antonio Raymondi","Chingas",737,17.2,56.62,2074
+"Áncash","Antonio Raymondi","Llamellin",1558,14.85,37.98,3849
+"Áncash","Antonio Raymondi","Mirgas",2582,26.96,69.95,5235
+"Áncash","Antonio Raymondi","San Juan de Rontoy",805,21.76,38.85,1596
+"Áncash","Asunción","Acochaca",1484,35.45,53.36,3720
+"Áncash","Asunción","Chacas",2205,23.45,36.02,5334
+"Áncash","Bolognesi","Abelardo Pardo Lezameta",169,1.96,45.06,678
+"Áncash","Bolognesi","Antonio Raymondi",129,14.32,65.63,1193
+"Áncash","Bolognesi","Aquia",747,11.03,23.02,2860
+"Áncash","Bolognesi","Cajacay",424,12.13,45.09,1686
+"Áncash","Bolognesi","Canis",193,4.92,35.02,691
+"Áncash","Bolognesi","Chiquián",1326,6.11,31.86,4087
+"Áncash","Bolognesi","Colquioc",751,5.13,53,3078
+"Áncash","Bolognesi","Huallanca",2991,8.26,24.77,8249
+"Áncash","Bolognesi","Huasta",507,5.47,29.02,2425
+"Áncash","Bolognesi","Huayllacayán",366,16.78,64.55,1276
+"Áncash","Bolognesi","La Primavera",112,5.35,36.12,657
+"Áncash","Bolognesi","Mangas",125,16.27,54.44,568
+"Áncash","Bolognesi","Pacllón",468,6.32,21.28,1522
+"Áncash","Bolognesi","San Miguel de Corpanqui",165,1.75,54.98,777
+"Áncash","Bolognesi","Ticllos",162,9.04,42.7,978
+"Áncash","Carhuaz","Acopampa",370,19.57,51.96,2488
+"Áncash","Carhuaz","Amashca",172,33.08,58.13,1647
+"Áncash","Carhuaz","Anta",890,21.01,51.69,2368
+"Áncash","Carhuaz","Ataquero",313,30.75,66.11,1498
+"Áncash","Carhuaz","Carhuaz",3238,26.25,49.15,13836
+"Áncash","Carhuaz","Marcará",2720,32.22,54.23,8634
+"Áncash","Carhuaz","Pariahuanca",425,19.33,42.33,1501
+"Áncash","Carhuaz","San Miguel de Aco",606,33.25,55.7,2552
+"Áncash","Carhuaz","Shilla",817,42.34,48.22,3280
+"Áncash","Carhuaz","Tinco",638,16.04,56.35,2939
+"Áncash","Carhuaz","Yungar",885,23.29,52.19,3159
+"Áncash","Carlos Fermín Fitzcarrald","San Luis",5012,32.27,28.83,12112
+"Áncash","Carlos Fermín Fitzcarrald","San Nicolás",1708,28.76,41.54,3922
+"Áncash","Carlos Fermín Fitzcarrald","Yauya",2261,27.13,41.76,5288
+"Áncash","Casma","Buena Vista Alta",1641,20.21,31.63,3937
+"Áncash","Casma","Casma",9644,6.49,32.63,28831
+"Áncash","Casma","Comandante Noel",629,11.81,30.63,2029
+"Áncash","Casma","Yaután",2414,15.55,41.46,7571
+"Áncash","Corongo","Aco",140,13.92,50,543
+"Áncash","Corongo","Bambas",170,7.23,33.52,500
+"Áncash","Corongo","Corongo",733,17.38,37.83,1824
+"Áncash","Corongo","Cusca",622,13.78,54.77,2792
+"Áncash","Corongo","La pampa",352,13.54,36.39,1164
+"Áncash","Corongo","Yanac",259,11.67,41.76,747
+"Áncash","Corongo","Yupán",258,6.97,49.83,759
+"Áncash","Huaraz","Cochabamba",896,18.1,49.26,2047
+"Áncash","Huaraz","Colcabamba",149,9.73,53.72,653
+"Áncash","Huaraz","Huanchay",984,9.52,64.99,2517
+"Áncash","Huaraz","Huaraz",16491,7.36,27.58,56186
+"Áncash","Huaraz","Independencia",19809,9.37,30.89,62853
+"Áncash","Huaraz","Jangas",1202,23.61,39.78,4403
+"Áncash","Huaraz","La Libertad",449,14.21,55.46,1280
+"Áncash","Huaraz","Olleros",654,23.18,58.51,2581
+"Áncash","Huaraz","Pampas",281,7.42,56.49,1310
+"Áncash","Huaraz","Pariacoto",1549,20.65,53.94,4386
+"Áncash","Huaraz","Pira",798,22.49,52.01,3853
+"Áncash","Huaraz","Tarica",1707,22.65,41.97,5394
+"Áncash","Huari","Anra",753,20.33,24.76,1800
+"Áncash","Huari","Cajay",1126,29.97,13.87,3018
+"Áncash","Huari","Chavín de Huantar",2675,28.74,46.63,9088
+"Áncash","Huari","Huacachi",797,18.58,21.26,2111
+"Áncash","Huari","Huacchis",627,12.76,50.64,2055
+"Áncash","Huari","Huachis",1427,25.54,51.15,3758
+"Áncash","Huari","Huantar",924,23.93,32.8,3010
+"Áncash","Huari","Huari",3166,16.9,28.4,9738
+"Áncash","Huari","Masin",651,23.95,26.4,1948
+"Áncash","Huari","Paucas",905,11.24,45.28,2048
+"Áncash","Huari","Pontó",1396,21.57,23.51,3472
+"Áncash","Huari","Rahuapampa",272,11.3,28.22,739
+"Áncash","Huari","Rapayán",828,12.6,30.3,1752
+"Áncash","Huari","San marcos",4951,16.45,27.38,13607
+"Áncash","Huari","San Pedro de Chaná",952,17.95,37.14,2668
+"Áncash","Huari","Uco",448,16.47,11.75,1786
+"Áncash","Huarmey","Cochapeti",180,5.14,56.33,879
+"Áncash","Huarmey","Culebras",1201,6.02,52.03,3145
+"Áncash","Huarmey","Huarmey",8308,3.68,34.06,21666
+"Áncash","Huarmey","Huayan",262,6.66,40.89,1085
+"Áncash","Huarmey","Malvas",302,3.56,57.65,1045
+"Áncash","Huaylas","Caraz",7468,15.56,40.44,23580
+"Áncash","Huaylas","Huallanca",417,12.52,41.3,955
+"Áncash","Huaylas","Huata",671,15.92,42.82,1609
+"Áncash","Huaylas","Huaylas",617,11.86,62.2,1894
+"Áncash","Huaylas","Mato",796,16.96,44.12,2109
+"Áncash","Huaylas","Pamparomas",3299,30.2,54.47,8607
+"Áncash","Huaylas","Pueblo Libre",2890,32.37,46.63,6897
+"Áncash","Huaylas","Santa Cruz",1905,34.53,60.32,4840
+"Áncash","Huaylas","Santo Toribio",440,8.74,32.57,1403
+"Áncash","Huaylas","Yuracmarca",629,25.42,64.06,1835
+"Áncash","Mariscal Luzuriaga","Casca",3031,31.22,53.93,4301
+"Áncash","Mariscal Luzuriaga","Eleazar Guzmán Barrón",956,32.21,54.41,1333
+"Áncash","Mariscal Luzuriaga","Fidel Olivas Escudero",1283,33.4,47.74,2309
+"Áncash","Mariscal Luzuriaga","Llama",1000,21.97,33.6,1392
+"Áncash","Mariscal Luzuriaga","Llumpa",3445,42.09,55.58,6066
+"Áncash","Mariscal Luzuriaga","Lucma",1924,35.81,44.48,3197
+"Áncash","Mariscal Luzuriaga","Musga",728,20.08,31.16,1094
+"Áncash","Mariscal Luzuriaga","Piscobamba",2170,20.77,22.66,3600
+"Áncash","Ocros","Acas",153,4.81,44.98,812
+"Áncash","Ocros","Cajamarquilla",86,3.08,45.45,429
+"Áncash","Ocros","Carhuapampa",158,6.15,52.5,752
+"Áncash","Ocros","Cochas",381,9.47,27.32,1298
+"Áncash","Ocros","Congas",266,5.78,59.84,1215
+"Áncash","Ocros","Llipa",146,2.7,62.95,843
+"Áncash","Ocros","Ocros",403,8.27,43.29,1375
+"Áncash","Ocros","San Cristóbal de Raján",130,9.76,40.31,572
+"Áncash","Ocros","San Pedro",497,2.99,45.92,1477
+"Áncash","Ocros","Santiago de Chilcas",65,9.49,52.74,423
+"Áncash","Pallasca","Bolognesi",426,8.64,22.69,1367
+"Áncash","Pallasca","Cabana",822,8.54,35.31,2810
+"Áncash","Pallasca","Conchucos",2411,19.68,32.12,8027
+"Áncash","Pallasca","Huacaschuque",189,12.97,45.45,671
+"Áncash","Pallasca","Huandoval",362,10.12,45.1,1144
+"Áncash","Pallasca","Lacabamba",339,11.37,48.07,656
+"Áncash","Pallasca","Llapo",196,8.14,37.04,688
+"Áncash","Pallasca","Pallasca",824,13.41,41.67,2624
+"Áncash","Pallasca","Pampas",2001,16.66,40.12,7079
+"Áncash","Pallasca","Santa rosa",340,12.03,49.77,1150
+"Áncash","Pallasca","Tauca",796,11.62,48.2,3238
+"Áncash","Pomabamba","Huayllán",2508,29.64,30.25,3666
+"Áncash","Pomabamba","Parobamba",4246,42.19,75.39,6861
+"Áncash","Pomabamba","Pomabamba",9949,27.59,34.66,14933
+"Áncash","Pomabamba","Quinuabamba",1649,47.05,41.22,2494
+"Áncash","Recuay","Catac",927,10.87,39.93,4036
+"Áncash","Recuay","Cotaparaco",205,7.86,31.78,603
+"Áncash","Recuay","Huayllapampa",293,16.11,57.6,1146
+"Áncash","Recuay","Llacllín",282,10.53,51.07,1418
+"Áncash","Recuay","Marca",284,11.28,47.88,1054
+"Áncash","Recuay","Pampas Chico",360,10.87,38.84,1618
+"Áncash","Recuay","Pararín",326,8.47,64.78,1251
+"Áncash","Recuay","Recuay",1754,11.13,37.37,5015
+"Áncash","Recuay","Tapacocha",134,17.96,65.69,525
+"Áncash","Recuay","Ticapampa",721,11.52,30.82,2436
+"Áncash","Santa","Cáceres del Perú",1619,14.32,54.67,5062
+"Áncash","Santa","Chimbote",72612,4.24,31.35,215817
+"Áncash","Santa","Coishco",6738,4.68,24.08,14832
+"Áncash","Santa","Macate",1048,8.58,54.24,3889
+"Áncash","Santa","Moro",2250,12.99,54.29,7580
+"Áncash","Santa","Nepeña",7669,10.11,28.41,13860
+"Áncash","Santa","Nuevo Chimbote",46040,2.06,26.79,113166
+"Áncash","Santa","Samanco",1636,6.25,29.59,4218
+"Áncash","Santa","Santa",5461,7.21,27.88,18010
+"Áncash","Sihuas","Acobamba",718,15.08,46.53,2004
+"Áncash","Sihuas","Alfonso Ugarte",407,17.57,31.72,874
+"Áncash","Sihuas","Cashapampa",1582,31.97,51.91,3061
+"Áncash","Sihuas","Chingalpo",545,16.17,38.03,1155
+"Áncash","Sihuas","Huayllabamba",2050,22.27,58.34,4227
+"Áncash","Sihuas","Quiches",1102,22.97,64.05,2779
+"Áncash","Sihuas","Ragash",1503,26.76,61.95,2769
+"Áncash","Sihuas","San juan",3704,39.48,41.89,6363
+"Áncash","Sihuas","Sicsibamba",1073,25.79,45.21,1906
+"Áncash","Sihuas","Sihuas",2673,10.9,32.7,5562
+"Áncash","Yungay","Cascapara",408,32.83,67.24,2064
+"Áncash","Yungay","Mancos",1566,23.17,49.79,7180
+"Áncash","Yungay","Matacoto",367,25.4,46.03,1482
+"Áncash","Yungay","Quillo",5533,45.43,70.68,12080
+"Áncash","Yungay","Ranrahirca",639,20.06,31.77,2818
+"Áncash","Yungay","Shupluy",890,32.28,59.83,2285
+"Áncash","Yungay","Yanama",2064,27.33,39.14,6979
+"Áncash","Yungay","Yungay",4443,21.5,52.32,20075
+"Apurímac","Abancay","Abancay",27632,6.46,31.58,51225
+"Apurímac","Abancay","Chacoche",944,19.97,34.67,1213
+"Apurímac","Abancay","Circa",1874,26.44,53.11,2498
+"Apurímac","Abancay","Curahuasi",10369,24.34,46.63,16532
+"Apurímac","Abancay","Huanipaca",2429,25.17,46.36,4515
+"Apurímac","Abancay","Lambrama",2166,25.46,42.1,5043
+"Apurímac","Abancay","Pichirhua",3273,26.58,61.09,4154
+"Apurímac","Abancay","San Pedro de Cachora",1683,23.75,37.09,3531
+"Apurímac","Abancay","Tamburco",3839,8.86,34.65,7353
+"Apurímac","Andahuaylas","Andahuaylas",16631,13.01,39.41,37260
+"Apurímac","Andahuaylas","Andarapa",4277,29.87,54.99,6441
+"Apurímac","Andahuaylas","Chiara",1036,28.2,30.95,1342
+"Apurímac","Andahuaylas","Huancarama",3366,26.55,44.47,7078
+"Apurímac","Andahuaylas","Huancaray",3005,29.68,51.89,4387
+"Apurímac","Andahuaylas","Huayana",728,24.35,57.14,961
+"Apurímac","Andahuaylas","Kaquiabamba",870,29.67,27.87,2410
+"Apurímac","Andahuaylas","Kishuara",5287,29.02,16.82,8033
+"Apurímac","Andahuaylas","Pacobamba",2257,27.08,39.16,4961
+"Apurímac","Andahuaylas","Pacucha",4902,29.58,44.03,9841
+"Apurímac","Andahuaylas","Pampachiri",1875,25.62,29.23,2478
+"Apurímac","Andahuaylas","Pomacocha",565,23.18,39.71,972
+"Apurímac","Andahuaylas","San Antonio de cachi",2092,26.08,54.61,3186
+"Apurímac","Andahuaylas","San Jerónimo",10442,24.51,35.69,20357
+"Apurímac","Andahuaylas","San Miguel de Chaccrampa",1161,33.37,26.59,1850
+"Apurímac","Andahuaylas","Santa María de Chicmo",4577,25.7,32.45,9430
+"Apurímac","Andahuaylas","Talavera",9051,19.74,28.21,16649
+"Apurímac","Andahuaylas","Tumay Huaraca",1346,29.29,49.28,2144
+"Apurímac","Andahuaylas","Turpo",2897,24.87,53.83,4066
+"Apurímac","Antabamba","Antabamba",1877,21.26,34.1,3166
+"Apurímac","Antabamba","El oro",223,14.81,36.13,516
+"Apurímac","Antabamba","Huaquirca",819,21.23,10.51,1463
+"Apurímac","Antabamba","Juan Espinoza Medrano",1039,22.83,29.96,1975
+"Apurímac","Antabamba","Oropesa",1264,25.88,22.79,2518
+"Apurímac","Antabamba","Pachaconas",657,14.41,52.03,1174
+"Apurímac","Antabamba","Sabaino",754,22.39,40.41,1455
+"Apurímac","Aymaraes","Capaya",384,12.2,50.71,729
+"Apurímac","Aymaraes","Caraybamba",631,18.34,50.1,1295
+"Apurímac","Aymaraes","Chalhuanca",2293,11,35.88,4558
+"Apurímac","Aymaraes","Chapimarca",1251,29.99,10.71,2221
+"Apurímac","Aymaraes","Colcabamba",488,28.93,36.24,786
+"Apurímac","Aymaraes","Cotaruse",2409,15.88,30.8,4049
+"Apurímac","Aymaraes","Huayllo",371,15.12,39.15,634
+"Apurímac","Aymaraes","Justo Apu Sahuaraura",770,23.13,64.2,1037
+"Apurímac","Aymaraes","Lucre",1233,34.58,52.33,2069
+"Apurímac","Aymaraes","Pocohuanca",772,20.38,25.17,1158
+"Apurímac","Aymaraes","San Juan de Chacña",321,35.63,24.48,908
+"Apurímac","Aymaraes","Sañayca",484,27.57,59.83,1299
+"Apurímac","Aymaraes","Soraya",344,26.22,58.74,771
+"Apurímac","Aymaraes","Tapairihua",1613,32.44,59.28,2131
+"Apurímac","Aymaraes","Tintay",1982,29.8,50.68,3052
+"Apurímac","Aymaraes","Toraya",938,29.79,29.84,1690
+"Apurímac","Aymaraes","Yanaca",595,20.22,24.82,1182
+"Apurímac","Chincheros","Anco-huallo",4727,21.97,45.06,10898
+"Apurímac","Chincheros","Chincheros",2743,19.83,35.09,5706
+"Apurímac","Chincheros","Cocharcas",1267,19.39,50,2254
+"Apurímac","Chincheros","Huaccana",4306,20.78,50.15,9200
+"Apurímac","Chincheros","Ocobamba",4313,25.57,44.65,7901
+"Apurímac","Chincheros","Ongoy",4195,26.36,44.55,7942
+"Apurímac","Chincheros","Ranracancha",2508,34.71,46.3,4642
+"Apurímac","Chincheros","Uranmarca",1805,25.94,52.68,3040
+"Apurímac","Cotabambas","Challhuahuacho",5100,34.93,16.75,7321
+"Apurímac","Cotabambas","Cotabambas",2195,24.48,54.44,4166
+"Apurímac","Cotabambas","Coyllurqui",4284,33.17,31.25,7494
+"Apurímac","Cotabambas","Haquira",6694,29.59,31.36,10437
+"Apurímac","Cotabambas","Mara",3838,31.1,52.45,6141
+"Apurímac","Cotabambas","Tambobamba",6725,40.35,45.58,10212
+"Apurímac","Grau","Chuquibambilla",3530,16.58,43.31,5490
+"Apurímac","Grau","Curasco",764,32.59,59.83,1469
+"Apurímac","Grau","Curpahuasi",1211,33.66,52.7,2337
+"Apurímac","Grau","Gamarra",2314,25.09,53.35,3965
+"Apurímac","Grau","Huayllati",1184,34.7,29.01,1830
+"Apurímac","Grau","Mamara",460,32.4,30.33,938
+"Apurímac","Grau","Micaela Bastidas",336,21.17,60.6,1255
+"Apurímac","Grau","Pataypampa",698,22.38,56.84,1022
+"Apurímac","Grau","Progreso",1444,33.7,52.94,2723
+"Apurímac","Grau","San Antonio",218,15.79,23.53,361
+"Apurímac","Grau","Santa Rosa",531,25.5,45.71,712
+"Apurímac","Grau","Turpay",374,20,40.84,777
+"Apurímac","Grau","Vilcabamba",532,11.68,20.14,1213
+"Apurímac","Grau","Virundo",533,22.11,34.46,998
+"Arequipa","Arequipa","Alto Selva Alegre",30329,2.67,27.85,72696
+"Arequipa","Arequipa","Arequipa",35038,0.72,13.75,61519
+"Arequipa","Arequipa","Cayma",33086,3.53,25.23,74776
+"Arequipa","Arequipa","Cerro Colorado",46843,3.37,27.33,113171
+"Arequipa","Arequipa","Characato",2489,4.42,29.1,6726
+"Arequipa","Arequipa","Chiguata",1002,10.05,35.61,2686
+"Arequipa","Arequipa","Jacobo Hunter",18562,4.18,27.39,46092
+"Arequipa","Arequipa","José Luis Bustamante y Rivero",40798,1.59,17.37,76410
+"Arequipa","Arequipa","La Joya",7685,7.14,20.65,24192
+"Arequipa","Arequipa","Mariano Melgar",21351,2.85,28.07,52144
+"Arequipa","Arequipa","Miraflores",21584,2.62,26,50704
+"Arequipa","Arequipa","Mollebaya",418,4.74,34.7,1410
+"Arequipa","Arequipa","Paucarpata",44920,3.86,32.42,120446
+"Arequipa","Arequipa","Pocsi",305,6.32,49.37,602
+"Arequipa","Arequipa","Polobaya",577,7.19,31.88,1445
+"Arequipa","Arequipa","Quequeña",501,3.25,20.75,1219
+"Arequipa","Arequipa","Sabandia",1548,5.26,25.89,3699
+"Arequipa","Arequipa","Sachaca",8150,4.19,19.87,17537
+"Arequipa","Arequipa","San Juan de Siguas",439,5.71,22.2,1295
+"Arequipa","Arequipa","San Juan de Tarucani",674,9.54,40.48,2129
+"Arequipa","Arequipa","Santa Isabel de Siguas",499,6.48,38.04,1246
+"Arequipa","Arequipa","Santa Rita de Siguas",1686,6.59,14.58,4456
+"Arequipa","Arequipa","Socabaya",24572,2.93,27.31,59671
+"Arequipa","Arequipa","Tiabaya",4938,6.97,21.68,14677
+"Arequipa","Arequipa","Uchumayo",4957,3.5,23.88,10672
+"Arequipa","Arequipa","Vitor",1019,7.92,24.49,2693
+"Arequipa","Arequipa","Yanahuara",15177,0.56,10.66,22890
+"Arequipa","Arequipa","Yarabamba",410,4.2,31.89,1027
+"Arequipa","Arequipa","Yura",6348,5.87,34.15,16020
+"Arequipa","Camaná","Camana",5854,2.88,29.23,14758
+"Arequipa","Camaná","José María Quimper",1653,4.27,23.58,3916
+"Arequipa","Camaná","Mariano Nicolás Valcárcel",564,1.48,66.35,4375
+"Arequipa","Camaná","Mariscal Cáceres",1735,7.72,18.17,5463
+"Arequipa","Camaná","Nicolás de Piérola",2375,4.65,22.44,6065
+"Arequipa","Camaná","Ocoña",1735,4.07,28.12,4540
+"Arequipa","Camaná","Quilca",283,5.42,53.64,806
+"Arequipa","Camaná","Samuel Pastor",4727,5.14,26.75,13142
+"Arequipa","Caravelí","Acarí",1322,5.23,31.58,4019
+"Arequipa","Caravelí","Atico",1440,2.66,37.12,4164
+"Arequipa","Caravelí","Atiquipa",353,4.43,25.79,774
+"Arequipa","Caravelí","Bella Unión",712,5.5,12.36,4296
+"Arequipa","Caravelí","Cahuacho",308,13.56,50.91,881
+"Arequipa","Caravelí","Caravelí",1933,4.75,26.47,3784
+"Arequipa","Caravelí","Chala",1407,3.07,35.23,5194
+"Arequipa","Caravelí","Chaparra",626,3.51,36.66,3846
+"Arequipa","Caravelí","Huanuhuanu",567,5.05,58.1,2509
+"Arequipa","Caravelí","Jaqui",413,5.8,24.34,1685
+"Arequipa","Caravelí","Lomas",433,1.26,47.29,1183
+"Arequipa","Caravelí","Quicacha",611,7.82,62.11,1885
+"Arequipa","Caravelí","Yauca",598,5.53,36.77,1708
+"Arequipa","Castilla","Andagua",588,12.29,44.08,1311
+"Arequipa","Castilla","Aplao",3877,5.68,27.01,8851
+"Arequipa","Castilla","Ayo",143,6.41,52.76,360
+"Arequipa","Castilla","Chachas",1258,24.92,53.36,1947
+"Arequipa","Castilla","Chilcaymarca",425,14.42,15.97,842
+"Arequipa","Castilla","Choco",615,30.18,67.7,1120
+"Arequipa","Castilla","Huancarqui",629,6.02,22.48,1445
+"Arequipa","Castilla","Machaguay",387,11.61,45.74,911
+"Arequipa","Castilla","Orcopampa",4964,8.25,15.69,8318
+"Arequipa","Castilla","Pampacolca",1140,12.35,36.07,3171
+"Arequipa","Castilla","Tipán",229,8.18,42.55,591
+"Arequipa","Castilla","Uñon",93,5.81,63.19,366
+"Arequipa","Castilla","Uraca",2461,4.94,20.41,7182
+"Arequipa","Castilla","Viraco",674,11.07,38.98,2010
+"Arequipa","Caylloma","Achoma",501,10.67,46.68,1139
+"Arequipa","Caylloma","Cabanaconde",1263,9.21,48.84,2842
+"Arequipa","Caylloma","Callalli",1476,11.82,49.69,2511
+"Arequipa","Caylloma","Caylloma",2911,16.19,27.76,4041
+"Arequipa","Caylloma","Chivay",2893,8.19,31.68,6532
+"Arequipa","Caylloma","Coporaque",506,8.85,35.25,1393
+"Arequipa","Caylloma","Huambo",490,8.6,45.97,895
+"Arequipa","Caylloma","Huanca",652,14.7,43.77,1841
+"Arequipa","Caylloma","Ichupampa",300,21.66,31.25,757
+"Arequipa","Caylloma","Lari",683,16.97,35.82,1373
+"Arequipa","Caylloma","Lluta",464,11.32,48.29,1417
+"Arequipa","Caylloma","Maca",380,11.54,36.09,916
+"Arequipa","Caylloma","Madrigal",297,21.51,49.22,705
+"Arequipa","Caylloma","Majes",10393,4.43,27.02,39445
+"Arequipa","Caylloma","San Antonio de Chuca",620,12.67,27.62,1415
+"Arequipa","Caylloma","Sibayo",486,11.73,30.97,801
+"Arequipa","Caylloma","Tapay",315,27.53,51.26,671
+"Arequipa","Caylloma","Tisco",1284,16.88,51.33,1817
+"Arequipa","Caylloma","Tuti",549,17.37,39.39,888
+"Arequipa","Caylloma","Yanque",1227,10.8,30.93,2319
+"Arequipa","Condesuyos","Andaray",362,14.56,36.74,719
+"Arequipa","Condesuyos","Cayarani",2691,16.16,17.32,3689
+"Arequipa","Condesuyos","Chichas",318,10.19,41.92,832
+"Arequipa","Condesuyos","Chuquibamba",1673,8.56,25.45,3618
+"Arequipa","Condesuyos","Iray",267,3.82,37.29,707
+"Arequipa","Condesuyos","Rio Grande",1954,4.68,25.39,3430
+"Arequipa","Condesuyos","Salamanca",388,21.83,46.22,1060
+"Arequipa","Condesuyos","Yanaquihua",2108,8.89,47.56,4936
+"Arequipa","Islay","Cocachacra",3788,5.99,21.66,9342
+"Arequipa","Islay","Dean Valdivia",2378,7.32,21.03,6318
+"Arequipa","Islay","Islay",1870,1.97,29.89,4823
+"Arequipa","Islay","Mejía",511,3.53,19.76,1132
+"Arequipa","Islay","Mollendo",13551,2.42,24.29,24028
+"Arequipa","Islay","Punta de Bombón",2395,6.43,29.76,6621
+"Arequipa","La Unión","Alca",1360,27.92,47.93,2169
+"Arequipa","La Unión","Charcana",408,17.13,39.11,647
+"Arequipa","La Unión","Cotahuasi",1577,8.83,32.92,3030
+"Arequipa","La Unión","Huaynacotas",1200,23.29,48.17,2464
+"Arequipa","La Unión","Pampamarca",922,31.11,55.56,1430
+"Arequipa","La Unión","Puyca",1883,33.69,47.47,2886
+"Arequipa","La Unión","Quechualla",121,15.91,42.48,278
+"Arequipa","La Unión","Sayla",255,8.86,38.36,518
+"Arequipa","La Unión","Tauría",186,13.19,13.91,343
+"Arequipa","La Unión","Tomepampa",506,15.68,46.95,892
+"Arequipa","La Unión","Toro",435,9.04,54.39,1005
+"Ayacucho","Cangallo","Cangallo",4501,26.19,25.29,6771
+"Ayacucho","Cangallo","Chuschi",6040,29.02,61.5,8281
+"Ayacucho","Cangallo","Los Morochucos",4720,24.97,53.84,7998
+"Ayacucho","Cangallo","María Parado de Bellido",2217,30.77,54.08,2831
+"Ayacucho","Cangallo","Paras",3718,25.29,55.79,5017
+"Ayacucho","Cangallo","Totos",2998,25.54,59.95,4004
+"Ayacucho","Huamanga","Acocro",6585,28.45,65.41,8953
+"Ayacucho","Huamanga","Acos Vinchos",3915,32.13,61.88,5100
+"Ayacucho","Huamanga","Ayacucho",46180,6.71,33.05,100935
+"Ayacucho","Huamanga","Chiara",4272,23.07,45.38,6307
+"Ayacucho","Huamanga","Jesús Nazareno",7372,7.33,39.91,15399
+"Ayacucho","Huamanga","Ocros",3821,22.24,66.16,5615
+"Ayacucho","Huamanga","Pacaycasa",1689,18.45,42.41,2842
+"Ayacucho","Huamanga","Quinua",3573,25.55,44.59,6115
+"Ayacucho","Huamanga","San José de Ticllas",1768,25.59,49.27,2442
+"Ayacucho","Huamanga","San Juan Bautista",18530,7.62,36.34,38457
+"Ayacucho","Huamanga","Santiago de Pischa",905,22.26,64.11,1467
+"Ayacucho","Huamanga","Socos",5382,28.9,54.84,6903
+"Ayacucho","Huamanga","Tambillo",4099,23.86,54.49,5068
+"Ayacucho","Huamanga","Vinchos",12582,34.67,51.42,15787
+"Ayacucho","Huanca Sancos","Carapo",2048,17.66,51.56,2609
+"Ayacucho","Huanca Sancos","Sacsamarca",1074,21.82,26.28,1797
+"Ayacucho","Huanca Sancos","Sancos",2370,12.61,33.15,3539
+"Ayacucho","Huanca Sancos","Santiago de Lucanamarca",1869,24.98,60.82,2675
+"Ayacucho","Huanta","Ayahuanco",7555,30.85,60.98,8874
+"Ayacucho","Huanta","Huamanguilla",3862,25.59,40.4,5200
+"Ayacucho","Huanta","Huanta",18586,18.98,45.7,40198
+"Ayacucho","Huanta","Iguain",1278,32.11,40.25,2697
+"Ayacucho","Huanta","Llochegua",3704,12.12,55.41,12131
+"Ayacucho","Huanta","Luricocha",2395,23.51,39.67,5089
+"Ayacucho","Huanta","Santillana",5082,33.16,58.47,7215
+"Ayacucho","Huanta","Sivia",4026,18.73,60.3,11956
+"Ayacucho","La Mar","Anco",9600,19.47,59.77,15352
+"Ayacucho","La Mar","Ayna",3333,18.62,54.91,10196
+"Ayacucho","La Mar","Chilcas",1693,25.86,23.95,2617
+"Ayacucho","La Mar","Chungui",4687,22.68,72.2,6311
+"Ayacucho","La Mar","Luis Carranza",1731,28.59,71.27,2089
+"Ayacucho","La Mar","San miguel",10396,26.43,52.8,18775
+"Ayacucho","La Mar","Santa Rosa",3948,15.48,51.18,11200
+"Ayacucho","La Mar","Tambo",7284,34.09,66,17637
+"Ayacucho","Lucanas","Aucara",2011,19.98,45.07,4400
+"Ayacucho","Lucanas","Cabana",1566,12.7,52.78,3252
+"Ayacucho","Lucanas","Carmen Salcedo",1555,16.36,59.12,3427
+"Ayacucho","Lucanas","Chaviña",1571,19.65,49.4,2355
+"Ayacucho","Lucanas","Chipao",1896,22.01,48.06,3965
+"Ayacucho","Lucanas","Huac-Huas",981,7.18,53.75,2704
+"Ayacucho","Lucanas","Laramate",862,11.55,50.14,1902
+"Ayacucho","Lucanas","Leoncio Prado",1003,12.61,48.24,1592
+"Ayacucho","Lucanas","Llauta",663,7.41,50.46,1372
+"Ayacucho","Lucanas","Lucanas",1977,23.71,43.69,3777
+"Ayacucho","Lucanas","Ocaña",1551,13.01,55.32,3444
+"Ayacucho","Lucanas","Otoca",695,8.95,48.06,3013
+"Ayacucho","Lucanas","Puquio",6415,14.3,36.37,13870
+"Ayacucho","Lucanas","Saisa",427,3.47,32.59,875
+"Ayacucho","Lucanas","San Cristóbal",729,29.46,59.65,1944
+"Ayacucho","Lucanas","San Juan",692,8.86,32.21,1233
+"Ayacucho","Lucanas","San Pedro",1637,29.2,58.35,3317
+"Ayacucho","Lucanas","San Pedro de Palco",708,24.28,57.11,1552
+"Ayacucho","Lucanas","Sancos",2031,11.04,45.36,5548
+"Ayacucho","Lucanas","Santa Ana de Huaycahuacho",335,21.7,44.14,745
+"Ayacucho","Lucanas","Santa Lucía",729,8.19,51.77,1127
+"Ayacucho","Parinacochas","Chumpi",2244,23.76,42.2,2981
+"Ayacucho","Parinacochas","Coracora",10389,14.36,35.49,14769
+"Ayacucho","Parinacochas","Coronel Castañeda",1033,17.21,13.83,1290
+"Ayacucho","Parinacochas","Pacapausa",1107,21.21,62.74,1607
+"Ayacucho","Parinacochas","Pullo",1685,10.01,55.36,4445
+"Ayacucho","Parinacochas","Puyusca",1708,20.81,44.87,2360
+"Ayacucho","Parinacochas","San Francisco de Ravacayco",515,28.19,49.63,673
+"Ayacucho","Parinacochas","Upahuacho",1314,34.94,48.4,1882
+"Ayacucho","Páucar del Sara Sara","Colta",352,14,56.31,797
+"Ayacucho","Páucar del Sara Sara","Corculla",252,17.37,47.03,566
+"Ayacucho","Páucar del Sara Sara","Lampa",1292,11.58,54.57,2473
+"Ayacucho","Páucar del Sara Sara","Marcabamba",484,16.1,51.28,785
+"Ayacucho","Páucar del Sara Sara","Oyolo",727,23.76,43.31,1166
+"Ayacucho","Páucar del Sara Sara","Pararca",310,16.15,45.04,678
+"Ayacucho","Páucar del Sara Sara","Pausa",1403,10.28,36.04,3050
+"Ayacucho","Páucar del Sara Sara","San Javier de Alpabamba",250,19.2,46.71,510
+"Ayacucho","Páucar del Sara Sara","San José de Ushua",115,13.39,50,187
+"Ayacucho","Páucar del Sara Sara","Sara Sara",463,20.11,36.05,800
+"Ayacucho","Sucre","Belén",382,14.22,58.11,640
+"Ayacucho","Sucre","Chalcos",442,11.14,20.36,721
+"Ayacucho","Sucre","Chilcayoc",544,22.07,61.64,668
+"Ayacucho","Sucre","Huacaña",494,15.38,33.51,642
+"Ayacucho","Sucre","Morcolla",1231,22.15,50.27,1603
+"Ayacucho","Sucre","Paico",694,20.26,28.43,953
+"Ayacucho","Sucre","Querobamba",2143,17.36,30.32,2645
+"Ayacucho","Sucre","San Pedro de Larcay",527,18.98,43.69,970
+"Ayacucho","Sucre","San Salvador de Quije",1266,21.06,54.23,1600
+"Ayacucho","Sucre","Santiago de Paucaray",634,20.56,31,917
+"Ayacucho","Sucre","Soras",748,16.99,35.87,1236
+"Ayacucho","Víctor Fajardo","Alcamenca",2010,22.86,56.69,2551
+"Ayacucho","Víctor Fajardo","Apongo",858,23.18,46.44,1256
+"Ayacucho","Víctor Fajardo","Asquipata",392,31.18,23.21,488
+"Ayacucho","Víctor Fajardo","Canaria",2524,13.97,29.26,4021
+"Ayacucho","Víctor Fajardo","Cayara",710,31.43,55.22,1335
+"Ayacucho","Víctor Fajardo","Colca",783,19.95,51.58,1220
+"Ayacucho","Víctor Fajardo","Huamanquiquia",943,21.92,51.45,1271
+"Ayacucho","Víctor Fajardo","Huancapi",1245,16.92,45.07,2400
+"Ayacucho","Víctor Fajardo","Huancaraylla",1427,29.83,33.97,1791
+"Ayacucho","Víctor Fajardo","Huaya",1762,22.61,53.08,3188
+"Ayacucho","Víctor Fajardo","Sarhua",1979,27.28,56.21,2985
+"Ayacucho","Víctor Fajardo","Vilcanchos",1929,26.96,67.61,2906
+"Ayacucho","Vilcas Huamán","Accomarca",616,24.79,53.36,1357
+"Ayacucho","Vilcas Huamán","Carhuanca",525,26.07,47.18,1149
+"Ayacucho","Vilcas Huamán","Concepción",1300,24.76,66.57,2885
+"Ayacucho","Vilcas Huamán","Huambalpa",1052,34.42,38.82,2212
+"Ayacucho","Vilcas Huamán","Independencia",884,23.77,56.21,1815
+"Ayacucho","Vilcas Huamán","Saurama",677,30.22,32.54,1464
+"Ayacucho","Vilcas Huamán","Vilcas Huamán",4690,25.57,44.98,8300
+"Ayacucho","Vilcas Huamán","Vischongo",2846,24.15,48.45,4418
+"Cajamarca","Cajabamba","Cachachi",8997,20.89,56.22,24305
+"Cajamarca","Cajabamba","Cajabamba",9650,14.55,48.71,28079
+"Cajamarca","Cajabamba","Condebamba",5267,24.57,64.88,13186
+"Cajamarca","Cajabamba","Sitacocha",4197,23.1,47.41,8717
+"Cajamarca","Cajamarca","Asunción",3110,25.22,60.23,11757
+"Cajamarca","Cajamarca","Cajamarca",70288,8.89,26.75,188363
+"Cajamarca","Cajamarca","Chetilla",1140,39.91,57.1,4005
+"Cajamarca","Cajamarca","Cospán",3178,20.21,50.61,7859
+"Cajamarca","Cajamarca","Encañada",8158,28.13,49.18,23076
+"Cajamarca","Cajamarca","Jesús",5064,18.66,56.88,14240
+"Cajamarca","Cajamarca","Llacanora",1588,18.57,45.81,4905
+"Cajamarca","Cajamarca","Los Baños del Inca",11004,18.3,36.84,34749
+"Cajamarca","Cajamarca","Magdalena",3461,17.57,58.87,9191
+"Cajamarca","Cajamarca","Matará",1593,16.22,48.15,3752
+"Cajamarca","Cajamarca","Namora",3296,22.96,57.25,9466
+"Cajamarca","Cajamarca","San juan",1753,19.95,52.7,4789
+"Cajamarca","Celendín","Celendín",8882,11.46,44.86,24623
+"Cajamarca","Celendín","Chumuch",1775,17.65,56.8,3123
+"Cajamarca","Celendín","Cortegana",4566,26.62,66.06,8099
+"Cajamarca","Celendín","Huasmin",5120,25.65,62.08,13282
+"Cajamarca","Celendín","Jorge Chávez",481,6.22,58.88,620
+"Cajamarca","Celendín","José Gálvez",1349,12.47,45.83,2859
+"Cajamarca","Celendín","La Libertad de Pallán",3880,21.21,64.74,7624
+"Cajamarca","Celendín","Miguel Iglesias",2511,20.27,67.43,4863
+"Cajamarca","Celendín","Oxamarca",2841,15.95,63.55,6425
+"Cajamarca","Celendín","Sorochuco",4620,26.96,53.91,9826
+"Cajamarca","Celendín","Sucre",2803,13.59,55.58,5860
+"Cajamarca","Celendín","Utco",516,18.63,54.39,1304
+"Cajamarca","Chota","Anguía",1607,21.64,62.02,4244
+"Cajamarca","Chota","Chadin",1693,23.93,70.79,4099
+"Cajamarca","Chota","Chalamarca",3505,26.71,58.28,10539
+"Cajamarca","Chota","Chiguirip",1945,25.7,56.85,4678
+"Cajamarca","Chota","Chimban",1680,20.51,51.08,3380
+"Cajamarca","Chota","Choropampa",1523,21.46,64.24,3314
+"Cajamarca","Chota","Chota",15228,22.12,38.18,45958
+"Cajamarca","Chota","Cochabamba",3661,24.54,48.08,6674
+"Cajamarca","Chota","Conchán",2085,26.67,65.55,6459
+"Cajamarca","Chota","Huambos",3466,22.49,62.34,9498
+"Cajamarca","Chota","Lajas",4810,25.84,59.42,12734
+"Cajamarca","Chota","Llama",2631,9.82,33.82,8102
+"Cajamarca","Chota","Miracosta",1442,20.39,69.09,3717
+"Cajamarca","Chota","Paccha",2157,22.39,55.3,5165
+"Cajamarca","Chota","Pión",859,20.71,46.97,1625
+"Cajamarca","Chota","Querocoto",3296,12.35,26.69,9229
+"Cajamarca","Chota","San Juan de Licupis",288,12.06,56.79,1101
+"Cajamarca","Chota","Tacabamba",6952,23.16,62.66,18933
+"Cajamarca","Chota","Tocmoche",363,14.51,52.51,998
+"Cajamarca","Contumazá","Chilete",1273,7.35,36.83,3158
+"Cajamarca","Contumazá","Contumazá",3860,12.77,48.99,8713
+"Cajamarca","Contumazá","Cupisnique",540,5.93,53.01,1566
+"Cajamarca","Contumazá","Guzmango",1654,15.3,42.46,2944
+"Cajamarca","Contumazá","San Benito",1371,7.83,52.41,3558
+"Cajamarca","Contumazá","Santa Cruz de Toledo",698,16.69,73.29,1143
+"Cajamarca","Contumazá","Tantarica",1152,8.46,44.17,2552
+"Cajamarca","Contumazá","Yonán",3789,7.13,25.91,7735
+"Cajamarca","Cutervo","Callayuc",7913,21.16,50.41,10474
+"Cajamarca","Cutervo","Choros",2645,15,45.95,3566
+"Cajamarca","Cutervo","Cujillo",2280,11.31,38.08,2916
+"Cajamarca","Cutervo","Cutervo",35895,22.31,48.69,53075
+"Cajamarca","Cutervo","La Ramada",4224,16.28,50.76,4705
+"Cajamarca","Cutervo","Pimpingos",4265,18.98,46.73,6201
+"Cajamarca","Cutervo","Querocotillo",12127,17.12,54.01,16549
+"Cajamarca","Cutervo","San Andrés de Cutervo",3609,14.35,41.36,5323
+"Cajamarca","Cutervo","San Juan de Cutervo",1795,17.12,41.8,2158
+"Cajamarca","Cutervo","San Luis de Lucma",2789,19.21,42.64,3951
+"Cajamarca","Cutervo","Santa Cruz",2657,21.81,57.33,3229
+"Cajamarca","Cutervo","Santo Domingo de la Capilla",4699,24.79,49.06,5483
+"Cajamarca","Cutervo","Santo Tomás",6075,17.89,44.07,8310
+"Cajamarca","Cutervo","Socota",6335,19.55,48.98,10779
+"Cajamarca","Cutervo","Toribio Casanova",1265,16.46,64.86,1494
+"Cajamarca","Hualgayoc","Bambamarca",21285,30.17,61.49,69411
+"Cajamarca","Hualgayoc","Chugur",1115,16.5,49.76,3553
+"Cajamarca","Hualgayoc","Hualgayoc",5671,24.65,44.24,16849
+"Cajamarca","Jaén","Bellavista",8180,11.02,32.96,15571
+"Cajamarca","Jaén","Chontali",5986,16.56,54.4,10118
+"Cajamarca","Jaén","Colasay",4992,15.02,54.39,11432
+"Cajamarca","Jaén","Huabal",4706,18.82,47.06,7732
+"Cajamarca","Jaén","Jaén",37061,7.52,37.65,86021
+"Cajamarca","Jaén","Las Pirias",2270,20.38,14.73,4344
+"Cajamarca","Jaén","Pomahuaca",4460,20.73,38.55,8763
+"Cajamarca","Jaén","Pucará",3316,12.42,28.73,7110
+"Cajamarca","Jaén","Sallique",4313,26.29,58.44,7798
+"Cajamarca","Jaén","San Felipe",2550,18.75,51.67,5664
+"Cajamarca","Jaén","San José del Alto",3260,14.36,52.73,6936
+"Cajamarca","Jaén","Santa rosa",5288,12.9,57.02,12145
+"Cajamarca","San Ignacio","Chirinos",6358,13.28,43.91,13525
+"Cajamarca","San Ignacio","Huarango",11132,15.76,54.39,20532
+"Cajamarca","San Ignacio","La Coipa",10891,16.46,45.62,18762
+"Cajamarca","San Ignacio","Namballe",6666,11.41,61.8,10200
+"Cajamarca","San Ignacio","San Ignacio",17999,13.36,46.78,32313
+"Cajamarca","San Ignacio","San José de Lourdes",8689,13.86,51.18,18171
+"Cajamarca","San Ignacio","Tabaconas",10457,17.44,56.01,17736
+"Cajamarca","San Marcos","Chancay",1927,24.37,69.09,3297
+"Cajamarca","San Marcos","Eduardo Villanueva",839,13.59,54.09,2294
+"Cajamarca","San Marcos","Gregorio Pita",3038,25.29,65.93,7018
+"Cajamarca","San Marcos","Ichocán",883,15.41,50.6,2149
+"Cajamarca","San Marcos","José Manuel Quiroz",1985,27.42,62.79,4170
+"Cajamarca","San Marcos","José Sabogal",6758,31.54,51.16,12985
+"Cajamarca","San Marcos","Pedro Gálvez",7561,13.81,46.35,19118
+"Cajamarca","San Miguel","Bolívar",627,8.38,54.39,1671
+"Cajamarca","San Miguel","Calquis",1554,19.46,49.58,4426
+"Cajamarca","San Miguel","Catilluc",1540,18.04,62.64,3369
+"Cajamarca","San Miguel","El Prado",687,14.02,49.44,1953
+"Cajamarca","San Miguel","La Florida",1165,12.02,48.38,2531
+"Cajamarca","San Miguel","Llapa",3362,20.94,51.74,5466
+"Cajamarca","San Miguel","Nanchoc",529,8.66,40.94,1404
+"Cajamarca","San Miguel","Niepos",2026,13.42,59.18,4452
+"Cajamarca","San Miguel","San Gregorio",1166,12.34,38.66,2502
+"Cajamarca","San Miguel","San Miguel",7325,16.5,53.06,15641
+"Cajamarca","San Miguel","San Silvestre de Cochán",2559,16.17,56.24,4642
+"Cajamarca","San Miguel","Tongod",1515,16.48,49.29,4385
+"Cajamarca","San Miguel","Unión Agua Blanca",1373,15.51,53.93,3704
+"Cajamarca","San Pablo","San Bernardino",2068,21.06,47.78,4710
+"Cajamarca","San Pablo","San Luis",614,17.81,21.97,1406
+"Cajamarca","San Pablo","San Pablo",5238,19.25,42.19,13347
+"Cajamarca","San Pablo","Tumbaden",1889,20.55,59.91,3651
+"Cajamarca","Santa Cruz","Andabamba",618,17.19,58.43,1752
+"Cajamarca","Santa Cruz","Catache",3770,15.88,48.45,9557
+"Cajamarca","Santa Cruz","Chancaybaños",1625,22.38,44.51,3923
+"Cajamarca","Santa Cruz","La Esperanza",805,25.68,52.09,2889
+"Cajamarca","Santa Cruz","Ninabamba",1061,19.94,42.24,3021
+"Cajamarca","Santa Cruz","Pulán",1867,13.4,55.37,4881
+"Cajamarca","Santa Cruz","Santa Cruz",4382,11.71,40.83,10198
+"Cajamarca","Santa Cruz","Saucepampa",867,19.46,47.07,2031
+"Cajamarca","Santa Cruz","Sexi",138,5.93,24.16,515
+"Cajamarca","Santa Cruz","Uticyacu",478,19.46,40.04,1664
+"Cajamarca","Santa Cruz","Yauyucan",1327,23.08,56.33,3425
+"Cusco","Acomayo","Acomayo",3298,22.73,45.96,5380
+"Cusco","Acomayo","Acopia",1293,24.79,49.32,2557
+"Cusco","Acomayo","Acos",1705,27.53,53.55,2545
+"Cusco","Acomayo","Mosoc Llacta",810,23.14,47.45,1864
+"Cusco","Acomayo","Pomacanchi",4512,25.53,44.91,8340
+"Cusco","Acomayo","Rondocan",1926,28.27,81.6,2918
+"Cusco","Acomayo","Sangarará",1742,25.61,53.06,3753
+"Cusco","Anta","Ancahuasi",3375,21.7,67.6,6785
+"Cusco","Anta","Anta",6300,15.43,52.93,16336
+"Cusco","Anta","Cachimayo",997,10.29,45,2037
+"Cusco","Anta","Chinchaypujio",3494,28.7,65.67,4724
+"Cusco","Anta","Huarocondo",2981,23.23,61.76,5719
+"Cusco","Anta","Limatambo",5904,20.35,62.25,9076
+"Cusco","Anta","Mollepata",1757,21.74,57.8,2901
+"Cusco","Anta","Pucyura",1254,14.42,58.02,3545
+"Cusco","Anta","Zurite",1786,14.63,48.8,3705
+"Cusco","Calca","Calca",6885,17.33,51.03,19312
+"Cusco","Calca","Coya",1306,24.32,56.89,3705
+"Cusco","Calca","Lamay",3399,29.09,53.3,5359
+"Cusco","Calca","Lares",4270,31.7,70.96,7138
+"Cusco","Calca","Pisac",4648,19.02,56.3,9440
+"Cusco","Calca","San Salvador",3238,35.44,67.34,5219
+"Cusco","Calca","Taray",2533,20.49,38.15,4275
+"Cusco","Calca","Yanatile",6665,17.91,48.58,10959
+"Cusco","Canas","Checca",4870,23.56,59.88,5983
+"Cusco","Canas","Kunturkanki",3425,21,39.55,5494
+"Cusco","Canas","Langui",1408,17.72,48.64,2626
+"Cusco","Canas","Layo",2433,18.99,66.41,6217
+"Cusco","Canas","Pampamarca",639,20.54,45.78,2047
+"Cusco","Canas","Quehue",2103,20.28,64.12,3260
+"Cusco","Canas","Túpac Amaru",1705,24.82,58.82,2965
+"Cusco","Canas","Yanaoca",5213,19.41,42.83,9701
+"Cusco","Canchis","Checacupe",2087,22.05,50.62,4883
+"Cusco","Canchis","Combapata",2374,19.72,53.36,5162
+"Cusco","Canchis","Marangani",4572,20.78,50.12,11074
+"Cusco","Canchis","Pitumarca",4096,34.64,61.16,7068
+"Cusco","Canchis","San pablo",2488,23.13,43.53,4979
+"Cusco","Canchis","San pedro",1235,17.72,60.79,2974
+"Cusco","Canchis","Sicuani",22064,11.62,50.07,55269
+"Cusco","Canchis","Tinta",2126,18.71,49.46,5528
+"Cusco","Chumbivílcas","Capacmarca",2898,35.14,60.48,4593
+"Cusco","Chumbivílcas","Chamaca",4267,22.75,46.86,7698
+"Cusco","Chumbivílcas","Colquemarca",6483,26.65,55.91,8656
+"Cusco","Chumbivílcas","Livitaca",9145,24.84,59.49,11516
+"Cusco","Chumbivílcas","Llusco",5536,33.78,63.26,6399
+"Cusco","Chumbivílcas","Quiñota",3524,30.29,51.3,4317
+"Cusco","Chumbivílcas","Santo Tomás",17818,24.08,50.56,24492
+"Cusco","Chumbivílcas","Velille",5683,22.14,53.36,7914
+"Cusco","Cusco","Ccorca",1717,37.76,65.3,2343
+"Cusco","Cusco","Cusco",41811,3.43,30.73,108798
+"Cusco","Cusco","Poroy",1513,11.18,47.19,4462
+"Cusco","Cusco","San Jerónimo",12481,4.74,35.56,31687
+"Cusco","Cusco","San Sebastián",27071,3.88,35.52,74712
+"Cusco","Cusco","Santiago",28204,4.96,39.24,83721
+"Cusco","Cusco","Saylla",969,6.88,45.75,2934
+"Cusco","Cusco","Wanchaq",29449,1.12,18.7,59134
+"Cusco","Espinar","Alto Pichigua",1112,22.21,45.65,2534
+"Cusco","Espinar","Condoroma",483,10.77,56.72,1208
+"Cusco","Espinar","Coporaque",7513,21.67,53.2,15838
+"Cusco","Espinar","Espinar",11323,9.2,39.2,29581
+"Cusco","Espinar","Ocoruro",729,16.37,56.24,1669
+"Cusco","Espinar","Pallpata",2376,15.61,54.76,5270
+"Cusco","Espinar","Pichigua",1838,14.85,42.29,3802
+"Cusco","Espinar","Suyckutambo",1200,22.71,50.59,2796
+"Cusco","La Convención","Echarate",27761,14.54,55.55,42676
+"Cusco","La Convención","Huayopata",3891,15.4,47.18,5772
+"Cusco","La Convención","Kimbiri",7671,17.55,50.05,16434
+"Cusco","La Convención","Maranura",4396,16.58,65.16,6770
+"Cusco","La Convención","Ocobamba",4274,19.9,53.74,6281
+"Cusco","La Convención","Pichari",7359,14.28,47.01,15807
+"Cusco","La Convención","Quelloúno",9740,15.18,60.59,15032
+"Cusco","La Convención","Santa Ana",13316,6.51,45.87,33230
+"Cusco","La Convención","Santa Teresa",4883,15.53,58.37,6999
+"Cusco","La Convención","Vilcabamba",11970,15.89,61.61,17832
+"Cusco","Paruro","Accha",2802,22.31,46.74,3853
+"Cusco","Paruro","Ccapi",2284,27.59,62.9,3860
+"Cusco","Paruro","Colcha",1086,21.76,66.03,1335
+"Cusco","Paruro","Huanoquite",3756,32.33,73.51,5556
+"Cusco","Paruro","Omacha",5251,31.59,57.89,6453
+"Cusco","Paruro","Paccaritambo",1409,35.63,73.23,2440
+"Cusco","Paruro","Paruro",2200,18.41,52.64,3512
+"Cusco","Paruro","Pillpinto",745,30.16,63.91,1325
+"Cusco","Paruro","Yaurisque",1405,25.55,47.64,2605
+"Cusco","Paucartambo","Caicay",1764,31.22,66.77,2521
+"Cusco","Paucartambo","Challabamba",6706,35.06,65.84,9983
+"Cusco","Paucartambo","Colquepata",7415,35.53,62.8,9616
+"Cusco","Paucartambo","Huancarani",4960,31.55,66.38,6910
+"Cusco","Paucartambo","Kosñipata",2559,19.13,50.52,4790
+"Cusco","Paucartambo","Paucartambo",7000,37.08,53.47,12057
+"Cusco","Quispicanchi","Andahuaylillas",2598,13.45,48.47,4940
+"Cusco","Quispicanchi","Camanti",922,9.67,32.53,2073
+"Cusco","Quispicanchi","Ccarhuayo",1546,31.85,70.3,2886
+"Cusco","Quispicanchi","Ccatca",10294,32.69,59.6,14346
+"Cusco","Quispicanchi","Cusipata",3163,24.4,42.76,4755
+"Cusco","Quispicanchi","Huaro",2585,16.56,46.46,4366
+"Cusco","Quispicanchi","Lucre",1493,12.69,43.42,3850
+"Cusco","Quispicanchi","Marcapata",2895,24.9,58.87,4520
+"Cusco","Quispicanchi","Ocongate",8493,25.71,52.76,13578
+"Cusco","Quispicanchi","Oropesa",2241,10.82,49.96,6432
+"Cusco","Quispicanchi","Quiquijana",7320,33.77,52.45,10340
+"Cusco","Quispicanchi","Urcos",5863,16.11,45.52,10087
+"Cusco","Urubamba","Chinchero",4795,14.53,61.58,9422
+"Cusco","Urubamba","Huayllabamba",1694,11.56,48.67,4980
+"Cusco","Urubamba","Machupicchu",2203,3.72,26.15,5286
+"Cusco","Urubamba","Maras",2465,20.45,54.06,6258
+"Cusco","Urubamba","Ollantaytambo",4807,18.2,56.32,9851
+"Cusco","Urubamba","Urubamba",7617,8.47,41.6,17787
+"Cusco","Urubamba","Yucay",1419,6.73,30.66,3101
+"Huancavelica","Acobamba","Acobamba",4396,16.74,48.83,9853
+"Huancavelica","Acobamba","Andabamba",2612,22.4,34.81,4802
+"Huancavelica","Acobamba","Anta",4473,26.27,54.51,8253
+"Huancavelica","Acobamba","Caja",1594,19.77,28.39,2968
+"Huancavelica","Acobamba","Marcas",989,23.81,59.13,2367
+"Huancavelica","Acobamba","Paucará",13221,22.71,44.31,24317
+"Huancavelica","Acobamba","Pomacocha",1630,15.83,50.44,4273
+"Huancavelica","Acobamba","Rosario",4217,26.82,61.3,6959
+"Huancavelica","Angaraes","Anchonga",4687,32.4,57.65,7487
+"Huancavelica","Angaraes","Callanmarca",403,27.05,56.63,898
+"Huancavelica","Angaraes","Ccochaccasa",2043,22.26,35.42,3434
+"Huancavelica","Angaraes","Chincho",592,17.9,47.71,1322
+"Huancavelica","Angaraes","Congalla",1830,31.39,62.9,4381
+"Huancavelica","Angaraes","Huanca-Huanca",1036,28.01,58.67,1643
+"Huancavelica","Angaraes","Huayllay Grande",693,32.15,59.81,2007
+"Huancavelica","Angaraes","Julcamarca",765,13.35,42.39,1658
+"Huancavelica","Angaraes","Lircay",11625,25.79,37.31,24614
+"Huancavelica","Angaraes","San Antonio de Antaparco",458,17.49,64.65,3055
+"Huancavelica","Angaraes","Santo Tomás de Pata",808,22.36,23.41,1828
+"Huancavelica","Angaraes","Secclla",1729,22.3,65.18,3377
+"Huancavelica","Castrovirreyna","Arma",615,19.08,62.95,1504
+"Huancavelica","Castrovirreyna","Aurahuá",690,16.29,46.09,2140
+"Huancavelica","Castrovirreyna","Capillas",638,10.12,62.16,1402
+"Huancavelica","Castrovirreyna","Castrovirreyna",2324,18.31,34.95,3428
+"Huancavelica","Castrovirreyna","Chupamarca",537,11.18,47.13,1129
+"Huancavelica","Castrovirreyna","Cocas",502,16.23,46.36,948
+"Huancavelica","Castrovirreyna","Huachos",672,5.15,45.48,1774
+"Huancavelica","Castrovirreyna","Huamatambo",197,11.11,37.97,447
+"Huancavelica","Castrovirreyna","Mollepampa",814,12.4,56.1,1550
+"Huancavelica","Castrovirreyna","San Juan",248,8.6,50,620
+"Huancavelica","Castrovirreyna","Santa Ana",1451,6.67,16.31,1983
+"Huancavelica","Castrovirreyna","Tantara",380,7.77,43.04,780
+"Huancavelica","Castrovirreyna","Ticrapo",753,8.75,42.86,1795
+"Huancavelica","Churcampa","Anco",5260,34.12,62.84,10836
+"Huancavelica","Churcampa","Chinchihuasi",2077,26.81,49.54,4378
+"Huancavelica","Churcampa","Churcampa",2919,18.74,42.94,5960
+"Huancavelica","Churcampa","El Carmen",1564,30.81,62.11,3102
+"Huancavelica","Churcampa","La Merced",327,12.87,49.69,1149
+"Huancavelica","Churcampa","Locroja",1897,24.99,30.11,4439
+"Huancavelica","Churcampa","Pachamarca",1739,25.46,35.37,3005
+"Huancavelica","Churcampa","Paucarbamba",2633,26.24,64.55,6646
+"Huancavelica","Churcampa","San Miguel de Mayocc",488,10.97,42.14,1144
+"Huancavelica","Churcampa","San Pedro de Coris",2350,14.89,26.77,4244
+"Huancavelica","Huancavelica","Acobambilla",1709,8.83,58.7,4005
+"Huancavelica","Huancavelica","Acoria",14531,23.99,57.37,31299
+"Huancavelica","Huancavelica","Ascensión",4578,9.18,35.29,9735
+"Huancavelica","Huancavelica","Conayca",566,20.84,72.99,1323
+"Huancavelica","Huancavelica","Cuenca",432,26.82,66.72,2226
+"Huancavelica","Huancavelica","Huachocolpa",1724,14.45,17.47,3032
+"Huancavelica","Huancavelica","Huancavelica",17324,8.57,28.28,37255
+"Huancavelica","Huancavelica","Huando",4244,23.11,53.77,7804
+"Huancavelica","Huancavelica","Huayllahuara",309,19.56,50.39,907
+"Huancavelica","Huancavelica","Izcuchaca",366,10.03,40.29,979
+"Huancavelica","Huancavelica","Laria",584,20.04,40.37,1443
+"Huancavelica","Huancavelica","Manta",501,16.14,70.16,1741
+"Huancavelica","Huancavelica","Mariscal Cáceres",218,14.02,43.28,760
+"Huancavelica","Huancavelica","Moya",1159,15.22,67.28,2272
+"Huancavelica","Huancavelica","Nuevo Occoro",1068,16.54,60.27,2536
+"Huancavelica","Huancavelica","Palca",1331,23.97,62.99,3467
+"Huancavelica","Huancavelica","Pilchaca",493,14.74,36.63,626
+"Huancavelica","Huancavelica","Vilca",1980,16.08,59.37,3186
+"Huancavelica","Huancavelica","Yauli",15041,26.25,55.88,28127
+"Huancavelica","Huaytará","Ayaví",292,7.29,64.04,817
+"Huancavelica","Huaytará","Córdova",1182,6.9,23.58,2101
+"Huancavelica","Huaytará","Huayacundo Arma",169,9.87,52.25,451
+"Huancavelica","Huaytará","Huaytará",952,7.44,35.09,2249
+"Huancavelica","Huaytará","Laramarca",253,10.16,49.1,1040
+"Huancavelica","Huaytará","Ocoyo",1161,10.72,25.94,1901
+"Huancavelica","Huaytará","Pilpichaca",2033,23.25,19.01,3743
+"Huancavelica","Huaytará","Querco",340,12.78,53.42,840
+"Huancavelica","Huaytará","Quito-Arma",320,15.08,52.19,881
+"Huancavelica","Huaytará","San Antonio de Cusicancha",944,19.7,56.57,1657
+"Huancavelica","Huaytará","San Francisco de Sangayaico",297,9.47,51.24,821
+"Huancavelica","Huaytará","San Isidro",137,10.19,51.11,1114
+"Huancavelica","Huaytará","Santiago de Chocorvos",1437,17.33,51.84,3359
+"Huancavelica","Huaytará","Santiago de Quirahuara",239,13.88,40.97,698
+"Huancavelica","Huaytará","Santo Domingo de Capillas",309,13.22,63.46,1081
+"Huancavelica","Huaytará","Tambo",177,14.73,41.33,521
+"Huancavelica","Tayacaja","Acostambo",2080,17.42,43.48,4537
+"Huancavelica","Tayacaja","Acraquía",2186,27.84,44.12,5203
+"Huancavelica","Tayacaja","Ahuaycha",2391,18.65,66.9,5212
+"Huancavelica","Tayacaja","Colcabamba",10178,25.86,23.15,20307
+"Huancavelica","Tayacaja","Daniel Hernandez",4343,20.21,44.12,9752
+"Huancavelica","Tayacaja","Huachocolpa",2228,12.82,65.53,4976
+"Huancavelica","Tayacaja","Huaribamba",3297,20.92,54.76,7639
+"Huancavelica","Tayacaja","Ñahuimpuquio",865,16.15,8.75,2175
+"Huancavelica","Tayacaja","Pampas",4431,14.35,45.11,10880
+"Huancavelica","Tayacaja","Pazos",3062,18.91,54.35,7511
+"Huancavelica","Tayacaja","Quishuar",443,26.47,59.24,942
+"Huancavelica","Tayacaja","Salcabamba",2590,25.29,57.31,5121
+"Huancavelica","Tayacaja","Salcahuasi",1791,28.22,55.58,3821
+"Huancavelica","Tayacaja","San Marcos de Rocchac",1374,21.49,70.44,3202
+"Huancavelica","Tayacaja","Surcubamba",2664,25.02,17.26,5112
+"Huancavelica","Tayacaja","Tintay Puncu",3477,19.83,63.93,8511
+"Huánuco","Ambo","Ambo",6238,17.85,52.54,15745
+"Huánuco","Ambo","Cayna",2569,21.36,67.12,3704
+"Huánuco","Ambo","Colpas",1940,28.21,66.15,2706
+"Huánuco","Ambo","Conchamarca",3272,20.17,49.42,5855
+"Huánuco","Ambo","Huacar",5377,24.02,59.78,8096
+"Huánuco","Ambo","San Francisco",2376,18.18,70.1,3285
+"Huánuco","Ambo","San Rafael",8737,27.29,64.33,11604
+"Huánuco","Ambo","Tomay Kichwa",1304,12.9,46.37,4488
+"Huánuco","Dos de Mayo","Chuquis",2932,22.61,60.49,5125
+"Huánuco","Dos de Mayo","La Unión",3285,6.92,31.5,6114
+"Huánuco","Dos de Mayo","Marías",5133,25.96,45.47,7656
+"Huánuco","Dos de Mayo","Pachas",4891,12.64,22.23,11121
+"Huánuco","Dos de Mayo","Quivilla",1235,13.3,27.49,2088
+"Huánuco","Dos de Mayo","Ripán",3698,14.34,50.27,6330
+"Huánuco","Dos de Mayo","Shunqui",1240,16.08,67.14,2549
+"Huánuco","Dos de Mayo","Sillapata",1666,19.72,38.78,2898
+"Huánuco","Dos de Mayo","Yanas",1513,22.62,55.53,3127
+"Huánuco","Huacaybamba","Canchabamba",2019,27.12,58.43,3038
+"Huánuco","Huacaybamba","Cochabamba",1098,12.92,47.82,2750
+"Huánuco","Huacaybamba","Huacaybamba",3945,21.9,47.95,6737
+"Huánuco","Huacaybamba","Pinra",4154,28.38,71.76,7883
+"Huánuco","Huamalíes","Arancay",1019,16.75,42.71,1767
+"Huánuco","Huamalíes","Chavín de Pariarca",3174,18.62,42.16,4295
+"Huánuco","Huamalíes","Jacas Grande",4332,20.28,28.01,6394
+"Huánuco","Huamalíes","Jircan",1217,24.02,31.87,2948
+"Huánuco","Huamalíes","Llata",7078,14.8,36.4,14873
+"Huánuco","Huamalíes","Miraflores",2310,27.13,57.23,3460
+"Huánuco","Huamalíes","Monzón",7758,10.49,41.88,18751
+"Huánuco","Huamalíes","Punchao",1289,21.52,26.34,2331
+"Huánuco","Huamalíes","Puños",2650,18.75,67.22,4727
+"Huánuco","Huamalíes","Singa",2003,19.01,46.79,4016
+"Huánuco","Huamalíes","Tantamayo",1874,17.63,54.78,2888
+"Huánuco","Huánuco","Amarilis",28926,7.81,38.03,67617
+"Huánuco","Huánuco","Chinchao",10682,25.73,57.23,24796
+"Huánuco","Huánuco","Churubamba",14162,50.41,50.13,24573
+"Huánuco","Huánuco","Huánuco",34999,5.76,35.53,74774
+"Huánuco","Huánuco","Margos",10756,19.11,63.24,14760
+"Huánuco","Huánuco","Pillco marca",11219,7.36,43.65,23896
+"Huánuco","Huánuco","Quisqui",5224,26.5,57.77,7134
+"Huánuco","Huánuco","San Francisco de Cayrán",3029,28.43,63.53,4739
+"Huánuco","Huánuco","San Pedro de Chaulán",5586,30.61,65.79,6903
+"Huánuco","Huánuco","Santa maría del valle",13289,39.15,62.86,18373
+"Huánuco","Huánuco","Yarumayo",2122,22.43,8.2,2668
+"Huánuco","Lauricocha","Baños",2557,15.43,41.16,5412
+"Huánuco","Lauricocha","Jesus",4047,6.33,53.42,6233
+"Huánuco","Lauricocha","Jivia",1441,5.34,56.06,2488
+"Huánuco","Lauricocha","Queropalca",739,1.66,50.34,1687
+"Huánuco","Lauricocha","Rondos",5549,7.59,46.79,7378
+"Huánuco","Lauricocha","San Francisco de Asís",2033,14.63,70.09,2426
+"Huánuco","Lauricocha","San Miguel de Cauri",6022,7.38,38.76,9699
+"Huánuco","Leoncio Prado","Daniel Alomías Robles",3026,17.24,50.6,6597
+"Huánuco","Leoncio Prado","Hermilio Valdizán",1557,18.96,73.53,3793
+"Huánuco","Leoncio Prado","José Crespo y Castillo",12957,12.46,50.04,32255
+"Huánuco","Leoncio Prado","Luyando",3459,15.01,50.16,8599
+"Huánuco","Leoncio Prado","Mariano Dámaso Beraún",3960,21.22,60.86,9332
+"Huánuco","Leoncio Prado","Rupa-Rupa",20592,5.81,41.05,56389
+"Huánuco","Marañón","Cholón",5918,16.83,64.59,8999
+"Huánuco","Marañón","Huacrachuco",8163,24.57,51.32,15122
+"Huánuco","Marañón","San Buenaventura",1959,39.05,71.21,2499
+"Huánuco","Pachitea","Chaglla",4715,21.17,54.23,11062
+"Huánuco","Pachitea","Molino",6741,40.83,64.91,12227
+"Huánuco","Pachitea","Panao",10611,34.79,63.57,19813
+"Huánuco","Pachitea","Umari",12012,29.63,57.12,17219
+"Huánuco","Puerto Inca","Codo del Pozuzo",2488,12.45,54.5,6067
+"Huánuco","Puerto Inca","Honoria",2476,6.55,58.1,5628
+"Huánuco","Puerto Inca","Puerto Inca",3833,9.61,58.26,8633
+"Huánuco","Puerto Inca","Tournavista",2055,10.77,51.18,5052
+"Huánuco","Puerto Inca","Yuyapichis",2112,9.3,47.89,5652
+"Huánuco","Yarowilca","Aparicio Pomares",3912,24.44,71.85,5743
+"Huánuco","Yarowilca","Cahuac",1729,9.38,46.58,3374
+"Huánuco","Yarowilca","Chacabamba",2008,10.01,69.23,3007
+"Huánuco","Yarowilca","Chavinillo",4639,22.54,64.66,6721
+"Huánuco","Yarowilca","Choras",2438,19.49,40.73,3438
+"Huánuco","Yarowilca","Jacas Chico",1219,19.58,40.04,1889
+"Huánuco","Yarowilca","Obas",4576,20.15,36.18,5967
+"Huánuco","Yarowilca","Pampamarca",1296,18.02,63.02,2241
+"Ica","Chincha","Alto Larán",2842,4.32,22.82,6220
+"Ica","Chincha","Chavín",529,15.8,37.47,1096
+"Ica","Chincha","Chincha Alta",27175,1.77,26.07,59574
+"Ica","Chincha","Chincha Baja",6563,3.45,17.72,12195
+"Ica","Chincha","El Carmen",5350,4.83,18.38,11725
+"Ica","Chincha","Grocio Prado",8333,3.36,32.74,20621
+"Ica","Chincha","Pueblo Nuevo",21638,2.6,30.69,52143
+"Ica","Chincha","San Juan de Yanac",121,9.64,60,471
+"Ica","Chincha","San Pedro de Huacarpana",566,5.48,52.33,1576
+"Ica","Chincha","Sunampe",11075,2.04,24.88,23969
+"Ica","Chincha","Tambo de Mora",2414,1.34,22.93,4725
+"Ica","Ica","Ica",57528,1.42,22.43,125189
+"Ica","Ica","La Tinguiña",11239,3.07,26.55,30902
+"Ica","Ica","Los Aquijes",7722,2.5,18.02,16298
+"Ica","Ica","Ocucaje",1906,5.84,30.87,3639
+"Ica","Ica","Pachacutec",3175,2.74,17,6000
+"Ica","Ica","Parcona",17450,2.73,30.95,50349
+"Ica","Ica","Pueblo Nuevo",2511,2.4,17.04,4588
+"Ica","Ica","Salas",9027,2.95,11.44,17973
+"Ica","Ica","San José de los Molinos",2779,5.85,17.14,6070
+"Ica","Ica","San Juan Bautista",6384,2.06,20.45,12430
+"Ica","Ica","Santiago",12542,4.52,13.78,23657
+"Ica","Ica","Subtanjalla",9148,2.26,23.36,19019
+"Ica","Ica","Tate",2130,1.13,16.12,4101
+"Ica","Ica","Yauca del Rosario",380,8.76,47.93,1117
+"Ica","Nazca","Changuillo",728,10.54,27.75,1950
+"Ica","Nazca","El Ingenio",1193,9.12,38,2932
+"Ica","Nazca","Marcona",7859,1.92,21.65,12876
+"Ica","Nazca","Nazca",7450,3.86,33.83,26062
+"Ica","Nazca","Vista Alegre",4946,5.07,34.84,13711
+"Ica","Palpa","Llipata",603,7.54,18.36,1420
+"Ica","Palpa","Palpa",3183,4.74,30.09,7250
+"Ica","Palpa","Rio Grande",1253,7.57,25.28,2731
+"Ica","Palpa","Santa Cruz",393,4.7,30.94,1060
+"Ica","Palpa","Tibillo",136,8.74,34.1,414
+"Ica","Pisco","Huancano",539,6.88,30.4,1758
+"Ica","Pisco","Humay",1715,7.86,33.66,5437
+"Ica","Pisco","Independencia",2525,6.45,31.95,12390
+"Ica","Pisco","Paracas",1941,2.32,15.22,4146
+"Ica","Pisco","Pisco",23095,1.7,28.4,54997
+"Ica","Pisco","San André",4268,2.01,36.36,13151
+"Ica","Pisco","San Clemente",6664,5.64,25.89,19324
+"Ica","Pisco","Túpac Amaru Inca",6058,2.92,28.83,14676
+"Junín","Chanchamayo","Chanchamayo",7178,5.7,37.26,26310
+"Junín","Chanchamayo","Perené",15228,8.84,44.21,56292
+"Junín","Chanchamayo","Pichanaqui",11379,7.89,47.19,50529
+"Junín","Chanchamayo","San Luis de Shuaro",1962,10.53,48,6977
+"Junín","Chanchamayo","San Ramón",9516,6.64,38.59,26088
+"Junín","Chanchamayo","Vitoc",1426,8.08,25.34,2753
+"Junín","Chupaca","Ahuac",1490,9.11,38.73,6547
+"Junín","Chupaca","Chongos Bajo",1038,8.58,49.4,4409
+"Junín","Chupaca","Chupaca",4607,5.67,36.95,20976
+"Junín","Chupaca","Huachac",954,7.54,25.16,3738
+"Junín","Chupaca","Huamancaca Chico",871,7.03,50.32,4998
+"Junín","Chupaca","San Juan de Jarpa",568,14.57,57.45,3664
+"Junín","Chupaca","San Juan de Yscos",448,10.58,32.1,2332
+"Junín","Chupaca","Tres de Diciembre",462,9.05,41.49,1920
+"Junín","Chupaca","Yanacancha",500,11.62,50,3294
+"Junín","Concepción","Aco",582,12.01,58.78,1951
+"Junín","Concepción","Andamarca",2022,26.15,69.57,5506
+"Junín","Concepción","Chambara",437,13.92,33.06,2985
+"Junín","Concepción","Cochas",765,11.25,68.97,2227
+"Junín","Concepción","Comas",2181,16.92,10.63,7801
+"Junín","Concepción","Concepción",4802,4.98,34.14,14131
+"Junín","Concepción","Heroínas Toledo",404,8.84,52.94,1422
+"Junín","Concepción","Manzanares",502,5.62,40.79,1540
+"Junín","Concepción","Mariscal Castilla",318,12.79,62.92,1509
+"Junín","Concepción","Matahuasi",945,6.71,28.99,5162
+"Junín","Concepción","Mito",374,5.92,34.57,1476
+"Junín","Concepción","Nueve de Julio",417,7.96,38.69,1774
+"Junín","Concepción","Orcotuna",894,6.69,44.23,4056
+"Junín","Concepción","San jose de quero",949,9.66,52.13,6452
+"Junín","Concepción","Santa rosa de ocopa",654,7.9,33.93,2129
+"Junín","Huancayo","Carhuacallanga",272,13.4,50.92,840
+"Junín","Huancayo","Chacapampa",374,21.89,53.57,1212
+"Junín","Huancayo","Chicche",424,19.06,35.65,1271
+"Junín","Huancayo","Chilca",18293,5.91,42.5,77392
+"Junín","Huancayo","Chongos Alto",538,17.89,49.88,1686
+"Junín","Huancayo","Chupuro",629,12.8,49.73,2012
+"Junín","Huancayo","Colca",610,11.34,55.17,1994
+"Junín","Huancayo","Cullhuas",772,21.58,54.79,2583
+"Junín","Huancayo","El Tambo",51880,3.22,28.47,146847
+"Junín","Huancayo","Huacrapuquio",391,15.32,59.16,1415
+"Junín","Huancayo","Hualhuas",881,7.39,36.8,3903
+"Junín","Huancayo","Huancán",3650,7.49,42.05,15024
+"Junín","Huancayo","Huancayo",34733,3.94,33.24,112054
+"Junín","Huancayo","Huasicancha",256,11.11,49.35,992
+"Junín","Huancayo","Huayucachi",1873,8.17,42.48,8076
+"Junín","Huancayo","Ingenio",964,11.22,37.4,2652
+"Junín","Huancayo","Pariahuanca",3028,22.13,60.58,7057
+"Junín","Huancayo","Pilcomayo",4290,5.25,34.14,13295
+"Junín","Huancayo","Pucará",1991,13.01,54.49,5655
+"Junín","Huancayo","Quichuay",517,12.7,36.87,1929
+"Junín","Huancayo","Quilcas",1073,10.05,41.53,4015
+"Junín","Huancayo","San Agustín",2351,6.63,35.23,10267
+"Junín","Huancayo","San Jerónimo de Tunán",3128,5.9,36.59,9658
+"Junín","Huancayo","Saño",1079,8.3,38.83,3778
+"Junín","Huancayo","Santo Domingo de Acobamba",3696,20.68,52.77,8055
+"Junín","Huancayo","Sapallanga",2169,11.63,48.58,13087
+"Junín","Huancayo","Sicaya",1888,9.59,27.13,7532
+"Junín","Huancayo","Viques",620,9.27,54.32,2065
+"Junín","Jauja","Acolla",2347,9.41,37.84,8402
+"Junín","Jauja","Apata",1291,8.68,36.72,4956
+"Junín","Jauja","Ataura",520,5.77,25.94,1269
+"Junín","Jauja","Canchayllo",504,9.91,14.13,1774
+"Junín","Jauja","Curicaca",372,9.17,21.84,1756
+"Junín","Jauja","El Mantaro",669,5.72,28.62,2612
+"Junín","Jauja","Huamalí",558,4.95,38.98,1968
+"Junín","Jauja","Huaripampa",452,5.19,30.33,1049
+"Junín","Jauja","Huertas",419,5.95,51.87,1865
+"Junín","Jauja","Janjaillo",356,17.8,55.56,905
+"Junín","Jauja","Jauja",4805,3.49,37.12,16524
+"Junín","Jauja","Julcán",334,7.63,34.24,848
+"Junín","Jauja","Leonor Ordoñez",607,7.34,26.12,1651
+"Junín","Jauja","Llocllapampa",504,9.57,23.75,1343
+"Junín","Jauja","Marco",547,11.73,30.32,2041
+"Junín","Jauja","Masma",773,8.46,49.75,2229
+"Junín","Jauja","Masma Chicche",176,12.67,11.19,912
+"Junín","Jauja","Molinos",710,9.56,53.12,1816
+"Junín","Jauja","Monobamba",373,9.06,56.59,1353
+"Junín","Jauja","Muqui",282,5.92,23.18,1057
+"Junín","Jauja","Muquiyauyo",864,6.87,23.99,2399
+"Junín","Jauja","Paca",409,12.31,43.49,1251
+"Junín","Jauja","Paccha",432,8.32,23.05,2123
+"Junín","Jauja","Pancán",269,8.4,29.21,1398
+"Junín","Jauja","Parco",477,9.65,31.26,1504
+"Junín","Jauja","Pomacancha",591,13.04,43.9,2141
+"Junín","Jauja","Ricrán",528,13.8,58.06,1972
+"Junín","Jauja","San Lorenzo",531,8.58,31.06,2265
+"Junín","Jauja","San Pedro de Chunán",184,9.05,39.56,974
+"Junín","Jauja","Sausa",985,7.72,35.48,2806
+"Junín","Jauja","Sincos",1448,6.56,37.83,4469
+"Junín","Jauja","Tunan Marca",315,10.06,33.66,1404
+"Junín","Jauja","Yauli",555,9.5,43.37,1640
+"Junín","Jauja","Yauyos",2668,5.47,37.03,9377
+"Junín","Junín","Carhuamayo",2046,13.05,42.17,8386
+"Junín","Junín","Junín",4422,10.16,40.47,12088
+"Junín","Junín","Ondores",824,5.84,46.11,2571
+"Junín","Junín","Ulcumayo",2152,21.61,65.25,7142
+"Junín","Satipo","Coviriali",1236,12,60.54,5266
+"Junín","Satipo","Llaylla",945,13.01,53.53,5143
+"Junín","Satipo","Mazamari-Pangoa",19436,11.88,48.36,81092
+"Junín","Satipo","Pampa Hermosa",2478,11.61,40.41,7508
+"Junín","Satipo","Río Negro",7785,9.75,35.67,25981
+"Junín","Satipo","Río Tambo",16637,17.11,57.49,32575
+"Junín","Satipo","Satipo",10481,6.48,41.9,36307
+"Junín","Tarma","Acobamba",3088,6.36,52.21,13402
+"Junín","Tarma","Huaricolca",675,10.59,53.22,3003
+"Junín","Tarma","Huasahuasi",2665,11.99,53.16,15384
+"Junín","Tarma","La Unión",1248,8.37,45.22,3839
+"Junín","Tarma","Palca",1437,9.78,52.24,6415
+"Junín","Tarma","Palcamayo",1229,10.13,42.26,8295
+"Junín","Tarma","San Pedro de Cajas",1499,14.96,67.06,5808
+"Junín","Tarma","Tapo",1754,16.23,67.37,5919
+"Junín","Tarma","Tarma",14184,5.53,39.73,50165
+"Junín","Yauli","Chacapalpa",291,7.75,26.58,918
+"Junín","Yauli","Huay-Huay",1099,3.12,18.67,1675
+"Junín","Yauli","La oroya",10332,2.78,27.18,18606
+"Junín","Yauli","Marcapomacocha",492,4.27,26.41,1267
+"Junín","Yauli","Morococha",3783,2.01,11.33,5397
+"Junín","Yauli","Paccha",812,4.68,29.24,1883
+"Junín","Yauli","Santa Barbara de Carhuacayán",498,11.21,15.1,1935
+"Junín","Yauli","Santa Rosa de Sacco",5963,2.71,27.61,11297
+"Junín","Yauli","Suitucancha",339,3.14,47.46,907
+"Junín","Yauli","Yauli",4258,1.75,11.07,5953
+"La Libertad","Ascope","Ascope",3318,6.39,31.58,7012
+"La Libertad","Ascope","Casa Grande",16961,4.71,26.44,29884
+"La Libertad","Ascope","Chicama",8874,6.35,29.58,15056
+"La Libertad","Ascope","Chocope",6008,5.31,24.44,10138
+"La Libertad","Ascope","Magdalena de Cao",1805,7.08,18.53,2884
+"La Libertad","Ascope","Paiján",9691,6.79,33.51,23194
+"La Libertad","Ascope","Rázuri",3787,5.18,26.72,8330
+"La Libertad","Ascope","Santiago de Cao",10490,4.45,26.48,19731
+"La Libertad","Bolívar","Bambamarca",2295,20.28,54.53,3537
+"La Libertad","Bolívar","Bolívar",3055,12.72,50.66,4751
+"La Libertad","Bolívar","Condormarca",1133,12.35,59.28,2222
+"La Libertad","Bolívar","Longotea",1225,9.36,35.79,2306
+"La Libertad","Bolívar","Uchumarca",1404,8.83,50.32,2888
+"La Libertad","Bolívar","Ucuncha",563,12.5,43.82,946
+"La Libertad","Chepén","Chepán",16515,5.88,32.32,45639
+"La Libertad","Chepén","Pacanga",7071,10.43,24.78,17976
+"La Libertad","Chepén","Pueblo Nuevo",4896,9.1,19,12365
+"La Libertad","Gran Chimú","Cascas",5180,10.69,42.14,14191
+"La Libertad","Gran Chimú","Compín",895,13.59,49.03,2441
+"La Libertad","Gran Chimú","Lucma",3286,12.8,57.27,5774
+"La Libertad","Gran Chimú","Sayapullo",3537,14.04,36.41,7993
+"La Libertad","Julcán","Calamarca",3531,17.8,52.8,6446
+"La Libertad","Julcán","Carabamba",4910,16.73,70.94,7104
+"La Libertad","Julcán","Huaso",3173,17.63,73.05,6423
+"La Libertad","Julcán","Julcán",7738,17.43,67.44,13012
+"La Libertad","Otuzco","Agallpampa",6660,18.68,64.67,9802
+"La Libertad","Otuzco","Charat",1383,11.22,23.59,3095
+"La Libertad","Otuzco","Huaranchal",1755,12.86,53.02,5087
+"La Libertad","Otuzco","La Cuesta",472,11.61,19.7,708
+"La Libertad","Otuzco","Mache",2101,11.64,46.41,3195
+"La Libertad","Otuzco","Otuzco",7141,12.21,50.81,25265
+"La Libertad","Otuzco","Paranday",456,11.09,59.11,689
+"La Libertad","Otuzco","Salpo",4024,12.69,57.24,6437
+"La Libertad","Otuzco","Sinsicap",4127,21.94,62.2,8271
+"La Libertad","Otuzco","Usquil",8054,18.91,64.28,26268
+"La Libertad","Pacasmayo","Guadalupe",11559,7.74,27.11,37239
+"La Libertad","Pacasmayo","Jequetepeque",2001,7.55,16.81,3457
+"La Libertad","Pacasmayo","Pacasmayo",12650,2.92,25.71,26118
+"La Libertad","Pacasmayo","San José",2980,9.02,21.02,11414
+"La Libertad","Pacasmayo","San Pedro de Lloc",8580,4.58,20.46,16149
+"La Libertad","Pataz","Buldibuyo",957,16.43,60.23,3836
+"La Libertad","Pataz","Chillia",4324,32.24,66.36,12043
+"La Libertad","Pataz","Huancaspata",2037,25.79,67.24,6352
+"La Libertad","Pataz","Huaylillas",416,17.83,61.79,2338
+"La Libertad","Pataz","Huayo",1622,25.4,68.71,4145
+"La Libertad","Pataz","Ongon",810,30.76,72.97,1694
+"La Libertad","Pataz","Parcoy",8014,10.64,18.5,16437
+"La Libertad","Pataz","Patáz",2068,10.05,34.86,7410
+"La Libertad","Pataz","Pias",358,17.9,19.88,1525
+"La Libertad","Pataz","Santiago de Challas",1034,21.5,64.56,2797
+"La Libertad","Pataz","Taurija",1244,24.08,63.83,3002
+"La Libertad","Pataz","Tayabamba",5221,23.09,51.25,13785
+"La Libertad","Pataz","Urpay",1885,23.59,64.76,3019
+"La Libertad","Sánchez Carrión","Chugay",9044,30.26,64.4,17236
+"La Libertad","Sánchez Carrión","Cochorco",5007,24.69,39.9,8751
+"La Libertad","Sánchez Carrión","Curgos",3471,28.37,53.48,8181
+"La Libertad","Sánchez Carrión","Huamachuco",20141,22.47,44.59,52459
+"La Libertad","Sánchez Carrión","Marcabal",7133,36.16,66.51,14807
+"La Libertad","Sánchez Carrión","Sanagorán",6471,36.76,43.4,12983
+"La Libertad","Sánchez Carrión","Sarín",4652,30.75,65.44,9156
+"La Libertad","Sánchez Carrión","Sartimbamba",5657,35.17,57.61,12648
+"La Libertad","Santiago de Chuco","Angasmarca",2939,15.5,17.57,6052
+"La Libertad","Santiago de Chuco","Cachicadán",2806,15.01,34.09,6663
+"La Libertad","Santiago de Chuco","Mollebamba",729,15.71,29.33,1955
+"La Libertad","Santiago de Chuco","Mollepata",1024,21.94,65.68,2748
+"La Libertad","Santiago de Chuco","Quiruvilca",7446,12.77,30.54,14060
+"La Libertad","Santiago de Chuco","Santa Cruz de Chuca",1473,14.69,64.11,3228
+"La Libertad","Santiago de Chuco","Santiago de Chuco",8787,11.86,58.03,19860
+"La Libertad","Santiago de Chuco","Sitabamba",2061,23.82,44.76,3754
+"La Libertad","Trujillo","El Porvenir",42314,5.63,34.63,140507
+"La Libertad","Trujillo","Florencia de Mora",11242,5.5,38.09,40014
+"La Libertad","Trujillo","Huanchaco",15433,4.35,32.34,44806
+"La Libertad","Trujillo","La Esperanza",51512,4.06,31.83,151845
+"La Libertad","Trujillo","Laredo",13431,5.94,33.07,32825
+"La Libertad","Trujillo","Moche",14067,4.06,26.91,29727
+"La Libertad","Trujillo","Poroto",905,11.36,49.69,3601
+"La Libertad","Trujillo","Salaverry",7791,3.25,24,13892
+"La Libertad","Trujillo","Simbal",1689,10.93,51.17,4082
+"La Libertad","Trujillo","Trujillo",131695,1.67,20.83,294899
+"La Libertad","Trujillo","Victor Larco Herrera",27881,2.08,20.81,55781
+"La Libertad","Virú","Chao",9341,8.32,24.61,22826
+"La Libertad","Virú","Guadalupito",3110,9.93,35.35,6232
+"La Libertad","Virú","Virú",19831,7.97,23.8,47652
+"Lambayeque","Chiclayo","Cayalti",9998,8.7,31.14,16557
+"Lambayeque","Chiclayo","Chiclayo",122301,2.31,26.08,260948
+"Lambayeque","Chiclayo","Chongoyape",10453,8.43,19.7,17540
+"Lambayeque","Chiclayo","Etén",4514,11.87,50.5,10673
+"Lambayeque","Chiclayo","Etén Puerto",1464,1.19,27.63,2238
+"Lambayeque","Chiclayo","José Leonardo Ortiz",52310,4.74,44.15,161717
+"Lambayeque","Chiclayo","La Victoria",30086,4.35,34.34,77699
+"Lambayeque","Chiclayo","Lagunas",4865,7.53,28.07,9351
+"Lambayeque","Chiclayo","Monsefu",8070,11.08,46.98,30123
+"Lambayeque","Chiclayo","Nueva Arica",1364,7.31,10.7,2420
+"Lambayeque","Chiclayo","Oyotún",5368,9.25,18.11,9954
+"Lambayeque","Chiclayo","Patapo",12129,10.24,27.53,20876
+"Lambayeque","Chiclayo","Picsi",4899,6.51,36.95,8942
+"Lambayeque","Chiclayo","Pimentel",14004,3.13,27,32346
+"Lambayeque","Chiclayo","Pomalca",13937,6.64,32.05,23092
+"Lambayeque","Chiclayo","Pucalá",6097,6.06,25.68,9272
+"Lambayeque","Chiclayo","Reque",5002,5.83,33.98,12606
+"Lambayeque","Chiclayo","Saña",8050,7.95,26.3,12013
+"Lambayeque","Chiclayo","Santa Rosa",4179,4.73,42.4,10965
+"Lambayeque","Chiclayo","Tuman",16167,5.89,24.61,28120
+"Lambayeque","Ferreñafe","Cañaris",6548,39.02,48.9,13038
+"Lambayeque","Ferreñafe","Ferreñafe",13844,4.96,27.23,32665
+"Lambayeque","Ferreñafe","Incahuasi",8706,33.16,49.71,14230
+"Lambayeque","Ferreñafe","Manuel Antonio Mesones Muro",2128,8.73,19.69,4083
+"Lambayeque","Ferreñafe","Pitipo",11361,13.21,20.27,20080
+"Lambayeque","Ferreñafe","Pueblo Nuevo",5194,6.11,28.46,12046
+"Lambayeque","Lambayeque","Chóchope",806,18.56,32.77,1231
+"Lambayeque","Lambayeque","Illimo",5018,7.13,30.81,9107
+"Lambayeque","Lambayeque","Jayanca",8716,9.11,25.1,15042
+"Lambayeque","Lambayeque","Lambayeque",28592,5.14,25.37,63386
+"Lambayeque","Lambayeque","Mochumí",7302,9.43,21.91,18043
+"Lambayeque","Lambayeque","Mórrope",22237,12.76,22.82,39174
+"Lambayeque","Lambayeque","Motupe",10899,6.59,29.11,24011
+"Lambayeque","Lambayeque","Olmos",14891,13.68,35.8,36595
+"Lambayeque","Lambayeque","Pacora",3698,8.89,24.31,6795
+"Lambayeque","Lambayeque","Salas",6303,23,41.18,12998
+"Lambayeque","Lambayeque","San José",4516,4.19,41.83,12078
+"Lambayeque","Lambayeque","Túcume",8216,8.65,30.84,20814
+"Lima","Barranca","Barranca",19833,4.71,35.4,61178
+"Lima","Barranca","Paramonga",11738,6.25,34.1,24009
+"Lima","Barranca","Pativilca",6786,9.22,32.46,17108
+"Lima","Barranca","Supe",8332,6.11,27.52,20512
+"Lima","Barranca","Supe Puerto",5606,4.5,30.69,11097
+"Lima","Cajatambo","Cajatambo",1134,12.17,39.78,2790
+"Lima","Cajatambo","Copa",414,19.5,34.55,990
+"Lima","Cajatambo","Gorgor",749,6.8,49.05,2275
+"Lima","Cajatambo","Huancapón",418,10.33,28.19,1225
+"Lima","Cajatambo","Manás",415,3.35,42.39,1078
+"Lima","Cañete","Asia",2942,2.76,20.99,6618
+"Lima","Cañete","Calango",675,2.55,22.19,2224
+"Lima","Cañete","Cerro Azul",3567,3.61,27.05,6893
+"Lima","Cañete","Chilca",6044,2.8,27.34,14559
+"Lima","Cañete","Coayllo",303,1.69,45.59,1031
+"Lima","Cañete","Imperial",14557,4.22,30.59,36340
+"Lima","Cañete","Lunahuaná",2304,2.08,39.45,4567
+"Lima","Cañete","Mala",12892,3.02,30.06,27881
+"Lima","Cañete","Nuevo Imperial",7196,4.78,23.94,19026
+"Lima","Cañete","Pacarán",911,3.72,26.44,1687
+"Lima","Cañete","Quilmaná",6768,4.46,22.83,13663
+"Lima","Cañete","San Antonio",1877,1.87,28.22,3640
+"Lima","Cañete","San Luis",5948,5.95,22.76,11940
+"Lima","Cañete","San Vicente de Cañete",20949,4.21,26.37,46464
+"Lima","Cañete","Santa Cruz de Flores",1231,2.23,30.34,2547
+"Lima","Cañete","Zuñiga",961,2.87,15.45,1582
+"Lima","Canta","Arahuay",225,1.87,54.24,686
+"Lima","Canta","Canta",1295,4.19,37.29,2978
+"Lima","Canta","Huamantanga",393,2.87,50.17,1265
+"Lima","Canta","Huaros",335,5.18,54.44,921
+"Lima","Canta","Lachaqui",303,5.39,34.4,985
+"Lima","Canta","San Buenaventura",142,3.13,40.12,505
+"Lima","Canta","Santa Rosa de Quives",2100,7.19,24.64,6173
+"Lima","Huaral","Atavillos Alto",372,2.43,28.46,976
+"Lima","Huaral","Atavillos Bajo",291,2.66,47,1374
+"Lima","Huaral","Aucallama",6091,8.2,23.45,16195
+"Lima","Huaral","Chancay",23435,5.97,30.49,49932
+"Lima","Huaral","Huaral",25196,4.95,33.36,88558
+"Lima","Huaral","Ihuarí",604,6.77,54.37,2671
+"Lima","Huaral","Lampían",88,3.83,63.5,519
+"Lima","Huaral","Pacaraos",133,4.71,29.43,747
+"Lima","Huaral","San Miguel de Acos",173,3.55,37.5,754
+"Lima","Huaral","Santa Cruz de Andamarca",283,3.12,34.12,1219
+"Lima","Huaral","Sumbilca",212,3.4,46.32,1171
+"Lima","Huaral","Veintisiete de Noviembre",73,8.1,53.88,544
+"Lima","Huarochirí","Antioquía",514,4.46,38.08,1376
+"Lima","Huarochirí","Callahuanca",1024,0.73,35.9,2405
+"Lima","Huarochirí","Carampoma",442,3.92,38.28,1161
+"Lima","Huarochirí","Chicla",5402,1.61,6.14,7194
+"Lima","Huarochirí","Cuenca",131,1.87,58.16,392
+"Lima","Huarochirí","Huachupampa",445,0.9,47.27,1566
+"Lima","Huarochirí","Huanza",551,5.13,66.53,1856
+"Lima","Huarochirí","Huarochirí",532,5.39,45.29,1590
+"Lima","Huarochirí","Lahuaytambo",290,3.18,55.8,837
+"Lima","Huarochirí","Langa",442,4.32,61.71,1056
+"Lima","Huarochirí","Laraos",261,3.37,46.88,1234
+"Lima","Huarochirí","Mariatana",531,3.14,58,1419
+"Lima","Huarochirí","Matucana",1970,2.59,39.41,4508
+"Lima","Huarochirí","Ricardo Palma",2397,2.91,26.48,5769
+"Lima","Huarochirí","San Andrés de Tupicocha",283,5.74,50.08,1423
+"Lima","Huarochirí","San Antonio",647,3.12,61.15,4516
+"Lima","Huarochirí","San Bartolomé",631,1.9,38.14,1793
+"Lima","Huarochirí","San Damián",317,2.79,56.88,1489
+"Lima","Huarochirí","San Juan de Iris",120,1.34,49.64,1010
+"Lima","Huarochirí","San Juan de Tantaranche",224,2.92,36.36,484
+"Lima","Huarochirí","San Lorenzo de Quinti",337,4.17,51.66,1681
+"Lima","Huarochirí","San Mateo",2752,4.03,23.77,5280
+"Lima","Huarochirí","San Mateo de Otao",312,1.69,54.51,1833
+"Lima","Huarochirí","San Pedro de Casta",501,3.52,52.64,1195
+"Lima","Huarochirí","San Pedro de Huancayre",135,6.9,47.29,262
+"Lima","Huarochirí","Sangallaya",216,7.37,40.93,678
+"Lima","Huarochirí","Santa Cruz de Cocachacra",1045,4.3,34.98,2302
+"Lima","Huarochirí","Santa Eulalia",4364,2.99,27.26,10591
+"Lima","Huarochirí","Santiago de Anchucaya",442,7.69,40.17,575
+"Lima","Huarochirí","Santiago de Tuna",75,3.68,72.24,666
+"Lima","Huarochirí","Santo Domingo de los Olleros",997,2.41,45.11,2906
+"Lima","Huarochirí","Surco",533,2.42,49.42,1798
+"Lima","Huaura","Ambar",1001,7.8,53.15,2825
+"Lima","Huaura","Caleta de Carquín",2405,2.76,49.61,6091
+"Lima","Huaura","Checras",422,13.26,55.86,1492
+"Lima","Huaura","Huacho",27528,1.56,25.28,55442
+"Lima","Huaura","Hualmay",10914,2.35,38.98,26808
+"Lima","Huaura","Huaura",11904,6.93,29.68,31212
+"Lima","Huaura","Leoncio Prado",566,5.4,39.84,2012
+"Lima","Huaura","Paccho",437,5,63.17,2055
+"Lima","Huaura","Santa Leonor",435,4.72,50.21,1521
+"Lima","Huaura","Santa María",11431,2.66,35.67,27699
+"Lima","Huaura","Sayán",10958,8.46,23.32,21962
+"Lima","Huaura","Vegueta",8200,6.27,29,18265
+"Lima","Lima","Ancón",11713,2.16,31.26,33367
+"Lima","Lima","Ate",161645,2.47,30.5,478278
+"Lima","Lima","Barranco",20115,0.65,15.85,33903
+"Lima","Lima","Breña",42915,0.76,19.4,81909
+"Lima","Lima","Carabayllo",75350,2.73,32.28,213386
+"Lima","Lima","Chaclacayo",19755,2.49,22.36,41110
+"Lima","Lima","Chorrillos",131004,1.9,24.69,286977
+"Lima","Lima","Cieneguilla",8829,4.06,24.9,26725
+"Lima","Lima","Comas",184757,1.93,27.31,486977
+"Lima","Lima","El Agustino",61981,2.81,36.34,180262
+"Lima","Lima","Independencia",78404,2.47,28.53,207647
+"Lima","Lima","Jesús Maria",42989,0.47,10.63,66171
+"Lima","Lima","La Molina",91545,0.65,9.25,132498
+"Lima","Lima","La victoria",74872,1.38,31.02,192724
+"Lima","Lima","Lima",142004,1.35,24.43,299493
+"Lima","Lima","Lince",32770,0.44,14.13,55242
+"Lima","Lima","Los Olivos",134062,1.36,24.29,318140
+"Lima","Lima","Lurigancho",63074,3.23,26.3,169359
+"Lima","Lima","Lurin",24560,2.73,29.73,62940
+"Lima","Lima","Magdalena del Mar",31578,0.79,13.02,50764
+"Lima","Lima","Magdalena Vieja",48149,0.52,11.89,74164
+"Lima","Lima","Miraflores",61226,0.29,8.14,85065
+"Lima","Lima","Pachacamac",21544,3.36,26.81,68441
+"Lima","Lima","Pucusana",3779,1.98,36.9,10633
+"Lima","Lima","Puente Piedra",69803,2.83,29.58,233602
+"Lima","Lima","Punta Hermosa",2392,1.78,22.85,5762
+"Lima","Lima","Punta Negra",2464,1.74,23.6,5284
+"Lima","Lima","Rimac",76512,1.61,26.02,176169
+"Lima","Lima","San Bartolo",3130,2.88,21.27,5812
+"Lima","Lima","San Borja",74779,0.48,7.98,105076
+"Lima","Lima","San isidro",44476,0.33,5.85,58056
+"Lima","Lima","San Juan de Lurigancho",281511,2.13,29.76,898443
+"Lima","Lima","San Juan de Miraflores",135595,2.38,26,362643
+"Lima","Lima","San Luis",24012,0.98,22.91,54634
+"Lima","Lima","San Martin de Porres",243355,1.36,23.3,579561
+"Lima","Lima","San Miguel",80225,0.59,13.66,129107
+"Lima","Lima","Santa Anita",62550,2.19,30.66,184614
+"Lima","Lima","Santa Maria del Mar",398,2.99,16.03,761
+"Lima","Lima","Santa Rosa",4641,1.59,26.67,10903
+"Lima","Lima","Santiago de Surco",195861,0.57,11.15,289597
+"Lima","Lima","Surquillo",49543,0.77,18,89283
+"Lima","Lima","Villa el Salvador",134447,2.21,30.88,381790
+"Lima","Lima","Villa Maria del Triunfo",129657,2.49,29.55,378470
+"Lima","Oyón","Andajes",181,14.71,45.4,1028
+"Lima","Oyón","Caujul",345,6.43,37.24,917
+"Lima","Oyón","Cochamarca",576,8.25,50.17,1490
+"Lima","Oyón","Naván",343,3.79,48.1,1074
+"Lima","Oyón","Oyón",6922,7.09,19.76,12812
+"Lima","Oyón","Pachangara",1167,5.6,38.79,3321
+"Lima","Yauyos","Alis",1284,0.7,4.49,1519
+"Lima","Yauyos","Ayauca",1023,2.41,23.64,1773
+"Lima","Yauyos","Ayaviri",325,4.59,36.96,752
+"Lima","Yauyos","Azángaro",138,7.56,57.03,603
+"Lima","Yauyos","Cacra",231,10.09,56.56,544
+"Lima","Yauyos","Carania",87,3.91,33.11,330
+"Lima","Yauyos","Catahuasi",363,5.83,43.77,1090
+"Lima","Yauyos","Chocos",313,15.41,57.44,1074
+"Lima","Yauyos","Cochas",76,2.63,60.43,293
+"Lima","Yauyos","Colonia",517,2.49,53.71,1439
+"Lima","Yauyos","Hongos",240,11.28,60.45,435
+"Lima","Yauyos","Huampara",89,2.58,48.2,256
+"Lima","Yauyos","Huancaya",75,1.58,51.17,1001
+"Lima","Yauyos","Huañec",179,3.25,50,467
+"Lima","Yauyos","Huangáscar",257,11.74,46.18,668
+"Lima","Yauyos","Huantán",299,5.06,48.74,926
+"Lima","Yauyos","Laraos",462,4.16,21.3,960
+"Lima","Yauyos","Lincha",204,10.07,50.22,771
+"Lima","Yauyos","Madean",340,10.06,61.82,822
+"Lima","Yauyos","Miraflores",170,2.56,25.29,441
+"Lima","Yauyos","Omas",301,3.68,49.25,656
+"Lima","Yauyos","Putinza",184,2.56,59.04,452
+"Lima","Yauyos","Quinches",351,5.15,52.73,1064
+"Lima","Yauyos","Quinocay",254,3.16,49.38,608
+"Lima","Yauyos","San Joaquín",36,0.77,43.37,320
+"Lima","Yauyos","San Pedro de Pilas",184,5.52,50.27,418
+"Lima","Yauyos","Tanta",155,6.71,30.25,500
+"Lima","Yauyos","Tauripampa",197,2.04,65.7,573
+"Lima","Yauyos","Tomas",386,1.24,21.05,1077
+"Lima","Yauyos","Tupe",349,13.08,62.2,655
+"Lima","Yauyos","Viñac",687,13.89,54.95,1791
+"Lima","Yauyos","Vitis",162,1.36,34.54,525
+"Lima","Yauyos","Yauyos",1013,2.07,32.75,2698
+"Loreto","Alto Amazonas","Balsapuerto",7827,36.03,34.24,13868
+"Loreto","Alto Amazonas","Jeberos",2456,20.39,46.56,4198
+"Loreto","Alto Amazonas","Lagunas",9517,8.34,56.21,13270
+"Loreto","Alto Amazonas","Santa Cruz",2416,12.04,57.26,4094
+"Loreto","Alto Amazonas","Teniente César López Rojas",3627,9.27,54.79,5892
+"Loreto","Alto Amazonas","Yurimaguas",30691,5.66,41.3,63345
+"Loreto","Datem del Marañón","Andoas",5239,32.17,44.41,9375
+"Loreto","Datem del Marañón","Barranca",6271,8.61,46.34,11864
+"Loreto","Datem del Marañón","Cahuapanas",4077,28.21,54.08,6822
+"Loreto","Datem del Marañón","Manseriche",6004,13.51,52.15,9017
+"Loreto","Datem del Marañón","Morona",4190,18.35,59.8,6356
+"Loreto","Datem del Marañón","Pastaza",3397,17.99,59.93,6137
+"Loreto","Loreto","Nauta",15584,5.85,50.51,28681
+"Loreto","Loreto","Parinari",3988,6,57.93,7292
+"Loreto","Loreto","Tigre",5086,10.76,48.85,7304
+"Loreto","Loreto","Trompeteros",5838,11.85,17.35,7450
+"Loreto","Loreto","Urarinas",6475,25.6,55.5,11438
+"Loreto","Mariscal Ramón Castilla","Pebas",6049,7.27,53.57,13624
+"Loreto","Mariscal Ramón Castilla","Ramón Castilla",9906,9.7,52.68,18783
+"Loreto","Mariscal Ramón Castilla","San Pablo",4095,11.22,61.66,12197
+"Loreto","Mariscal Ramón Castilla","Yavari",4259,9.37,49.04,10225
+"Loreto","Maynas","Alto Nanay",2140,7.53,62.22,2617
+"Loreto","Maynas","Belén",32020,2.61,49.18,68806
+"Loreto","Maynas","Fernando Lores",8614,5.37,60.18,19127
+"Loreto","Maynas","Indíana",6602,5.94,52.24,12198
+"Loreto","Maynas","Iquitos",80851,1.34,33.16,159023
+"Loreto","Maynas","Las Amazonas",5512,8.9,52.17,10331
+"Loreto","Maynas","Mazán",7730,8.01,51,13098
+"Loreto","Maynas","Napo",7355,9.7,48.51,14882
+"Loreto","Maynas","Punchana",36796,2.29,40.14,76435
+"Loreto","Maynas","Putumayo",4385,6.86,42.82,5638
+"Loreto","Maynas","San Juan Bautista",49980,2.25,41.23,102076
+"Loreto","Maynas","Teniente Manuel Clavero",2595,8.69,56.75,3896
+"Loreto","Maynas","Torres Causana",2884,19.3,30.49,4865
+"Loreto","Requena","Alto Tapiche",824,8.01,30.46,1947
+"Loreto","Requena","Capelo",1828,5.08,54.32,3941
+"Loreto","Requena","Emilio San Martín",2402,4.4,60.29,6911
+"Loreto","Requena","Jenaro Herrera",2051,4.11,65.66,5116
+"Loreto","Requena","Maquía",3495,4.42,62.91,7905
+"Loreto","Requena","Puinahua",1740,3.31,47.55,5298
+"Loreto","Requena","Requena",11782,3.65,45.42,25987
+"Loreto","Requena","Saquena",1461,3.67,44.63,4536
+"Loreto","Requena","Soplin",315,3.9,41.05,613
+"Loreto","Requena","Tapiche",615,5.74,33.86,1042
+"Loreto","Requena","Yaquerana",2062,10.41,47.39,2396
+"Loreto","Ucayali","Contamana",11746,3.17,43.59,23184
+"Loreto","Ucayali","Inahuaya",1029,3.14,47.24,2143
+"Loreto","Ucayali","Padre Márquez",3151,5.94,38.07,5560
+"Loreto","Ucayali","Pampa Hermosa",2399,5.18,45.21,7322
+"Loreto","Ucayali","Sarayacu",6978,3.45,50.91,15388
+"Loreto","Ucayali","Vargas Guerra",3055,3.8,57.26,8219
+"Madre de Dios","Manu","Fitzcarrald",650,14.95,46.78,1263
+"Madre de Dios","Manu","Huepetuhe",1289,3.52,32.97,6978
+"Madre de Dios","Manu","Madre De Dios",1424,2.92,30.97,9404
+"Madre de Dios","Manu","Manu",1323,11.69,41.82,2645
+"Madre de Dios","Tahuamanu","Iberia",3419,3,26.59,6715
+"Madre de Dios","Tahuamanu","Iñapari",398,3.65,29.09,1288
+"Madre de Dios","Tahuamanu","Tahuamanu",1414,3.36,22.58,2739
+"Madre de Dios","Tambopata","Inambari",2498,4.98,31.24,8038
+"Madre de Dios","Tambopata","Laberinto",1405,4.81,40.06,4780
+"Madre de Dios","Tambopata","Las Piedras",1924,5.18,50.82,5491
+"Madre de Dios","Tambopata","Tambopata",24090,2.18,32.88,60214
+"Moquegua","General Sánchez Cerro","Chojata",863,12.41,57.82,2213
+"Moquegua","General Sánchez Cerro","Coalaque",451,8.76,45.95,1307
+"Moquegua","General Sánchez Cerro","Ichuña",1886,10.65,24.66,4057
+"Moquegua","General Sánchez Cerro","La Capilla",744,1.04,26.49,1731
+"Moquegua","General Sánchez Cerro","Lloque",700,6.21,35.84,1376
+"Moquegua","General Sánchez Cerro","Matalaque",314,6.04,31.21,1033
+"Moquegua","General Sánchez Cerro","Omate",1848,2.12,31.54,3900
+"Moquegua","General Sánchez Cerro","Puquina",982,7.47,33.93,2979
+"Moquegua","General Sánchez Cerro","Quinistaquillas",338,3.56,24.37,1013
+"Moquegua","General Sánchez Cerro","Ubinas",1294,9.17,33.48,3725
+"Moquegua","General Sánchez Cerro","Yunga",359,8.32,33.13,1570
+"Moquegua","Ilo","El Algarrobal",145,0.5,32.72,247
+"Moquegua","Ilo","Ilo",29205,2.12,27.9,59132
+"Moquegua","Ilo","Pacocha",3326,0.24,5.26,4401
+"Moquegua","Mariscal Nieto","Carumas",1417,16,38.4,4816
+"Moquegua","Mariscal Nieto","Cuchumbaya",817,16.59,31.55,1990
+"Moquegua","Mariscal Nieto","Moquegua",24878,4.3,24.91,49419
+"Moquegua","Mariscal Nieto","Samegua",3400,4.61,20.42,6515
+"Moquegua","Mariscal Nieto","San Cristóbal",1244,14.6,34.06,3518
+"Moquegua","Mariscal Nieto","Torata",3595,6.77,17.65,6591
+"Pasco","Daniel Alcides Carrión","Chacayán",1043,15.86,53.57,4008
+"Pasco","Daniel Alcides Carrión","Goyllarisquizga",834,6.9,49.42,2505
+"Pasco","Daniel Alcides Carrión","Paucar",961,20.58,49.09,2235
+"Pasco","Daniel Alcides Carrión","San Pedro de Pillao",413,14.83,19,1701
+"Pasco","Daniel Alcides Carrión","Santa Ana de Tusi",3394,10.98,53.73,17204
+"Pasco","Daniel Alcides Carrión","Tapuc",1271,15.49,38.73,3976
+"Pasco","Daniel Alcides Carrión","Vilcabamba",568,17.21,42.48,1894
+"Pasco","Daniel Alcides Carrión","Yanahuanca",5535,9.49,36.52,14280
+"Pasco","Oxapampa","Chontabamba",1106,8.02,44.24,3189
+"Pasco","Oxapampa","Huancabamba",2211,13.41,52.97,6333
+"Pasco","Oxapampa","Oxapampa",5981,6.19,39.58,14190
+"Pasco","Oxapampa","Palcazu",3617,6.68,39.11,8810
+"Pasco","Oxapampa","Pozuzo",3087,16.73,37.15,7760
+"Pasco","Oxapampa","Puerto Bermúdez",9446,12.22,52.78,23028
+"Pasco","Oxapampa","Villa Rica",6941,9.4,43.11,18619
+"Pasco","Pasco","Chaupimarca",11074,4.29,30.65,27873
+"Pasco","Pasco","Huachón",1463,9.92,58.66,4579
+"Pasco","Pasco","Huariaca",3769,9.99,35.34,7962
+"Pasco","Pasco","Huayllay",6856,3.26,13.38,10617
+"Pasco","Pasco","Ninacaca",1011,10.67,58.32,3819
+"Pasco","Pasco","Pallanchacra",1161,8.94,40.07,4153
+"Pasco","Pasco","Paucartambo",5441,8.35,48.98,20993
+"Pasco","Pasco","San Francisco de Asis de Yarusyacán",3932,7.59,34.67,11209
+"Pasco","Pasco","Simón Bolívar",7616,4.89,18.62,13681
+"Pasco","Pasco","Ticlacayán",1811,13.61,47.91,7543
+"Pasco","Pasco","Tinyahuarco",3624,3.47,18.35,5962
+"Pasco","Pasco","Vicco",931,7.08,30.36,2730
+"Pasco","Pasco","Yanacancha",15530,3.9,20.21,29596
+"Piura","Ayabaca","Ayabaca",12109,15.33,60.13,38730
+"Piura","Ayabaca","Frías",10503,26.72,61.18,23005
+"Piura","Ayabaca","Jilili",1047,15.54,61.82,2956
+"Piura","Ayabaca","Lagunas",3043,25.84,41.7,6625
+"Piura","Ayabaca","Montero",3141,16.03,61.06,7337
+"Piura","Ayabaca","Pacaipampa",9260,32.18,66.14,24760
+"Piura","Ayabaca","Paimas",3347,16.48,60.68,9638
+"Piura","Ayabaca","Sapillica",3964,23.53,73.02,11127
+"Piura","Ayabaca","Sicchez",1109,13.19,50.66,2274
+"Piura","Ayabaca","Suyo",4528,7.05,49.77,11951
+"Piura","Huancabamba","Canchaque",3663,16.48,45.63,8957
+"Piura","Huancabamba","El Carmen de la Frontera",6252,19.98,53.08,12681
+"Piura","Huancabamba","Huancabamba",13691,22.21,54.74,30116
+"Piura","Huancabamba","Huarmaca",20774,27.85,65.01,39416
+"Piura","Huancabamba","Lalaquiz",1832,28.59,63.79,5115
+"Piura","Huancabamba","San Miguel de El Faique",3728,22.83,48.88,9096
+"Piura","Huancabamba","Sondor",3801,24.68,61.34,8399
+"Piura","Huancabamba","Sondorillo",5150,30.93,71.29,10518
+"Piura","Morropón","Buenos Aires",3788,12.05,48.93,8753
+"Piura","Morropón","Chalaco",3444,18.3,62.79,9721
+"Piura","Morropón","Chulucanas",26690,11.75,44.25,76205
+"Piura","Morropón","La Matanza",3680,18.59,44,12888
+"Piura","Morropón","Morropón",7403,10.2,45.24,14421
+"Piura","Morropón","Salitral",3104,16.1,38.74,8516
+"Piura","Morropón","San Juan de Bigote",1954,17.06,52.56,6965
+"Piura","Morropón","Santa Catalina de Mossa",1696,10.41,37.28,4289
+"Piura","Morropón","Santo Domingo",2750,11.04,51.17,7957
+"Piura","Morropón","Yamango",3570,25.17,59.44,9978
+"Piura","Paita","Amotape",972,8.42,29.89,2305
+"Piura","Paita","Arenal",814,7.86,37.62,1092
+"Piura","Paita","Colan",5963,11.7,42.41,12332
+"Piura","Paita","La Huaca",7541,8.96,35.22,10867
+"Piura","Paita","Paita",34249,2.99,27.95,72522
+"Piura","Paita","Tamarindo",1571,10.65,37.15,4402
+"Piura","Paita","Vichayal",2265,10.32,54.13,5015
+"Piura","Piura","Castilla",59693,3.7,29.62,123692
+"Piura","Piura","Catacaos",24897,10.66,42.82,66308
+"Piura","Piura","Cura Mori",7735,18.88,48.14,16923
+"Piura","Piura","El Tallán",1838,19.48,68.01,4774
+"Piura","Piura","La Arena",13761,20.74,42.37,34584
+"Piura","Piura","La Unión",8773,12.8,42.76,36000
+"Piura","Piura","Las Lomas",7164,10.14,47.18,26896
+"Piura","Piura","Piura",134280,2.39,27.21,260363
+"Piura","Piura","Tambo Grande",28020,15.32,30.38,96451
+"Piura","Sechura","Bellavista de la Unión",2137,4.62,38.31,3954
+"Piura","Sechura","Bernal",2623,4.12,47.18,6449
+"Piura","Sechura","Cristo Nos Valga",1969,5.97,49.39,3377
+"Piura","Sechura","Rinconada Llicuar",1193,4.15,50.62,2855
+"Piura","Sechura","Sechura",14376,4.38,38.75,32965
+"Piura","Sechura","Vice",3881,5.31,43.93,12719
+"Piura","Sullana","Bellavista",11957,4.96,41.64,36072
+"Piura","Sullana","Ignacio Escudero",7382,11.83,39.57,17862
+"Piura","Sullana","Lancones",4115,12.26,42.86,13119
+"Piura","Sullana","Marcavelica",12674,9.85,44.3,26031
+"Piura","Sullana","Miguel Checa",3609,10.07,34.41,7446
+"Piura","Sullana","Querecotillo",9715,9.3,37.48,24452
+"Piura","Sullana","Salitral",3324,6.08,33.83,6097
+"Piura","Sullana","Sullana",56744,4.14,34.8,156601
+"Piura","Talara","El Alto",3601,1.56,17.92,7137
+"Piura","Talara","La Brea",7102,1.63,18.65,12486
+"Piura","Talara","Lobitos",686,1.95,31.12,1506
+"Piura","Talara","Los Organos",4292,1.64,32.76,9612
+"Piura","Talara","Máncora",3926,2.89,32.7,10547
+"Piura","Talara","Pariñas",39704,1.87,28.35,88108
+"Provincia Constitucional del Callao","Provincia Constitucional del Callao","Bellavista",43928,0.63,14.64,75163
+"Provincia Constitucional del Callao","Provincia Constitucional del Callao","Callao",192540,1.55,23.02,415888
+"Provincia Constitucional del Callao","Provincia Constitucional del Callao","Carmen de la Legua Reynoso",19291,2.09,25.17,41863
+"Provincia Constitucional del Callao","Provincia Constitucional del Callao","La Perla",36589,0.57,14.15,61698
+"Provincia Constitucional del Callao","Provincia Constitucional del Callao","La Punta",3208,0.22,8.54,4370
+"Provincia Constitucional del Callao","Provincia Constitucional del Callao","Ventanilla",110794,2.07,28.69,277895
+"Puno","Azángaro","Achaya",298,15.84,54.62,3971
+"Puno","Azángaro","Arapa",2173,19.3,51.81,8485
+"Puno","Azángaro","Asillo",5672,15.41,47.69,17215
+"Puno","Azángaro","Azángaro",7404,12.87,36.5,27823
+"Puno","Azángaro","Caminaca",1186,24.83,73.69,3828
+"Puno","Azángaro","Chupa",1606,19.36,25.27,13746
+"Puno","Azángaro","José Domingo Choquehuanca",1365,14.91,52.17,5189
+"Puno","Azángaro","Muñani",2644,19.16,47.26,7582
+"Puno","Azángaro","Potoni",2384,13.4,29.43,6592
+"Puno","Azángaro","Samán",4428,22.51,58.85,14314
+"Puno","Azángaro","San Antón",2649,13.6,47.24,9145
+"Puno","Azángaro","San José",1737,16.46,62.4,5984
+"Puno","Azángaro","San Juan de Salinas",1202,20.02,64.53,4034
+"Puno","Azángaro","Santiago de Pupuja",768,21.32,52.23,5792
+"Puno","Azángaro","Tirapata",1005,17.63,63.44,3129
+"Puno","Carabaya","Ajoyani",772,18.7,23.28,1938
+"Puno","Carabaya","Ayapata",2476,11.92,54.42,8996
+"Puno","Carabaya","Coasa",1415,16.92,45.79,12097
+"Puno","Carabaya","Corani",1671,24.59,52.31,3622
+"Puno","Carabaya","Crucero",2345,14.44,46.46,8474
+"Puno","Carabaya","Ituata",2224,13.67,49.22,6108
+"Puno","Carabaya","Macusani",5335,17.61,42.07,11707
+"Puno","Carabaya","Ollachea",1942,25.51,45.41,4919
+"Puno","Carabaya","San Gabán",1132,7.4,54.13,4022
+"Puno","Carabaya","Usicayos",3698,13.35,55.7,12063
+"Puno","Chucuito","Desaguadero",3146,6.39,69.33,20009
+"Puno","Chucuito","Huacullani",2447,9.2,59.47,14906
+"Puno","Chucuito","Juli",7509,13.76,54.13,23741
+"Puno","Chucuito","Kelluyo",3819,5.67,66.53,17869
+"Puno","Chucuito","Pisacoma",2643,7.29,69.9,12151
+"Puno","Chucuito","Pomata",5484,16.55,56.59,17787
+"Puno","Chucuito","Zepita",3723,14.25,67.37,19796
+"Puno","El Collao","Capazo",574,4.26,60.83,1830
+"Puno","El Collao","Conduriri",833,13.85,68.17,4277
+"Puno","El Collao","Ilave",12080,13.84,58.84,54138
+"Puno","El Collao","Pilcuyo",3598,20.93,64.67,14151
+"Puno","El Collao","Santa Rosa",1307,9.83,70.74,6663
+"Puno","Huancané","Cojata",1140,16.62,60.46,4354
+"Puno","Huancané","Huancané",6257,16.93,45.44,21089
+"Puno","Huancané","Huatasani",888,16.61,62.53,4156
+"Puno","Huancané","Inchupalla",1128,21.73,53.79,3586
+"Puno","Huancané","Pusi",1156,20.11,65.87,6516
+"Puno","Huancané","Rosaspata",1884,23.83,46.72,5637
+"Puno","Huancané","Taraco",3006,18.79,54.47,14657
+"Puno","Huancané","Vilque Chico",3187,29.08,59.76,9527
+"Puno","Lampa","Cabanilla",1943,12.96,60.9,5573
+"Puno","Lampa","Calapuja",291,18.88,30.23,1494
+"Puno","Lampa","Lampa",3689,14.04,48.22,11329
+"Puno","Lampa","Nicasio",763,12.68,52.79,2756
+"Puno","Lampa","Ocuviri",1360,7.62,29.65,2655
+"Puno","Lampa","Palca",2028,7.64,47.64,3027
+"Puno","Lampa","Paratia",2834,3.09,42.39,5257
+"Puno","Lampa","Pucará",1853,15.14,60.17,6060
+"Puno","Lampa","Santa Lucía",2223,12.74,43.06,7692
+"Puno","Lampa","Vilavila",786,5.89,59.69,2380
+"Puno","Melgar","Antauta",1949,11.31,28.38,4993
+"Puno","Melgar","Ayaviri",7242,10.05,38.08,22667
+"Puno","Melgar","Cupi",1138,9.94,43.68,2572
+"Puno","Melgar","Llalli",971,12.11,56.98,3907
+"Puno","Melgar","Macari",2277,11.13,61.08,7971
+"Puno","Melgar","Nuñoa",4807,21.83,46.73,11121
+"Puno","Melgar","Orurillo",3424,16.48,56.05,10457
+"Puno","Melgar","Santa Rosa",1960,18.11,42.26,6943
+"Puno","Melgar","Umachiri",917,12.68,34.78,4104
+"Puno","Moho","Conima",567,19.91,63.61,3517
+"Puno","Moho","Huayrapata",1004,17.38,54.06,4154
+"Puno","Moho","Moho",3254,20.5,47.13,17042
+"Puno","Moho","Tilali",498,27.91,66.36,3106
+"Puno","Puno","Acora",6173,15.82,53.9,28679
+"Puno","Puno","Amantaní",966,21.69,55.91,4255
+"Puno","Puno","Atuncolla",1475,15.94,50.06,5333
+"Puno","Puno","Capachica",1815,29.84,64.64,11387
+"Puno","Puno","Chucuito",1829,15.37,40.84,7913
+"Puno","Puno","Coata",2076,18.53,55.35,7387
+"Puno","Puno","Huata",818,11.08,36.59,6682
+"Puno","Puno","Mañazo",1551,16.62,34.12,5451
+"Puno","Puno","Paucarcolla",1151,18.48,47.23,4864
+"Puno","Puno","Pichacani",1330,18.4,46.41,5608
+"Puno","Puno","Platería",1723,12.54,49.42,8268
+"Puno","Puno","Puno",48108,4.31,29.7,125663
+"Puno","Puno","San Antonio",689,16.45,54.8,2570
+"Puno","Puno","Tiquillaca",337,29.14,22.47,2053
+"Puno","Puno","Vilque",726,14.82,49.03,3123
+"Puno","San Antonio de Putina","Ananea",2250,3.92,21.98,20572
+"Puno","San Antonio de Putina","Pedro Vilca Apaza",840,22.43,49.13,2523
+"Puno","San Antonio de Putina","Putina",2214,16.87,37.93,20792
+"Puno","San Antonio de Putina","Quilcapuncu",1444,18.66,57.18,5131
+"Puno","San Antonio de Putina","Sina",490,15.5,46,1472
+"Puno","San Román","Cabana",1651,16.14,58.26,4392
+"Puno","San Román","Cabanillas",1911,12.16,52.67,5180
+"Puno","San Román","Caracoto",856,24.43,54.84,6058
+"Puno","San Román","Juliaca",47876,4.97,47.49,225146
+"Puno","Sandia","Alto Inambari",3670,11.66,50.95,7537
+"Puno","Sandia","Cuyocuyo",2183,20.21,57.53,5355
+"Puno","Sandia","Limbani",837,11.4,55.37,3734
+"Puno","Sandia","Patambuco",1556,21.46,62.23,4266
+"Puno","Sandia","Phara",1114,11.28,37.66,4847
+"Puno","Sandia","Quiaca",1031,17.14,57.88,2232
+"Puno","Sandia","San Juan Del Oro",1705,8.52,51.23,9828
+"Puno","Sandia","San Pedro de Putina Punco",3559,4.21,63.38,10605
+"Puno","Sandia","Sandia",6246,17.82,54.61,11374
+"Puno","Sandia","Yanahuaya",826,10.38,51.24,2369
+"Puno","Yunguyo","Anapia",509,4.43,58.06,2294
+"Puno","Yunguyo","Copani",1826,21.03,62.53,5436
+"Puno","Yunguyo","Cuturapi",592,23.59,59.93,1598
+"Puno","Yunguyo","Ollaraya",935,25.04,63.85,4644
+"Puno","Yunguyo","Tinicachi",346,12.53,46.52,1490
+"Puno","Yunguyo","Unicachi",451,20.49,65.41,3571
+"Puno","Yunguyo","Yunguyo",10168,19.03,56.84,28367
+"San Martín","Bellavista","Alto Biavo",1801,12.02,49.5,5917
+"San Martín","Bellavista","Bajo Biavo",3102,10.3,59.6,11780
+"San Martín","Bellavista","Bellavista",4838,5.95,44.9,14238
+"San Martín","Bellavista","Huallaga",1136,10.57,53.67,2803
+"San Martín","Bellavista","San Pablo",3192,8.42,56.59,8919
+"San Martín","Bellavista","San Rafael",1838,6.1,40.16,5636
+"San Martín","El Dorado","Agua Blanca",1590,8.68,44.56,2552
+"San Martín","El Dorado","San José de Sisa",7331,11.44,52.57,13220
+"San Martín","El Dorado","San Martín",3496,14.29,59.32,9318
+"San Martín","El Dorado","Santa Rosa",3424,15.43,54.92,5934
+"San Martín","El Dorado","Shatoja",1240,11.85,54.62,2614
+"San Martín","Huallaga","Alto Saposoa",1243,9.95,57.89,2643
+"San Martín","Huallaga","El Eslabón",1425,6.28,76.04,2804
+"San Martín","Huallaga","Piscoyacu",1955,10.65,49.48,3531
+"San Martín","Huallaga","Sacanche",1528,7.63,60.16,2724
+"San Martín","Huallaga","Saposoa",6585,5.82,51.13,11982
+"San Martín","Huallaga","Tingo de Saposoa",497,2.81,51.32,764
+"San Martín","Lamas","Alonso De Alvarado",3661,14.74,45.45,14883
+"San Martín","Lamas","Barranquita",2507,8.04,56.74,5285
+"San Martín","Lamas","Caynarachi",3316,10.17,61.52,7775
+"San Martín","Lamas","Cuñumbuqui",2052,8.34,52.51,4461
+"San Martín","Lamas","Lamas",8358,11.52,43.89,13173
+"San Martín","Lamas","Pinto Recodo",3055,14.16,51.34,9301
+"San Martín","Lamas","Rumisapa",1785,12.53,35.46,2561
+"San Martín","Lamas","San Roque de Cumbaza",1093,16.33,50.31,1508
+"San Martín","Lamas","Shanao",662,19.71,46.02,2492
+"San Martín","Lamas","Tabalosos",5325,12.06,53.52,12645
+"San Martín","Lamas","Zapatero",2662,13.66,67.1,4991
+"San Martín","Mariscal Cáceres","Campanilla",2959,7.63,48.23,8028
+"San Martín","Mariscal Cáceres","Huicungo",2600,7.42,65,6219
+"San Martín","Mariscal Cáceres","Juanjuí",10945,4.43,43.04,27151
+"San Martín","Mariscal Cáceres","Pachiza",1766,9.84,44.94,4367
+"San Martín","Mariscal Cáceres","Pajarillo",2300,9.49,58.86,5119
+"San Martín","Moyobamba","Calzada",1917,7.77,33.96,4045
+"San Martín","Moyobamba","Habana",864,10.2,34.4,1726
+"San Martín","Moyobamba","Jepelacio",6354,12.8,57.4,18471
+"San Martín","Moyobamba","Moyobamba",25990,7.42,42.98,65048
+"San Martín","Moyobamba","Soritor",7146,9.92,57.48,23320
+"San Martín","Moyobamba","Yantalo",955,14.97,57.65,2779
+"San Martín","Picota","Buenos Aires",1314,9.27,64.62,3174
+"San Martín","Picota","Caspisapa",594,4.08,49.61,1916
+"San Martín","Picota","Picota",3028,3.81,42.35,8164
+"San Martín","Picota","Pilluana",341,2.41,56.04,890
+"San Martín","Picota","Pucacaca",1182,3.4,44.59,2852
+"San Martín","Picota","San Cristóbal",458,7.2,29.95,1286
+"San Martín","Picota","San Hilarión",1483,4.4,43.61,4355
+"San Martín","Picota","Shamboyacu",1929,13.3,59.87,7043
+"San Martín","Picota","Tingo de Ponasa",1442,7.1,31.69,3957
+"San Martín","Picota","Tres Unidos",1360,8.48,56.35,4084
+"San Martín","Rioja","Awajún",2564,12.15,54.85,7427
+"San Martín","Rioja","Elías Soplín Vargas",3578,12.82,49.39,9767
+"San Martín","Rioja","Nueva Cajamarca",10497,8.68,53.34,35718
+"San Martín","Rioja","Pardo Miguel",5003,12.36,60.55,17088
+"San Martín","Rioja","Posic",486,11.41,40.29,1398
+"San Martín","Rioja","Rioja",9537,5.95,38.93,22290
+"San Martín","Rioja","San Fernando",1452,10.97,41.63,3799
+"San Martín","Rioja","Yorongos",1218,11.19,59.51,3128
+"San Martín","Rioja","Yuracyacu",1773,8.01,37.16,4267
+"San Martín","San Martín","Alberto Leveau",625,3.9,51.87,827
+"San Martín","San Martín","Cacatachi",1317,4.62,50.57,2978
+"San Martín","San Martín","Chazuta",5211,10.91,59.77,8556
+"San Martín","San Martín","Chipurana",1377,8.34,44.84,1871
+"San Martín","San Martín","El Porvenir",1067,5.18,45.73,2062
+"San Martín","San Martín","Huimbayoc",3662,5.45,54.19,4351
+"San Martín","San Martín","Juan Guerra",1802,4.35,24.18,3224
+"San Martín","San Martín","La Banda de Shilcayo",11082,3.53,37.82,29111
+"San Martín","San Martín","Morales",10667,3.04,37.37,23561
+"San Martín","San Martín","Papaplaya",1543,8.93,45.51,2548
+"San Martín","San Martín","San Antonio",1110,6.34,44.67,1460
+"San Martín","San Martín","Sauce",3514,4.83,50.63,10598
+"San Martín","San Martín","Shapaja",1218,5.4,55.02,1690
+"San Martín","San Martín","Tarapoto",30098,2.05,33.24,68295
+"San Martín","Tocache","Nuevo Progreso",3746,10.26,52.61,11170
+"San Martín","Tocache","Pólvora",3683,10.01,62.14,10592
+"San Martín","Tocache","Shunte",509,19.76,59.7,1163
+"San Martín","Tocache","Tocache",8432,7.02,48.58,26973
+"San Martín","Tocache","Uchiza",10493,6.7,35.57,22448
+"Tacna","Candarave","Cairani",500,12.75,47.05,1355
+"Tacna","Candarave","Camilaca",517,13.14,36.1,1724
+"Tacna","Candarave","Candarave",1328,13.3,43.65,3174
+"Tacna","Candarave","Curibaya",101,3.45,36.24,203
+"Tacna","Candarave","Huanuara",489,6.65,46.99,823
+"Tacna","Candarave","Quilahuani",488,11.18,47.18,1094
+"Tacna","Jorge Basadre","Ilabaya",2894,4.7,15.86,4414
+"Tacna","Jorge Basadre","Ite",1467,2.28,10.97,3299
+"Tacna","Jorge Basadre","Locumba",819,4.38,17.61,2159
+"Tacna","Tacna","Alto de la Alianza",8672,4.22,44.55,35439
+"Tacna","Tacna","Calana",861,7.31,38.46,2625
+"Tacna","Tacna","Ciudad Nueva",6940,4.75,50.36,34231
+"Tacna","Tacna","Coronel Gregorio Albarracín Lanchipa",23529,2.76,39.61,68989
+"Tacna","Tacna","Inclán",743,5.15,25.65,4064
+"Tacna","Tacna","Pachia",894,6.57,41.48,1945
+"Tacna","Tacna","Palca",938,9.4,29.37,1510
+"Tacna","Tacna","Pocollay",6063,3.12,35.66,17113
+"Tacna","Tacna","Sama",1030,5.42,26.86,2387
+"Tacna","Tacna","Tacna",39482,2.37,25.42,94428
+"Tacna","Tarata","Estique",168,4.7,49.19,551
+"Tacna","Tarata","Estique-Pampa",75,2.64,46.22,412
+"Tacna","Tarata","Héroes Albarracín",358,4.39,55.56,559
+"Tacna","Tarata","Sitajara",179,9.07,52.1,560
+"Tacna","Tarata","Susapaya",304,9.27,48.03,848
+"Tacna","Tarata","Tarata",1921,8.38,37.95,3626
+"Tacna","Tarata","Tarucachi",134,4.56,46.33,434
+"Tacna","Tarata","Ticaco",380,8.89,45.6,815
+"Tumbes","Contralmirante Villar","Canoas de Punta Sal",2120,4.97,38.06,4429
+"Tumbes","Contralmirante Villar","Casitas",999,5.89,35.74,2233
+"Tumbes","Contralmirante Villar","Zorritos",5826,2.48,35.2,10252
+"Tumbes","Tumbes","Corrales",10727,4.25,34.16,20984
+"Tumbes","Tumbes","La Cruz",4724,2.86,32.05,8090
+"Tumbes","Tumbes","Pampas de Hospital",3065,7.89,41.2,6313
+"Tumbes","Tumbes","San Jacinto",4664,4.95,37.66,7979
+"Tumbes","Tumbes","San Juan de La Virgen",2286,4.32,32,3848
+"Tumbes","Tumbes","Tumbes",45512,2.58,37.33,95124
+"Tumbes","Zarumilla","Aguas Verdes",5088,4.9,54.52,16058
+"Tumbes","Zarumilla","Matapalo",725,9.64,56.46,1568
+"Tumbes","Zarumilla","Papayal",3133,4.24,49.58,4965
+"Tumbes","Zarumilla","Zarumilla",7895,2.32,39.9,18463
+"Ucayali","Atalaya","Raymondi",14883,22.45,25.43,28348
+"Ucayali","Atalaya","Sepahua",3944,10.31,33.85,6670
+"Ucayali","Atalaya","Tahuanía",3486,19.6,51.19,7284
+"Ucayali","Atalaya","Yurúa",604,38.48,4.88,1631
+"Ucayali","Coronel Portillo","Callería",54333,1.57,38.46,136478
+"Ucayali","Coronel Portillo","Campoverde",5587,3.5,45.82,13515
+"Ucayali","Coronel Portillo","Iparía",6940,11.4,59.2,10774
+"Ucayali","Coronel Portillo","Manantay",26046,2.28,45.91,70745
+"Ucayali","Coronel Portillo","Masisea",6677,7.45,55.72,11651
+"Ucayali","Coronel Portillo","Nueva Requena",2202,6.26,53.02,5122
+"Ucayali","Coronel Portillo","Yarinacocha",38300,2.17,39.04,85605
+"Ucayali","Padre Abad","Curimaná",2329,6.32,50.95,6047
+"Ucayali","Padre Abad","Irazola",6272,8.97,50.65,18910
+"Ucayali","Padre Abad","Padre Abad",9957,7.38,47.08,25633
+"Ucayali","Purús","Purus",2881,19.33,41.87,3746
