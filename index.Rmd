@@ -8,14 +8,7 @@ output:
 bibliography: references.bib
 #zotero: true
 ---
-
-<img src="https://imgur.com/T5KQ7qg.jpg" width="400"/>
-
-<center>
-
-<h1>Estadística para el Análisis Político 2</h1>
-
-</center>
+<center><img src="https://github.com/Estadistica-AnalisisPolitico/operations_onDFs/blob/main/Logo2025.png?raw=true" width="900"/></center>
 
 <br>
 
